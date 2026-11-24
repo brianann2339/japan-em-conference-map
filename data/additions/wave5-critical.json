@@ -52,12 +52,12 @@
     "mapVenue": "順天堂大学7号館",
     "topic": "精神科急診",
     "topicKey": "emergency",
-    "lat": 35.70232917258047,
-    "lng": 139.7581569757886,
+    "lat": 35.70245934285714,
+    "lng": 139.76070810000002,
     "mapPrecision": "complex",
     "mapNote": "地圖點為7號館代表位置",
     "officialUrl": "https://jaep2027.planningwill.com/outline.html",
-    "mapSourceUrl": "https://jss41.umin.ne.jp/access.html",
+    "mapSourceUrl": "https://www.openstreetmap.org/way/181579883",
     "sourceCheckedAt": "2026-11-25"
   }
 ]

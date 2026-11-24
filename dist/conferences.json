@@ -32,12 +32,12 @@
     "mapVenue": "東京慈恵会医科大学1号館",
     "topic": "蘇生／AED",
     "topicKey": "resuscitation",
-    "lat": 35.66438207938476,
-    "lng": 139.74367259094285,
+    "lat": 35.6637217,
+    "lng": 139.7514373,
     "mapPrecision": "complex",
-    "mapNote": "地圖點為校區代表位置",
+    "mapNote": "地圖點為西新橋校區／附屬醫院代表位置",
     "officialUrl": "https://jsr45.umin.jp/",
-    "mapSourceUrl": "https://www.jikei.ac.jp/access/nishi-shimbashi/",
+    "mapSourceUrl": "https://www.openstreetmap.org/way/754627020",
     "sourceCheckedAt": "2026-11-25"
   },
   {
@@ -290,7 +290,7 @@
   {
     "id": "jss-stroke-52",
     "societyCode": "JSS-STROKE",
-    "name": "STROKE 2027／第52回日本脳卒中学会学術集会",
+    "name": "STROKE 2027／第52回日本脳卒中学会学術集会・第56回日本脳卒中の外科学会学術集会・第43回SAH/スパズム・シンポジウム",
     "start": "2027-03-18",
     "end": "2027-03-20",
     "city": "東京都千代田區",
@@ -360,11 +360,11 @@
     "mapVenue": "順天堂大学7号館",
     "topic": "休克／重症",
     "topicKey": "shock",
-    "lat": 35.70232917258047,
-    "lng": 139.7581569757886,
+    "lat": 35.70245934285714,
+    "lng": 139.76070810000002,
     "mapPrecision": "venue",
     "officialUrl": "https://jss41.umin.ne.jp/kaisai.html",
-    "mapSourceUrl": "https://jss41.umin.ne.jp/access.html",
+    "mapSourceUrl": "https://www.openstreetmap.org/way/181579883",
     "sourceCheckedAt": "2026-11-25"
   },
   {
@@ -848,12 +848,12 @@
     "mapVenue": "順天堂大学7号館",
     "topic": "精神科急診",
     "topicKey": "emergency",
-    "lat": 35.70232917258047,
-    "lng": 139.7581569757886,
+    "lat": 35.70245934285714,
+    "lng": 139.76070810000002,
     "mapPrecision": "complex",
     "mapNote": "地圖點為7號館代表位置",
     "officialUrl": "https://jaep2027.planningwill.com/outline.html",
-    "mapSourceUrl": "https://jss41.umin.ne.jp/access.html",
+    "mapSourceUrl": "https://www.openstreetmap.org/way/181579883",
     "sourceCheckedAt": "2026-11-25"
   },
   {

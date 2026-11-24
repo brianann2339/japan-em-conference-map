@@ -830,6 +830,7 @@ def render_html(rows: list[dict], all_rows: list[dict], today: date, checked_at:
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>日本急診相關醫學會議追蹤</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231d3550'/%3E%3Cpath d='M26 14h12v12h12v12H38v12H26V38H14V26h12z' fill='white'/%3E%3C/svg%3E">
 <meta name="description" content="追蹤日本國內急診、EMS、重症、敗血症、創傷、毒物、心臟、航空、潛水、登山與運動醫學等急性照護相關會議。">
 <meta property="og:title" content="日本急診相關醫學會議追蹤">
 <meta property="og:locale" content="zh_TW">
@@ -874,6 +875,7 @@ def render_archive(rows: list[dict], all_rows: list[dict], today: date, checked_
 <html lang="zh-Hant"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>歷屆會議 — 日本急診相關醫學會議追蹤</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231d3550'/%3E%3Cpath d='M26 14h12v12h12v12H38v12H26V38H14V26h12z' fill='white'/%3E%3C/svg%3E">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

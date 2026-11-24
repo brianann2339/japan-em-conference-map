@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import io
+import json
 import re
 import unittest
 from datetime import date
@@ -32,7 +33,14 @@ class RenderTests(unittest.TestCase):
         self.assertIn("https://96311123.github.io/EM-conference2/", page)
         self.assertIn("https://github.com/geolonia/japanese-prefectures", page)
         self.assertIn("GFDL", page)
+        self.assertIn('rel="icon" href="data:image/svg+xml,', page)
         self.assertNotIn("assets/acep.png", page)
+
+    def test_addition_batches_match_merged_source(self):
+        by_id = {event["id"]: event for event in self.events}
+        for path in sorted((ROOT / "data" / "additions").glob("*.json")):
+            for event in json.loads(path.read_text(encoding="utf-8")):
+                self.assertEqual(by_id[event["id"]], event, f"conflict in {path.name}")
 
     def test_shared_coordinate_uses_one_group_marker(self):
         page = self.files["index.html"]
@@ -48,7 +56,7 @@ class RenderTests(unittest.TestCase):
         page = self.files["index.html"]
         calendar = self.files["conferences.ics"]
         self.assertIn("目前沒有官方已確認的投稿截止日期", page)
-        self.assertEqual([], __import__("json").loads(self.files["deadlines.json"]))
+        self.assertEqual([], json.loads(self.files["deadlines.json"]))
         self.assertEqual(len(self.events), calendar.count("BEGIN:VEVENT"))
         self.assertNotIn("VALARM", calendar)
 
