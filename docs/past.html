@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>歷屆會議 — 日本急診相關醫學會議追蹤</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#e8edef; --surface:#fdfdfc; --ink:#13222a; --muted:#5f747e;
+  --rule:#c6d1d6; --rule-soft:#dde5e8;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:Newsreader,"Iowan Old Style","Source Serif 4",Georgia,
+              "Noto Serif TC","Noto Serif JP","PingFang TC","Microsoft JhengHei",serif;
+  font-size:17px; line-height:1.55; font-variant-numeric:tabular-nums;
+}
+.wrap{max-width:1080px; margin:0 auto; padding:2.5rem 1.5rem 5rem}
+a{color:inherit; text-decoration-thickness:1px; text-underline-offset:2px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--ink); outline-offset:3px}
+.masthead{display:flex; justify-content:space-between; align-items:baseline;
+  gap:1rem; flex-wrap:wrap; border-bottom:1px solid var(--ink); padding-bottom:.6rem}
+.masthead h1{font-size:1.5rem; font-weight:600; margin:0; letter-spacing:.01em}
+.masthead .stamp{color:var(--muted); font-size:.85rem}
+.intro{margin:.65rem 0 0; color:var(--muted); font-size:.95rem; line-height:1.6; max-width:55rem}
+.hero{margin:2.6rem 0 3rem}
+.hero .lede{color:var(--muted); font-size:.95rem; margin:0 0 .5rem}
+.hero .title{font-size:clamp(1.7rem,4.4vw,2.6rem); line-height:1.2;
+  font-weight:300; margin:0 0 .7rem; max-width:28ch}
+.hero .meta{font-size:1.05rem; margin:0}
+.hero .count{color:var(--muted); font-size:.95rem; margin:.55rem 0 0}
+.hero .count b{color:var(--ink); font-weight:600; font-size:1.25rem}
+h2{font-size:1.05rem; font-weight:600; margin:0 0 1rem;
+   padding-bottom:.35rem; border-bottom:1px solid var(--rule)}
+.grid{background:var(--surface); border:1px solid var(--rule); padding:1rem .9rem 1.2rem;
+      overflow-x:auto}
+.gridrow{display:grid; grid-template-columns:3.4rem repeat(12,1fr);
+  column-gap:2px; row-gap:3px; min-width:640px}
+.months{margin-bottom:.4rem; border-bottom:1px solid var(--rule-soft); padding-bottom:.3rem}
+.months span{font-size:.72rem; color:var(--muted); text-align:center}
+.months span:first-child{text-align:left}
+.yr{font-size:.9rem; color:var(--muted); align-self:center}
+.yr.now{color:var(--ink); font-weight:600}
+.bar{grid-row:auto; border-left:3px solid currentColor; background:#fff;
+  padding:.18rem .35rem; font-size:.73rem; line-height:1.25; min-width:0;
+  border-top:1px solid var(--rule-soft); border-right:1px solid var(--rule-soft);
+  border-bottom:1px solid var(--rule-soft)}
+.bar b{display:block; font-weight:600; font-size:.78rem}
+.bar span{color:var(--muted); display:block; white-space:nowrap;
+  overflow:hidden; text-overflow:ellipsis}
+.yearband{grid-column:1/-1; height:1px; background:var(--rule-soft); margin:.25rem 0}
+.legend{display:flex; gap:.6rem 1.4rem; flex-wrap:wrap; margin:1rem 0 0; font-size:.8rem}
+.legend span{display:flex; align-items:center; gap:.55rem;
+  border-left:3px solid currentColor; padding:.2rem 0 .2rem .55rem}
+.legend .lg-txt{display:flex; flex-direction:column; line-height:1.25}
+.legend .lg-txt b{font-weight:600; font-size:.82rem}
+.legend em{font-style:normal; color:var(--muted)}
+.cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(232px,1fr));
+  gap:1.6rem 1.3rem; margin-top:.3rem}
+.card{display:block; color:inherit; text-decoration:none; min-width:0}
+.card .band{aspect-ratio:16/10; display:flex; align-items:center;
+  justify-content:center; padding:1.1rem; position:relative;
+  border:1px solid var(--rule); background:#fff}
+.code-block{width:100%; min-height:6rem; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:.3rem; border-top:5px solid currentColor;
+  background:linear-gradient(180deg,currentColor 0 5px,#fff 5px 100%)}
+.code-block b{font-family:"Inter","Helvetica Neue",Arial,sans-serif;
+  font-size:1.55rem; letter-spacing:.04em; line-height:1}
+.code-block small{font-size:.76rem; color:var(--muted); letter-spacing:.02em; text-align:center}
+.card .band em{position:absolute; right:.45rem; bottom:.35rem; font-style:normal;
+  font-size:.72rem; color:var(--muted)}
+.card .soc-line{display:block; font-size:.76rem; font-weight:600;
+  margin:.6rem 0 -.35rem}
+.card .card-title{display:block; font-weight:600; font-size:1rem; line-height:1.3;
+  margin:.7rem 0 .45rem}
+.card:hover .card-title,.card:focus-visible .card-title{text-decoration:underline}
+.card .meta{display:flex; align-items:flex-start; gap:.4rem;
+  font-size:.88rem; color:var(--muted); margin:.18rem 0}
+.card .meta svg{flex:0 0 auto; width:.9rem; height:.9rem; margin-top:.22rem}
+.card .meta .place{color:var(--ink)}
+.card .venue{display:block; color:var(--muted); font-size:.78rem; line-height:1.35; margin-top:.12rem}
+.card .precision{display:block; color:#7a5525; font-size:.76rem; margin-top:.28rem}
+.card.past{opacity:.52}
+.archive-link{margin:2rem 0 0; font-size:.9rem}
+.archive-link a{color:var(--muted)}
+.archive-link a:hover{color:var(--ink)}
+.dl{background:var(--surface); border:1px solid var(--rule); padding:.2rem 1rem .8rem}
+.dl ol{list-style:none; margin:0; padding:0}
+.dl li{display:grid; grid-template-columns:6rem 1fr auto; gap:.8rem;
+  align-items:baseline; padding:.6rem 0; border-bottom:1px solid var(--rule-soft)}
+.dl li:last-child{border-bottom:0}
+.dl .when{font-size:.88rem; color:var(--muted); white-space:nowrap}
+.dl .what b{font-weight:600}
+.dl .what span{color:var(--muted); font-size:.85rem; display:block}
+.dl .left{font-size:.85rem; white-space:nowrap; text-align:right}
+.dl li.tba .when,.dl li.tba .left{color:var(--muted); font-style:italic}
+.dl .note{margin:.7rem 0 0; font-size:.8rem; color:var(--muted)}
+footer{margin-top:3.5rem; padding-top:1rem; border-top:1px solid var(--rule);
+  font-size:.82rem; color:var(--muted)}
+footer p{margin:.35rem 0}
+footer ul{margin:.4rem 0; padding-left:1.1rem}
+.template-credit{margin:1.25rem 0; padding:.75rem .9rem; color:var(--ink);
+  border-left:4px solid #1d3550; background:rgba(255,255,255,.58)}
+.license-note{font-size:.78rem}
+@media (max-width:640px){
+  body{font-size:16px}
+  .wrap{padding:1.6rem 1rem 3rem}
+  .dl li{grid-template-columns:5.5rem 1fr; gap:.5rem}
+  .dl .left{display:none}
+}
+</style></head><body><div class="wrap">
+<header class="masthead"><h1>歷屆會議</h1><p class="stamp"><a href="index.html">回到主頁</a></p></header>
+<section style="margin-top:2.4rem"><p class="intro">已結束的日本急診相關醫學會議。</p></section>
+
+<section style="margin-top:3rem"><h2>全部歷屆場次</h2><div class="dl"><p class="note">目前尚無已結束的收錄會議。</p></div></section>
+
+<footer>
+  <p>官方資料查核至 2026-11-25。資料來源：</p>
+  <ul><li><a href="https://www.jca39.com/" target="_blank" rel="noopener">JCA — 第39回日本冠疾患学会学術集会</a></li><li><a href="https://jsr45.umin.jp/" target="_blank" rel="noopener">JSR — 日本蘇生学会 第45回大会</a></li><li><a href="https://med-gakkai.jp/39jssi/gaiyo/" target="_blank" rel="noopener">JSSI — 第39回日本外科感染症学会総会学術集会</a></li><li><a href="https://jsasem72.com/about.html" target="_blank" rel="noopener">JSASEM — 第72回 日本宇宙航空環境医学会大会</a></li><li><a href="https://jaam29.com/" target="_blank" rel="noopener">JAAM-CHUBU — 第29回日本救急医学会中部地方会総会・学術集会</a></li><li><a href="https://square.umin.ac.jp/jspm/congress/index.html" target="_blank" rel="noopener">JSPM — 第21回日本病院前救急診療医学会総会・学術集会</a></li><li><a href="https://2nd.jsts-mw.jp/overview" target="_blank" rel="noopener">JSTS — 第2回日本搬送学会学術集会</a></li><li><a href="https://www.juhms.net/syukai/chihoukai/kanto/" target="_blank" rel="noopener">JUHMS — 第25回日本高気圧潜水医学会関東・東北地方会 学術集会</a></li><li><a href="https://kenkyuukai.m3.com/event/event_detail.asp?id=86881" target="_blank" rel="noopener">SIRET — 第13回救急・外傷IVR症例検討会（SIRET）</a></li><li><a href="https://www.knt.co.jp/ec/2027/99sympo_35/" target="_blank" rel="noopener">EMS-SYMP — 第35回全国救急隊員シンポジウム YOKOHAMA 2027</a></li><li><a href="https://neurotrauma50.umin.jp/overview.html" target="_blank" rel="noopener">JNST — 第50回日本脳神経外傷学会</a></li><li><a href="https://jaam77kanto.umin.jp/" target="_blank" rel="noopener">JAAM-KANTO — 第77回日本救急医学会関東地方会学術集会・第64回救急隊員学術研究会</a></li><li><a href="https://www.jsaem63.org/" target="_blank" rel="noopener">JSAEM — 第63回日本腹部救急医学会総会</a></li><li><a href="https://www.k-gakkai.jp/133jaam-kinki/" target="_blank" rel="noopener">JAAM-KINKI — 第133回近畿救急医学研究会（日本救急医学会近畿地方会）</a></li><li><a href="https://www.congre.co.jp/stroke2027/outline.html" target="_blank" rel="noopener">JSS-STROKE — STROKE 2027／第52回日本脳卒中学会学術集会</a></li><li><a href="https://site2.convention.co.jp/32jadm/index.html" target="_blank" rel="noopener">JADM — 第32回日本災害医学会総会・学術集会</a></li><li><a href="https://www.congre.co.jp/jcs2027/" target="_blank" rel="noopener">JCS — JCS2027－第91回日本循環器学会学術集会・APSC2027</a></li><li><a href="https://jss41.umin.ne.jp/kaisai.html" target="_blank" rel="noopener">JSS — 第41回日本Shock学会学術集会</a></li><li><a href="https://www.jsicm.org/meeting/jsicm54/outline/index.html" target="_blank" rel="noopener">JSICM — 第54回日本集中治療医学会学術集会</a></li><li><a href="https://www.kansensho.or.jp/modules/meeting/index.php?content_id=2" target="_blank" rel="noopener">JAID-JSC — 第101回日本感染症学会総会・学術講演会／第75回日本化学療法学会総会 合同学会</a></li><li><a href="https://shun-convention.jp/jsbi53/" target="_blank" rel="noopener">JSBI — 第53回日本熱傷学会総会・学術集会</a></li><li><a href="https://jsmmed.org/pg130.html" target="_blank" rel="noopener">JSMED — 2027年度 第47回 日本登山医学会学術集会</a></li><li><a href="https://shun-convention.jp/jast2027/" target="_blank" rel="noopener">JAST — 第41回日本外傷学会総会・学術集会</a></li><li><a href="https://med-gakkai.jp/jaam-cs43/" target="_blank" rel="noopener">JAAM-CHUSHI — 第43回日本救急医学会中国四国地方会</a></li><li><a href="https://shinsen-mc.co.jp/tohoku-am2027/" target="_blank" rel="noopener">JAAM-TOHOKU — 第41回東北救急医学会総会・学術集会／第37回日本救急医学会東北地方会</a></li><li><a href="https://www.c-linkage.co.jp/jsth49/" target="_blank" rel="noopener">JSTH — 第49回日本血栓止血学会学術集会</a></li><li><a href="https://www.congre.co.jp/jsoa2027/" target="_blank" rel="noopener">JSOA — 日本スポーツ整形外科学会2027（JSOA2027）</a></li><li><a href="https://www.okinawa-congre.co.jp/jaamk31/about.html" target="_blank" rel="noopener">JAAM-KYUSHU — 第31回日本救急医学会九州地方会</a></li><li><a href="https://crbd.umin.jp/syukai.html" target="_blank" rel="noopener">JABR — 第39回日本脳死・脳蘇生学会総会・学術集会</a></li><li><a href="https://square.umin.ac.jp/jrcm/aca-conferences/" target="_blank" rel="noopener">JRCM — 第49回日本呼吸療法医学会学術集会</a></li><li><a href="https://site2.convention.co.jp/jsem30/info/" target="_blank" rel="noopener">JSEM — 第30回日本臨床救急医学会総会・学術集会</a></li><li><a href="https://www.congre.co.jp/cvit2027/outline.html" target="_blank" rel="noopener">CVIT — 第35回日本心血管インターベンション治療学会学術集会（CVIT 2027）</a></li><li><a href="https://jsep40-jspicc34.umin.jp/outline.html" target="_blank" rel="noopener">JSEP — 第40回日本小児救急医学会学術集会・第34回小児集中治療ワークショップ</a></li><li><a href="https://jsct.jp/" target="_blank" rel="noopener">JSCT — 第49回日本中毒学会総会・学術集会</a></li><li><a href="https://jsbpcc.umin.jp/meeting/" target="_blank" rel="noopener">JSBPCC — 第38回日本急性血液浄化学会学術集会</a></li><li><a href="https://cropcrop.xsrv.jp/jpocus19/" target="_blank" rel="noopener">J-POCUS — 第19回日本ポイントオブケア超音波学会学術集会</a></li><li><a href="https://jsdn.info/index-2/%E5%B9%B4%E6%AC%A1%E5%A4%A7%E4%BC%9A/" target="_blank" rel="noopener">JSDN — 日本災害看護学会 第29回年次大会</a></li><li><a href="https://site2.convention.co.jp/jaam55/about.html" target="_blank" rel="noopener">JAAM — 第55回日本救急医学会総会・学術集会</a></li><li><a href="https://jaen.jp/council/council-detail-council_29th/" target="_blank" rel="noopener">JAEN — 第29回日本救急看護学会学術集会</a></li><li><a href="https://www.congre.co.jp/jhfs2027/" target="_blank" rel="noopener">JHFS — 第31回日本心不全学会学術集会</a></li><li><a href="https://jaep2027.planningwill.com/outline.html" target="_blank" rel="noopener">JAEP — 第35回日本精神科救急学会学術総会</a></li><li><a href="http://www.qqigaku.jp/assets/document/pdf/top/2026/r9_information.pdf" target="_blank" rel="noopener">HOKKAIDO-EM — 第51回北海道救急医学会学術集会</a></li><li><a href="https://rinspo.jp/congress.html" target="_blank" rel="noopener">JSSM — 第38回日本臨床スポーツ医学会学術集会</a></li><li><a href="https://www.jsels.jp/conference/" target="_blank" rel="noopener">JSELS — 第13回日本救急救命学会学術集会</a></li><li><a href="https://jsas1994.jp/meeting.html" target="_blank" rel="noopener">JSAS — 第34回（次回）日本航空医療学会総会</a></li></ul>
+  <p>會議日期、城市與會場請以官方公告為準。訂閱
+     <a href="conferences.ics">ICS 行事曆</a>，或下載
+     <a href="conferences.csv">CSV</a>／<a href="conferences.json">JSON</a>。</p>
+  <p class="template-credit">版型與追蹤架構沿用學長的
+    <a href="https://96311123.github.io/EM-conference2/" target="_blank" rel="noopener">「急診國際年會追蹤」</a>；
+    <a href="https://github.com/96311123/EM-conference2/" target="_blank" rel="noopener">原始碼 repository</a>。</p>
+  <p class="license-note">日本地圖 SVG 來源：
+    <a href="https://github.com/geolonia/japanese-prefectures" target="_blank" rel="noopener">Geolonia japanese-prefectures / map-full.svg</a>，
+    源自 Wikipedia「日本地図.svg」，依
+    <a href="https://www.gnu.org/licenses/fdl-1.3.html" target="_blank" rel="noopener">GNU Free Documentation License（GFDL）</a>使用。
+    專案內保留原始 SVG 與授權說明。</p>
+</footer>
+</div></body></html>

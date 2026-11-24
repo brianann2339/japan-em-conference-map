@@ -1,0 +1,573 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Japan Emergency Conference Tracker//TW//ZH-Hant
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:日本急診相關醫學會議
+X-WR-TIMEZONE:Asia/Tokyo
+BEGIN:VEVENT
+UID:5c8bfaccdf7793cc3979908a@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20261127
+DTEND;VALUE=DATE:20261129
+SUMMARY:JCA — 第39回日本冠疾患学会学術集会
+LOCATION:佐賀県 · 佐賀市 · グランデはがくれ
+DESCRIPTION:冠疾患・ACS\\n官方來源：https://www.jca39.com/
+URL:https://www.jca39.com/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:e5adf36f27a78dc6550d818d@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20261128
+DTEND;VALUE=DATE:20261130
+SUMMARY:JSR — 日本蘇生学会 第45回大会
+LOCATION:東京都港區 · 東京慈恵会医科大学1号館
+DESCRIPTION:蘇生／AED\\n官方來源：https://jsr45.umin.jp/
+URL:https://jsr45.umin.jp/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:decb09b5f338c9887400b467@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20261203
+DTEND;VALUE=DATE:20261205
+SUMMARY:JSSI — 第39回日本外科感染症学会総会学術集会
+LOCATION:神奈川縣 · 橫濱市 · パシフィコ横浜ノース
+DESCRIPTION:外科感染・敗血症相關\\n官方來源：https://med-gak
+ kai.jp/39jssi/gaiyo/
+URL:https://med-gakkai.jp/39jssi/gaiyo/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:e18bfb7c3ea1823c3323b8ae@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20261203
+DTEND;VALUE=DATE:20261207
+SUMMARY:JSASEM — 第72回 日本宇宙航空環境医学会大会
+LOCATION:大分県 · 大分市 · J:COMホルトホール大分
+DESCRIPTION:宇宙航空環境醫學\\n官方來源：https://jsasem72.com/
+ about.html
+URL:https://jsasem72.com/about.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:e6c5a344b5e8b542fdd29d60@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20261204
+DTEND;VALUE=DATE:20261206
+SUMMARY:JAAM-CHUBU — 第29回日本救急医学会中部地方会総会
+ ・学術集会
+LOCATION:愛知県 · 長久手市 · 愛知医科大学 大学本館
+DESCRIPTION:急診醫學・地方會\\n官方來源：https://jaam29.com/
+URL:https://jaam29.com/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:2bab0f0052ae21faedadbed8@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20261206
+DTEND;VALUE=DATE:20261207
+SUMMARY:JSPM — 第21回日本病院前救急診療医学会総会・学
+ 術集会
+LOCATION:鳥取県 · 米子市 · 米子市文化ホール
+DESCRIPTION:院前救急／災害醫療\\n官方來源：https://square.umi
+ n.ac.jp/jspm/congress/index.html
+URL:https://square.umin.ac.jp/jspm/congress/index.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ca0ff1a8594edf94b7f0da8f@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261213
+SUMMARY:JSTS — 第2回日本搬送学会学術集会
+LOCATION:愛知県 · 長久手市 · 愛知医科大学 大学本館
+DESCRIPTION:搬送醫療\\n官方來源：https://2nd.jsts-mw.jp/overview
+URL:https://2nd.jsts-mw.jp/overview
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:431545e7529e0bd7970c163e@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270123
+DTEND;VALUE=DATE:20270124
+SUMMARY:JUHMS — 第25回日本高気圧潜水医学会関東・東北地
+ 方会 学術集会
+LOCATION:東京都文京區 · 東京科学大学3号館 医学科講義室
+ 1・M&Dタワー共用講義室2
+DESCRIPTION:高氣壓・潛水醫學\\n官方來源：https://www.juhms.net
+ /syukai/chihoukai/kanto/
+URL:https://www.juhms.net/syukai/chihoukai/kanto/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:01f9851ed4174d5e12a7c6bf@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270124
+DTEND;VALUE=DATE:20270125
+SUMMARY:SIRET — 第13回救急・外傷IVR症例検討会（SIRET）
+LOCATION:神奈川県 · 相模原市 · 北里大学IPE棟＋Web
+DESCRIPTION:救急放射・外傷IVR\\n官方來源：https://kenkyuukai.m3
+ .com/event/event_detail.asp?id=86881
+URL:https://kenkyuukai.m3.com/event/event_detail.asp?id=86881
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:4a9e2ebb324a4bc8a2a955c1@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270204
+DTEND;VALUE=DATE:20270206
+SUMMARY:EMS-SYMP — 第35回全国救急隊員シンポジウム YOKOHAMA 
+ 2027
+LOCATION:神奈川縣 · 橫濱市 · パシフィコ横浜 会議センタ
+ ー
+DESCRIPTION:EMS・救急隊員\\n官方來源：https://www.knt.co.jp/ec/20
+ 27/99sympo_35/
+URL:https://www.knt.co.jp/ec/2027/99sympo_35/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:04b3817d49bd2a7015f908e3@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270226
+DTEND;VALUE=DATE:20270228
+SUMMARY:JNST — 第50回日本脳神経外傷学会
+LOCATION:東京都千代田區 · 御茶ノ水ソラシティ カンファ
+ レンスセンター
+DESCRIPTION:腦神經外傷\\n官方來源：https://neurotrauma50.umin.jp/
+ overview.html
+URL:https://neurotrauma50.umin.jp/overview.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:8bdc8ec3cce40215665ce38d@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270227
+DTEND;VALUE=DATE:20270228
+SUMMARY:JAAM-KANTO — 第77回日本救急医学会関東地方会学術
+ 集会・第64回救急隊員学術研究会
+LOCATION:東京都千代田區 · 日本教育会館
+DESCRIPTION:急診醫學・地方會\\n官方來源：https://jaam77kanto.u
+ min.jp/
+URL:https://jaam77kanto.umin.jp/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:1020920ac18f9dea3cdca7a6@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270304
+DTEND;VALUE=DATE:20270306
+SUMMARY:JSAEM — 第63回日本腹部救急医学会総会
+LOCATION:福岡県 · 福岡市 · 福岡国際会議場・福岡サンパ
+ レス
+DESCRIPTION:外傷・急性外科\\n官方來源：https://www.jsaem63.org/
+URL:https://www.jsaem63.org/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:a25caa1ff3b8cfb521dc138d@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270306
+DTEND;VALUE=DATE:20270307
+SUMMARY:JAAM-KINKI — 第133回近畿救急医学研究会（日本救急
+ 医学会近畿地方会）
+LOCATION:兵庫県 · 神戶市 · 神戸学院大学 ポートアイラン
+ ド第1キャンパスB号棟
+DESCRIPTION:急診醫學・地方會\\n官方來源：https://www.k-gakkai.
+ jp/133jaam-kinki/
+URL:https://www.k-gakkai.jp/133jaam-kinki/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:e369eb75de3941893f5d9dc4@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270318
+DTEND;VALUE=DATE:20270321
+SUMMARY:JSS-STROKE — STROKE 2027／第52回日本脳卒中学会学術集
+ 会
+LOCATION:東京都千代田區 · 東京国際フォーラム
+DESCRIPTION:腦中風・急性期治療\\n官方來源：https://www.congre
+ .co.jp/stroke2027/outline.html
+URL:https://www.congre.co.jp/stroke2027/outline.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:31bccd619fecedf3d8460eb3@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270318
+DTEND;VALUE=DATE:20270321
+SUMMARY:JADM — 第32回日本災害医学会総会・学術集会
+LOCATION:北海道 · 札幌市 · 札幌コンベンションセンター
+ ・札幌市産業振興センター
+DESCRIPTION:災害醫學\\n官方來源：https://site2.convention.co.jp/32
+ jadm/index.html
+URL:https://site2.convention.co.jp/32jadm/index.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:d8658a0f28130cec8d0eb65e@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270326
+DTEND;VALUE=DATE:20270329
+SUMMARY:JCS — JCS2027－第91回日本循環器学会学術集会・APSC2
+ 027
+LOCATION:神奈川縣 · 橫濱市 · パシフィコ横浜
+DESCRIPTION:循環器・急性心血管\\n官方來源：https://www.congre
+ .co.jp/jcs2027/
+URL:https://www.congre.co.jp/jcs2027/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:dc634af5b9376bea4696c6d0@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270416
+DTEND;VALUE=DATE:20270418
+SUMMARY:JSS — 第41回日本Shock学会学術集会
+LOCATION:東京都文京區 · 順天堂大学7号館
+DESCRIPTION:休克／重症\\n官方來源：https://jss41.umin.ne.jp/kaisa
+ i.html
+URL:https://jss41.umin.ne.jp/kaisai.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:7f9bb39910d63c3657d7c5f1@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270512
+DTEND;VALUE=DATE:20270515
+SUMMARY:JSICM — 第54回日本集中治療医学会学術集会
+LOCATION:京都府 · 京都市 · 国立京都国際会館・ザ・プリ
+ ンス京都宝ヶ池
+DESCRIPTION:重症・集中治療\\n官方來源：https://www.jsicm.org/me
+ eting/jsicm54/outline/index.html
+URL:https://www.jsicm.org/meeting/jsicm54/outline/index.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:5be31298fd10da50f7637235@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270513
+DTEND;VALUE=DATE:20270516
+SUMMARY:JAID-JSC — 第101回日本感染症学会総会・学術講演会
+ ／第75回日本化学療法学会総会 合同学会
+LOCATION:北海道 · 札幌市 · 札幌コンベンションセンター
+ ・札幌市産業振興センター
+DESCRIPTION:感染・敗血症相關\\n官方來源：https://www.kansensho
+ .or.jp/modules/meeting/index.php?content_id=2
+URL:https://www.kansensho.or.jp/modules/meeting/index.php?content_id=2
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:57dd59ee5aaa542e19bdaecd@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270520
+DTEND;VALUE=DATE:20270522
+SUMMARY:JSBI — 第53回日本熱傷学会総会・学術集会
+LOCATION:東京都江東區 · 日本科学未来館
+DESCRIPTION:燒燙傷\\n官方來源：https://shun-convention.jp/jsbi53/
+URL:https://shun-convention.jp/jsbi53/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:26df6ad4531c32a9cc1a2200@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270522
+DTEND;VALUE=DATE:20270524
+SUMMARY:JSMED — 2027年度 第47回 日本登山医学会学術集会
+LOCATION:栃木県 · 那須塩原市 · 国際医療福祉大学病院 那
+ 須医療センター
+DESCRIPTION:登山・高山醫學\\n官方來源：https://jsmmed.org/pg130
+ .html
+URL:https://jsmmed.org/pg130.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:ec851d27beaf7bd7788c405d@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270527
+DTEND;VALUE=DATE:20270529
+SUMMARY:JAST — 第41回日本外傷学会総会・学術集会
+LOCATION:島根県 · 出雲市 · ビッグハート出雲・パルメイ
+ トホール
+DESCRIPTION:外傷・急性外科\\n官方來源：https://shun-convention.
+ jp/jast2027/
+URL:https://shun-convention.jp/jast2027/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:77f18f9422b509b3d5933cc6@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270604
+DTEND;VALUE=DATE:20270606
+SUMMARY:JAAM-CHUSHI — 第43回日本救急医学会中国四国地方会
+LOCATION:岡山県 · 倉敷市 · 倉敷市芸文館
+DESCRIPTION:急診醫學・地方會\\n官方來源：https://med-gakkai.jp
+ /jaam-cs43/
+URL:https://med-gakkai.jp/jaam-cs43/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:478137a0c5bf92b20dbd749b@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270605
+DTEND;VALUE=DATE:20270606
+SUMMARY:JAAM-TOHOKU — 第41回東北救急医学会総会・学術集会
+ ／第37回日本救急医学会東北地方会
+LOCATION:新潟県 · 新潟市 · 新潟医療人育成センター
+DESCRIPTION:急診醫學・地方會\\n官方來源：https://shinsen-mc.co
+ .jp/tohoku-am2027/
+URL:https://shinsen-mc.co.jp/tohoku-am2027/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:e7d6b5468e3ba6cfc223a8aa@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270610
+DTEND;VALUE=DATE:20270613
+SUMMARY:JSTH — 第49回日本血栓止血学会学術集会
+LOCATION:奈良県 · 奈良市 · 奈良春日野国際フォーラム 甍
+DESCRIPTION:血栓止血・DIC\\n官方來源：https://www.c-linkage.co.jp
+ /jsth49/
+URL:https://www.c-linkage.co.jp/jsth49/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:cd8963eec3cfe6695cbb84d4@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270617
+DTEND;VALUE=DATE:20270619
+SUMMARY:JSOA — 日本スポーツ整形外科学会2027（JSOA2027）
+LOCATION:北海道 · 札幌市 · 札幌コンベンションセンター
+DESCRIPTION:運動外傷・骨科\\n官方來源：https://www.congre.co.jp
+ /jsoa2027/
+URL:https://www.congre.co.jp/jsoa2027/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:7043cbb6f85a5a799304ab71@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270625
+DTEND;VALUE=DATE:20270627
+SUMMARY:JAAM-KYUSHU — 第31回日本救急医学会九州地方会
+LOCATION:沖縄県 · 那覇市・宜野湾市 · 6月25日：沖縄県青
+ 年会館・6月26日：沖縄コンベンションセンター
+DESCRIPTION:急診醫學・地方會\\n官方來源：https://www.okinawa-c
+ ongre.co.jp/jaamk31/about.html
+URL:https://www.okinawa-congre.co.jp/jaamk31/about.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:bbec4a9c72946145f8f38b2c@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270627
+DTEND;VALUE=DATE:20270628
+SUMMARY:JABR — 第39回日本脳死・脳蘇生学会総会・学術集
+ 会
+LOCATION:富山県 · 富山市 · 富山県民会館
+DESCRIPTION:腦死・腦蘇生\\n官方來源：https://crbd.umin.jp/syukai
+ .html
+URL:https://crbd.umin.jp/syukai.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:1c5123a3b31a0479a92aaab1@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270703
+DTEND;VALUE=DATE:20270705
+SUMMARY:JRCM — 第49回日本呼吸療法医学会学術集会
+LOCATION:愛知県 · 名古屋市 · ウインクあいち
+DESCRIPTION:呼吸治療・重症\\n官方來源：https://square.umin.ac.j
+ p/jrcm/aca-conferences/
+URL:https://square.umin.ac.jp/jrcm/aca-conferences/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:141f4f2a3d138a6507d94985@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270715
+DTEND;VALUE=DATE:20270718
+SUMMARY:JSEM — 第30回日本臨床救急医学会総会・学術集会
+LOCATION:神奈川縣 · 橫濱市 · パシフィコ横浜 会議センタ
+ ー
+DESCRIPTION:臨床急診・院前救護\\n官方來源：https://site2.conv
+ ention.co.jp/jsem30/info/
+URL:https://site2.convention.co.jp/jsem30/info/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:398de5148511b03deeea011d@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270715
+DTEND;VALUE=DATE:20270718
+SUMMARY:CVIT — 第35回日本心血管インターベンション治療
+ 学会学術集会（CVIT 2027）
+LOCATION:東京都千代田區 · 東京国際フォーラム
+DESCRIPTION:心血管介入・ACS\\n官方來源：https://www.congre.co.jp
+ /cvit2027/outline.html
+URL:https://www.congre.co.jp/cvit2027/outline.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:602a6dec11041bc0daa738d1@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270723
+DTEND;VALUE=DATE:20270726
+SUMMARY:JSEP — 第40回日本小児救急医学会学術集会・第34回
+ 小児集中治療ワークショップ
+LOCATION:神奈川縣 · 橫濱市 · 慶應義塾大学日吉キャンパ
+ ス
+DESCRIPTION:兒童急診・兒童重症\\n官方來源：https://jsep40-jsp
+ icc34.umin.jp/outline.html
+URL:https://jsep40-jspicc34.umin.jp/outline.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:1ee0e6412941e0d87d6e95b6@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270730
+DTEND;VALUE=DATE:20270801
+SUMMARY:JSCT — 第49回日本中毒学会総会・学術集会
+LOCATION:東京都新宿區 · TKP市ヶ谷カンファレンスセンタ
+ ー
+DESCRIPTION:臨床中毒\\n官方來源：https://jsct.jp/
+URL:https://jsct.jp/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:a361a68e382d52a0d277f94e@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270910
+DTEND;VALUE=DATE:20270912
+SUMMARY:JSBPCC — 第38回日本急性血液浄化学会学術集会
+LOCATION:埼玉縣 · 川越市 · 川越プリンスホテル
+DESCRIPTION:急性血液淨化・重症\\n官方來源：https://jsbpcc.umi
+ n.jp/meeting/
+URL:https://jsbpcc.umin.jp/meeting/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:61aefee6fce20ee6af2830be@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270911
+DTEND;VALUE=DATE:20270913
+SUMMARY:J-POCUS — 第19回日本ポイントオブケア超音波学会
+ 学術集会
+LOCATION:和歌山県 · 和歌山市 · 和歌山県立医科大学 薬学
+ 部 伏虎キャンパス
+DESCRIPTION:POCUS・急診超音波\\n官方來源：https://cropcrop.xsrv.
+ jp/jpocus19/
+URL:https://cropcrop.xsrv.jp/jpocus19/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:f74b3ca3ff7668de21cc5614@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270925
+DTEND;VALUE=DATE:20270927
+SUMMARY:JSDN — 日本災害看護学会 第29回年次大会
+LOCATION:東京都渋谷區 · 日本赤十字看護大学広尾キャン
+ パス
+DESCRIPTION:災害看護\\n官方來源：https://jsdn.info/index-2/%E5%B9%
+ B4%E6%AC%A1%E5%A4%A7%E4%BC%9A/
+URL:https://jsdn.info/index-2/%E5%B9%B4%E6%AC%A1%E5%A4%A7%E4%BC%9A/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:36f35d8c416e1cd675d82ba2@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20271005
+DTEND;VALUE=DATE:20271008
+SUMMARY:JAAM — 第55回日本救急医学会総会・学術集会
+LOCATION:北海道 · 札幌市 · グランドメルキュール札幌大
+ 通公園・札幌市教育文化会館
+DESCRIPTION:急診醫學\\n官方來源：https://site2.convention.co.jp/ja
+ am55/about.html
+URL:https://site2.convention.co.jp/jaam55/about.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:5016a6cb82b14f6fd6e2088e@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20271016
+DTEND;VALUE=DATE:20271018
+SUMMARY:JAEN — 第29回日本救急看護学会学術集会
+LOCATION:神奈川縣 · 橫濱市 · パシフィコ横浜
+DESCRIPTION:救急看護\\n官方來源：https://jaen.jp/council/council-d
+ etail-council_29th/
+URL:https://jaen.jp/council/council-detail-council_29th/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:cbd2cabc65347db2daf10312@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20271029
+DTEND;VALUE=DATE:20271101
+SUMMARY:JHFS — 第31回日本心不全学会学術集会
+LOCATION:新潟県 · 新潟市 · 朱鷺メッセ新潟コンベンショ
+ ンセンター
+DESCRIPTION:心衰竭\\n官方來源：https://www.congre.co.jp/jhfs2027/
+URL:https://www.congre.co.jp/jhfs2027/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:9bdfdc90b33c0a334f0e7d41@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20271030
+DTEND;VALUE=DATE:20271101
+SUMMARY:JAEP — 第35回日本精神科救急学会学術総会
+LOCATION:東京都文京區 · 順天堂大学7号館・10号館
+DESCRIPTION:精神科急診\\n官方來源：https://jaep2027.planningwill.
+ com/outline.html
+URL:https://jaep2027.planningwill.com/outline.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:b4a37c8c1285e3cbdbdee58d@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20271030
+DTEND;VALUE=DATE:20271031
+SUMMARY:HOKKAIDO-EM — 第51回北海道救急医学会学術集会
+LOCATION:北海道 · 札幌市 · ホテルライフォート札幌
+DESCRIPTION:急診醫學・地方會\\n官方來源：http://www.qqigaku.jp
+ /assets/document/pdf/top/2026/r9_information.pdf
+URL:http://www.qqigaku.jp/assets/document/pdf/top/2026/r9_information.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:6710a6fe08bef4691109a46b@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20271113
+DTEND;VALUE=DATE:20271115
+SUMMARY:JSSM — 第38回日本臨床スポーツ医学会学術集会
+LOCATION:千葉県 · 千葉市 · 幕張メッセ国際会議場
+DESCRIPTION:臨床運動醫學\\n官方來源：https://rinspo.jp/congress.
+ html
+URL:https://rinspo.jp/congress.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:16da4e31f9ee206d344c1a94@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20271120
+DTEND;VALUE=DATE:20271121
+SUMMARY:JSELS — 第13回日本救急救命学会学術集会
+LOCATION:栃木県 · 宇都宮市 · ライトキューブ宇都宮
+DESCRIPTION:救急救命・EMS\\n官方來源：https://www.jsels.jp/confer
+ ence/
+URL:https://www.jsels.jp/conference/
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:661a288bc15608cc0d188aff@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20271203
+DTEND;VALUE=DATE:20271205
+SUMMARY:JSAS — 第34回（次回）日本航空医療学会総会
+LOCATION:鹿児島県 · 鹿兒島市 · カクイックス交流センタ
+ ー（かごしま県民交流センター）
+DESCRIPTION:航空醫療／院前救急\\n官方來源：https://jsas1994.j
+ p/meeting.html
+URL:https://jsas1994.jp/meeting.html
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

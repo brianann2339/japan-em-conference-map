@@ -1,0 +1,496 @@
+{
+  "version": 1,
+  "normalizationVersion": 2,
+  "sources": {
+    "conference:jca-39": {
+      "name": "第39回日本冠疾患学会学術集会",
+      "url": "https://www.jca39.com/",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://www.jca39.com/",
+      "contentHash": "c788b601fb655e5481dc395a79dffd13d394db897fbcfda0353958b091011b0a",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jsr-45": {
+      "name": "日本蘇生学会 第45回大会",
+      "url": "https://jsr45.umin.jp/",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://jsr45.umin.jp/",
+      "contentHash": "d0474cadf1869098a5a09583413ff934906fe890b30bfaa9cb6723cfc3874eca",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jssi-39": {
+      "name": "第39回日本外科感染症学会総会学術集会",
+      "url": "https://med-gakkai.jp/39jssi/gaiyo/",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://med-gakkai.jp/39jssi/gaiyo/",
+      "contentHash": "f90e704575890924bfab8e5caaa0d8de37dd34322d4faafc1ea77c4b225d21ad",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jsasem-72": {
+      "name": "第72回 日本宇宙航空環境医学会大会",
+      "url": "https://jsasem72.com/about.html",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://jsasem72.com/about.html",
+      "contentHash": "432d9fb788a1187f97ec4f0bff9706f7d340a878b360de5bc5c617b00e072f7c",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jaam-chubu-29": {
+      "name": "第29回日本救急医学会中部地方会総会・学術集会",
+      "url": "https://jaam29.com/",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://jaam29.com/",
+      "contentHash": "9498630a7c2f0c8edcff4dcb91e1e0b526878d9ae9edc8fbce166d8ba6d5b3ca",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jspm-21": {
+      "name": "第21回日本病院前救急診療医学会総会・学術集会",
+      "url": "https://square.umin.ac.jp/jspm/congress/index.html",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://square.umin.ac.jp/jspm/congress/index.html",
+      "contentHash": "c23c943b159deb7976e967d96ed65072d6e540d62a2586ac58c41173b07028ae",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jsts-2": {
+      "name": "第2回日本搬送学会学術集会",
+      "url": "https://2nd.jsts-mw.jp/overview",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://2nd.jsts-mw.jp/overview",
+      "contentHash": "4ca4c57999e4e42c9b44a33d410f6981f8751e4dae1cfdaf5b3d4790cd6f6cec",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:juhms-kanto-tohoku-25": {
+      "name": "第25回日本高気圧潜水医学会関東・東北地方会 学術集会",
+      "url": "https://www.juhms.net/syukai/chihoukai/kanto/",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://www.juhms.net/syukai/chihoukai/kanto/",
+      "contentHash": "5108e32c4a37f9823d95f21432ea161b1feb323726361e05399c8ce499d05c90",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:siret-13": {
+      "name": "第13回救急・外傷IVR症例検討会（SIRET）",
+      "url": "https://kenkyuukai.m3.com/event/event_detail.asp?id=86881",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://kenkyuukai.m3.com/event/event_detail.asp?id=86881",
+      "contentHash": "17f271399bf77925083c12d371ad73105752dfc92e0bba3a913a473482c67f6f",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:ems-symp-35": {
+      "name": "第35回全国救急隊員シンポジウム YOKOHAMA 2027",
+      "url": "https://www.knt.co.jp/ec/2027/99sympo_35/",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://www.knt.co.jp/ec/2027/99sympo_35/",
+      "contentHash": "5b2d9ca64195ef10b0a9c8afd845cdf705ad6fd5f93feeaf6b4b38259314584b",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jnst-50": {
+      "name": "第50回日本脳神経外傷学会",
+      "url": "https://neurotrauma50.umin.jp/overview.html",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://neurotrauma50.umin.jp/overview.html",
+      "contentHash": "6dd295a368b60adb84299f2433b9d14e34cbb6ee2d68e7be42e479102ad08876",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jaam-kanto-77": {
+      "name": "第77回日本救急医学会関東地方会学術集会・第64回救急隊員学術研究会",
+      "url": "https://jaam77kanto.umin.jp/",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://jaam77kanto.umin.jp/",
+      "contentHash": "c9960930cdeae78628e5b00e4649cfe93b20ec437b48797b95124cf1cbc6982b",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jsaem-63": {
+      "name": "第63回日本腹部救急医学会総会",
+      "url": "https://www.jsaem63.org/",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://www.jsaem63.org/",
+      "contentHash": "74119b49d217bee46dd2515d5e764e5d32c471ffe56b73caeacc3898ad30af77",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jaam-kinki-133": {
+      "name": "第133回近畿救急医学研究会（日本救急医学会近畿地方会）",
+      "url": "https://www.k-gakkai.jp/133jaam-kinki/",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://www.k-gakkai.jp/133jaam-kinki/",
+      "contentHash": "67a321b634ad27ca26899c8e90d5cee80e4a03252bebad8e010c866208e53ea0",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jss-stroke-52": {
+      "name": "STROKE 2027／第52回日本脳卒中学会学術集会",
+      "url": "https://www.congre.co.jp/stroke2027/outline.html",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://www.congre.co.jp/stroke2027/outline.html",
+      "contentHash": "fe2422d8cdba0d0ee30b42cf272e1ff1de20ec08992f0c8d8560321aec5659ca",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jadm-32": {
+      "name": "第32回日本災害医学会総会・学術集会",
+      "url": "https://site2.convention.co.jp/32jadm/index.html",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://site2.convention.co.jp/32jadm/index.html",
+      "contentHash": "450d302748c76aaae7d3e472dd807521687a9eb494b12a891e50ef5828ccd401",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jcs-91-apsc": {
+      "name": "JCS2027－第91回日本循環器学会学術集会・APSC2027",
+      "url": "https://www.congre.co.jp/jcs2027/",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://www.congre.co.jp/jcs2027/",
+      "contentHash": "0176acdead2ae170e349e37af199aebc70baa68a586fb75778b05a2259dbfc6a",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jss-41": {
+      "name": "第41回日本Shock学会学術集会",
+      "url": "https://jss41.umin.ne.jp/kaisai.html",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://jss41.umin.ne.jp/kaisai.html",
+      "contentHash": "efc86abb0d28114843c2ed11a8653335af808d4512b134b0b60dbcaaef5cf2d6",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jsicm-54": {
+      "name": "第54回日本集中治療医学会学術集会",
+      "url": "https://www.jsicm.org/meeting/jsicm54/outline/index.html",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://www.jsicm.org/meeting/jsicm54/outline/index.html",
+      "contentHash": "d4931c4cfcc1a726cf51f2ecb26ffbdfb27872d11f579f3badf75e8bc848fc26",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jaid-101-jsc-75": {
+      "name": "第101回日本感染症学会総会・学術講演会／第75回日本化学療法学会総会 合同学会",
+      "url": "https://www.kansensho.or.jp/modules/meeting/index.php?content_id=2",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://www.kansensho.or.jp/modules/meeting/index.php?content_id=2",
+      "contentHash": "4e33ecf6b85d981e530ff898a0cb0f91a992e26a104d265604064f92331b9ff7",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jsbi-53": {
+      "name": "第53回日本熱傷学会総会・学術集会",
+      "url": "https://shun-convention.jp/jsbi53/",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://shun-convention.jp/jsbi53/",
+      "contentHash": "a95d358ee7c6670981d339e13e1a19d492267c3e3b4faabbd85db134035e36ac",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jsmmed-47": {
+      "name": "2027年度 第47回 日本登山医学会学術集会",
+      "url": "https://jsmmed.org/pg130.html",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://jsmmed.org/pg130.html",
+      "contentHash": "19cdc3bb9b5e1ce61caf8ac832d7a93284d2ce96b0ea112a2205a61085ce2725",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jast-41": {
+      "name": "第41回日本外傷学会総会・学術集会",
+      "url": "https://shun-convention.jp/jast2027/",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://shun-convention.jp/jast2027/",
+      "contentHash": "a449ee4f83e86fc1bf198903efca4610d754996f5a08e995eacf6f57d4d9e737",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jaam-chushi-43": {
+      "name": "第43回日本救急医学会中国四国地方会",
+      "url": "https://med-gakkai.jp/jaam-cs43/",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://med-gakkai.jp/jaam-cs43/",
+      "contentHash": "d3412ad4bf5d94d88dfb414525d6c144d8682aae971fe1f616633566fb04646e",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jaam-tohoku-41": {
+      "name": "第41回東北救急医学会総会・学術集会／第37回日本救急医学会東北地方会",
+      "url": "https://shinsen-mc.co.jp/tohoku-am2027/",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://shinsen-mc.co.jp/tohoku-am2027/",
+      "contentHash": "12a3aa6f1b36f9b35132dc828d64d1460613f625e151bb33b3390cdd20578020",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jsth-49": {
+      "name": "第49回日本血栓止血学会学術集会",
+      "url": "https://www.c-linkage.co.jp/jsth49/",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://www.c-linkage.co.jp/jsth49/",
+      "contentHash": "5f29c582e4ced7233bd269bcc7f6b7e1dafc288a571b0cf16945e810f3f28484",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jsoa-2027": {
+      "name": "日本スポーツ整形外科学会2027（JSOA2027）",
+      "url": "https://www.congre.co.jp/jsoa2027/",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://www.congre.co.jp/jsoa2027/",
+      "contentHash": "1d17076751e4983639c0b38a01ae0cd179bb7a9b86304bf9ec0cdca4a4e5df30",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jaam-kyushu-31": {
+      "name": "第31回日本救急医学会九州地方会",
+      "url": "https://www.okinawa-congre.co.jp/jaamk31/about.html",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://www.okinawa-congre.co.jp/jaamk31/about.html",
+      "contentHash": "2da80a6020307728cae462bb6b33f3b99e00aea1483aaed25d774068632a2062",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jabr-39": {
+      "name": "第39回日本脳死・脳蘇生学会総会・学術集会",
+      "url": "https://crbd.umin.jp/syukai.html",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://crbd.umin.jp/syukai.html",
+      "contentHash": "c5cf64527e111f1a4035730f80deda9a531b3d7071deef7c90fd716ca327875a",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jrcm-49": {
+      "name": "第49回日本呼吸療法医学会学術集会",
+      "url": "https://square.umin.ac.jp/jrcm/aca-conferences/",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://square.umin.ac.jp/jrcm/aca-conferences/",
+      "contentHash": "fd73d0421cc49d2fa3c17cc47e4827e6b2a797db5020fc45e54e8feb16cd4ba1",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jsem-30": {
+      "name": "第30回日本臨床救急医学会総会・学術集会",
+      "url": "https://site2.convention.co.jp/jsem30/info/",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://site2.convention.co.jp/jsem30/info/",
+      "contentHash": "11f484609700e2c74cba52242eb9ce269ea2d8ad9a133b797b8de2c1b8ab4c21",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:07:31+09:00"
+    },
+    "conference:cvit-35": {
+      "name": "第35回日本心血管インターベンション治療学会学術集会（CVIT 2027）",
+      "url": "https://www.congre.co.jp/cvit2027/outline.html",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://www.congre.co.jp/cvit2027/outline.html",
+      "contentHash": "b2bfdaa779b5a3a93b97812fb8a689aa8802f54c4902dae12d7b780be069ac93",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jsep-40-jspicc-34": {
+      "name": "第40回日本小児救急医学会学術集会・第34回小児集中治療ワークショップ",
+      "url": "https://jsep40-jspicc34.umin.jp/outline.html",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://jsep40-jspicc34.umin.jp/outline.html",
+      "contentHash": "4afce2fb34e749043e1d659cee1922bcefc334c50487e433a1edb59405b6e676",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jsct-49": {
+      "name": "第49回日本中毒学会総会・学術集会",
+      "url": "https://jsct.jp/",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://jsct.jp/",
+      "contentHash": "89da5f818abed58906419267a4cdf7a7749596dc4b42a9b45319fb6fe2fec118",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jsbpcc-38": {
+      "name": "第38回日本急性血液浄化学会学術集会",
+      "url": "https://jsbpcc.umin.jp/meeting/",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://jsbpcc.umin.jp/meeting/",
+      "contentHash": "cd94ee32604f1d037da3383290020c8c094259fc636391885fe4addd0b2d92de",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jpocus-19": {
+      "name": "第19回日本ポイントオブケア超音波学会学術集会",
+      "url": "https://cropcrop.xsrv.jp/jpocus19/",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://cropcrop.xsrv.jp/jpocus19/",
+      "contentHash": "8ed8443170a5d2f1eba39039423bd6beb8abe8cc43563ead0016ab36a996bc5b",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jsdn-29": {
+      "name": "日本災害看護学会 第29回年次大会",
+      "url": "https://jsdn.info/index-2/%E5%B9%B4%E6%AC%A1%E5%A4%A7%E4%BC%9A/",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://jsdn.info/index-2/%E5%B9%B4%E6%AC%A1%E5%A4%A7%E4%BC%9A/",
+      "contentHash": "95b88d4c765aa7219de2fa33cc5fb95e8cae759135f20ec25f5990615d48c518",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jaam-55": {
+      "name": "第55回日本救急医学会総会・学術集会",
+      "url": "https://site2.convention.co.jp/jaam55/about.html",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://site2.convention.co.jp/jaam55/about.html",
+      "contentHash": "ada0d601545cf8fdd1631799cf6c88508c0bf3e2c3fc9ffd5deb5d93fc75b60a",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jaen-29": {
+      "name": "第29回日本救急看護学会学術集会",
+      "url": "https://jaen.jp/council/council-detail-council_29th/",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://jaen.jp/council/council-detail-council_29th/",
+      "contentHash": "88dbdd740d60e44ae7fe5538ab897723154bfd343af89861e0f73dec88be344d",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jhfs-31": {
+      "name": "第31回日本心不全学会学術集会",
+      "url": "https://www.congre.co.jp/jhfs2027/",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://www.congre.co.jp/jhfs2027/",
+      "contentHash": "46469fd44f2298c8b5264f5aafd86698a4d7e9d8ed237886e2ab8310eea21d2d",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:hokkaido-em-51": {
+      "name": "第51回北海道救急医学会学術集会",
+      "url": "http://www.qqigaku.jp/assets/document/pdf/top/2026/r9_information.pdf",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "http://www.qqigaku.jp/assets/document/pdf/top/2026/r9_information.pdf",
+      "contentHash": "cf1e4468921e6aad47954f4c9ea1803a5f042ebfd13136d6bc94e27017481982",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:13:31+09:00"
+    },
+    "conference:jaep-35": {
+      "name": "第35回日本精神科救急学会学術総会",
+      "url": "https://jaep2027.planningwill.com/outline.html",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://jaep2027.planningwill.com/outline.html",
+      "contentHash": "15b5ed12361e1ae6d6fbe9ccd19ac510daccfc081e551a8b3cc65d4440fceff3",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jssm-38": {
+      "name": "第38回日本臨床スポーツ医学会学術集会",
+      "url": "https://rinspo.jp/congress.html",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://rinspo.jp/congress.html",
+      "contentHash": "aad46b5df332f84688126c60e4cb56b14441adfe960e5744bd23eeb8ebd420e2",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jsels-13": {
+      "name": "第13回日本救急救命学会学術集会",
+      "url": "https://www.jsels.jp/conference/",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://www.jsels.jp/conference/",
+      "contentHash": "53c59dbb24b471df5654cfd9cb96d7a3585b5554f05ea32c5772d6db64cf5de0",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:jsas-34": {
+      "name": "第34回（次回）日本航空医療学会総会",
+      "url": "https://jsas1994.jp/meeting.html",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://jsas1994.jp/meeting.html",
+      "contentHash": "fe51b64624832751a3996ef59970015b51aad07f66749ddfc0a44e349dce377d",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "watch:national-mc-next": {
+      "name": "全国メディカルコントロール協議会連絡会 次回会議",
+      "url": "https://www.mhlw.go.jp/stf/shingi/other-isei_202743.html",
+      "kind": "watchlist",
+      "status": 200,
+      "finalUrl": "https://www.mhlw.go.jp/stf/shingi/other-isei_202743.html",
+      "contentHash": "61ff396cb74b82a1812d15b78264ecdba48724fd48a7859f3b8250738a9e1db9",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "watch:j-cimels": {
+      "name": "日本母体救命システム普及協議会",
+      "url": "https://www.j-cimels.jp/",
+      "kind": "watchlist",
+      "status": 200,
+      "finalUrl": "https://www.j-cimels.jp/",
+      "contentHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "watch:juhms-61": {
+      "name": "第61回日本高気圧潜水医学会学術総会",
+      "url": "https://www.juhms.net/",
+      "kind": "watchlist",
+      "status": 200,
+      "finalUrl": "https://www.juhms.net/",
+      "contentHash": "e4d70c9919c204ec8e8537d72b1f1875bc8dc1fc7a2f704b029a4ffe8071f342",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "watch:jser-next": {
+      "name": "日本救急放射線研究会 次回主年会",
+      "url": "https://jser.kenkyuukai.jp/",
+      "kind": "watchlist",
+      "status": 200,
+      "finalUrl": "https://jser.kenkyuukai.jp/special/?id=30353",
+      "contentHash": "dd3d9dbdb9e513e0678b2d9f1c65ecbd0b22055be1b57cf0ad6d45d0edcb5344",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    }
+  }
+}

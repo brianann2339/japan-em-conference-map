@@ -1,0 +1,38 @@
+[
+  {
+    "id": "jsacs-next",
+    "name": "日本Acute Care Surgery学会 次回学術集会",
+    "url": "https://www.jsacs.org/",
+    "status": "manual",
+    "reason": "官方HTTPS憑證已逾期，HTTP會重複導向；未找到可穩定抓取且能追蹤次屆的官方入口，改採人工追蹤。",
+    "manual": true
+  },
+  {
+    "id": "national-mc-next",
+    "name": "全国メディカルコントロール協議会連絡会 次回会議",
+    "url": "https://www.mhlw.go.jp/stf/shingi/other-isei_202743.html",
+    "status": "waiting",
+    "reason": "厚生勞動省頁最新列載場次為2026年7月16日；尚未公布基準日後場次。"
+  },
+  {
+    "id": "j-cimels",
+    "name": "日本母体救命システム普及協議会",
+    "url": "https://www.j-cimels.jp/",
+    "status": "course-only",
+    "reason": "官方提供母體急變及救急科向け講習課程；未找到獨立學術集會。"
+  },
+  {
+    "id": "juhms-61",
+    "name": "第61回日本高気圧潜水医学会学術総会",
+    "url": "https://www.juhms.net/",
+    "status": "partial",
+    "reason": "官方只公布2027年第61回與會長；日期、城市及會場尚未公布。"
+  },
+  {
+    "id": "jser-next",
+    "name": "日本救急放射線研究会 次回主年会",
+    "url": "https://jser.kenkyuukai.jp/",
+    "status": "waiting",
+    "reason": "研究會尚未公布基準日後主年會；已收錄SIRET個別會議，但不冒稱研究會主年會。"
+  }
+]
