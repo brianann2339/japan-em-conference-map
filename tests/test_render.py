@@ -179,6 +179,15 @@ class RenderTests(unittest.TestCase):
         self.assertIn('<option value="critical">Intensive and critical care</option>', self.files["index-en.html"])
         self.assertIn('<option value="critical">重症／集中治療</option>', self.files["index-ja.html"])
 
+    def test_page_i18n_payload_uses_a_stable_key_order(self):
+        for filename in ("index.html", "index-ja.html", "index-en.html"):
+            match = re.search(
+                r'<script id="page-i18n" type="application/json">(.*?)</script>',
+                self.files[filename],
+            )
+            self.assertIsNotNone(match)
+            self.assertEqual(list(render.PAGE_I18N_KEYS), list(json.loads(match.group(1))))
+
     def test_localized_archive_tracking_text_is_complete(self):
         visible = [item for item in self.watchlist if item.get("showOnArchive")]
         for item in visible:

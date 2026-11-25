@@ -153,6 +153,10 @@ MONTH_LABELS = {
 }
 LOCALES = ("zh-Hant", "ja", "en")
 PAGE_SUFFIX = {"zh-Hant": "", "ja": "-ja", "en": "-en"}
+PAGE_I18N_KEYS = (
+    "date_error", "next", "filtered_next", "no_future", "opens_days",
+    "opens_tomorrow", "opens_today", "ongoing", "ended", "show_count", "map_count",
+)
 TEXT = {
     "zh-Hant": {
         "language": "語言", "site_title": "日本急診相關醫學會議追蹤",
@@ -1653,11 +1657,7 @@ def source_list(rows: list[dict], locale: str = "zh-Hant") -> str:
 
 
 def page_i18n(locale: str) -> str:
-    keys = {
-        "date_error", "next", "filtered_next", "no_future", "opens_days",
-        "opens_tomorrow", "opens_today", "ongoing", "ended", "show_count", "map_count",
-    }
-    payload = {key: TEXT[locale][key] for key in keys}
+    payload = {key: TEXT[locale][key] for key in PAGE_I18N_KEYS}
     return json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
 
 
