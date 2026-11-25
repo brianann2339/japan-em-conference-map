@@ -1,0 +1,197 @@
+[
+  {
+    "query": {
+      "societyCode": "JAAM-KYUSHU",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jaam-kyushu-2025",
+      "societyCode": "JAAM-KYUSHU",
+      "name": "第29回日本救急医学会九州地方会",
+      "start": "2025-06-27",
+      "end": "2025-06-28",
+      "city": "佐賀市",
+      "prefecture": "佐賀県",
+      "region": "九州",
+      "venue": "浪漫座、佐嘉神社記念館",
+      "topic": "急診醫學・地方會",
+      "topicKey": "emergency",
+      "officialUrl": "https://kenkyuukai.m3.com/event/event_detail.asp?id=70255",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第29屆日本急診醫學會九州地方會",
+    "evidence": [
+      {
+        "url": "https://kenkyuukai.m3.com/event/event_detail.asp?id=70255",
+        "quote": "第29回 日本救急医学会九州地方会"
+      },
+      {
+        "url": "https://kenkyuukai.m3.com/event/event_detail.asp?id=70255",
+        "quote": "2025年6月27日（金）・28日（土）"
+      },
+      {
+        "url": "https://kenkyuukai.m3.com/event/event_detail.asp?id=70255",
+        "quote": "6月27日 浪漫座 6月28日 佐嘉神社記念館"
+      }
+    ],
+    "notes": "官方抄錄集列出佐賀市兩個會場，分別供6月27日與28日使用。"
+  },
+  {
+    "query": {
+      "societyCode": "JAAM-KYUSHU",
+      "year": 2026
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jaam-kyushu-2026",
+      "societyCode": "JAAM-KYUSHU",
+      "name": "第30回日本救急医学会九州地方会",
+      "start": "2026-06-19",
+      "end": "2026-06-20",
+      "city": "大分市",
+      "prefecture": "大分県",
+      "region": "九州",
+      "venue": "J:COMホルトホール大分",
+      "topic": "急診醫學・地方會",
+      "topicKey": "emergency",
+      "officialUrl": "https://www.jaamk30.org/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第30屆日本急診醫學會九州地方會",
+    "evidence": [
+      {
+        "url": "https://www.jaamk30.org/doc/letter_of_intent-20250728.pdf",
+        "quote": "第30回日本救急医学会九州地方会"
+      },
+      {
+        "url": "https://www.jaamk30.org/doc/letter_of_intent-20250728.pdf",
+        "quote": "2026年6月19日（金）〜20日（土）"
+      },
+      {
+        "url": "https://www.jaamk30.org/doc/letter_of_intent-20250728.pdf",
+        "quote": "開催場所：J:COM ホルトホール大分"
+      }
+    ],
+    "notes": "官方企畫書載明會場地址為大分県大分市金池南一丁目5番1号。"
+  },
+  {
+    "query": {
+      "societyCode": "JABR",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jabr-2025",
+      "societyCode": "JABR",
+      "name": "第37回日本脳死・脳蘇生学会 総会・学術集会",
+      "start": "2025-06-28",
+      "end": "2025-06-28",
+      "city": "枚方市",
+      "prefecture": "大阪府",
+      "region": "近畿",
+      "venue": "関西医科大学 加多乃講堂",
+      "topic": "腦死・腦蘇生",
+      "topicKey": "resuscitation",
+      "officialUrl": "https://jacrbd37.umin.ne.jp/kaisai.html",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第37屆日本腦死暨腦復甦學會總會暨學術集會",
+    "evidence": [
+      {
+        "url": "https://jacrbd37.umin.ne.jp/kaisai.html",
+        "quote": "第37回日本脳死・脳蘇生学会 総会・学術集会"
+      },
+      {
+        "url": "https://jacrbd37.umin.ne.jp/kaisai.html",
+        "quote": "会期 2025年6月28日（土）"
+      },
+      {
+        "url": "https://jacrbd37.umin.ne.jp/kaisai.html",
+        "quote": "会場 関西医科大学 加多乃講堂"
+      }
+    ],
+    "notes": "官方頁載明會場地址為大阪府枚方市新町2丁目5番1号。"
+  },
+  {
+    "query": {
+      "societyCode": "JABR",
+      "year": 2026
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jabr-2026",
+      "societyCode": "JABR",
+      "name": "第38回日本脳死・脳蘇生学会 総会・学術集会",
+      "start": "2026-06-27",
+      "end": "2026-06-27",
+      "city": "東京都文京區",
+      "prefecture": "東京都",
+      "region": "關東",
+      "venue": "日本光電株式会社東京支社セミナールーム",
+      "topic": "腦死・腦蘇生",
+      "topicKey": "resuscitation",
+      "officialUrl": "https://jacrbd38.umin.ne.jp/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第38屆日本腦死暨腦復甦學會總會暨學術集會",
+    "evidence": [
+      {
+        "url": "https://jacrbd38.umin.ne.jp/",
+        "quote": "第38回日本脳死・脳蘇生学会 総会・学術集会"
+      },
+      {
+        "url": "https://jacrbd38.umin.ne.jp/",
+        "quote": "会期 2026年6月27日（土）"
+      },
+      {
+        "url": "https://jacrbd38.umin.ne.jp/",
+        "quote": "日本光電株式会社東京支社セミナールーム"
+      }
+    ],
+    "notes": "官方頁載明會場地址為東京都文京区小石川1-1-1。"
+  },
+  {
+    "query": {
+      "societyCode": "JRCM",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jrcm-2025",
+      "societyCode": "JRCM",
+      "name": "第47回日本呼吸療法医学会学術集会",
+      "start": "2025-08-30",
+      "end": "2025-08-31",
+      "city": "大阪市",
+      "prefecture": "大阪府",
+      "region": "近畿",
+      "venue": "グランキューブ大阪（大阪国際会議場）",
+      "topic": "呼吸治療・重症",
+      "topicKey": "respiratory",
+      "officialUrl": "https://jsrcm47.jp/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第47屆日本呼吸治療醫學會學術集會",
+    "evidence": [
+      {
+        "url": "https://square.umin.ac.jp/jrcm/pas-conferences/",
+        "quote": "第47回日本呼吸療法医学会学術集会"
+      },
+      {
+        "url": "https://square.umin.ac.jp/jrcm/pas-conferences/",
+        "quote": "2025年8月30日(土)～31日(日)"
+      },
+      {
+        "url": "https://jsrcm47.jp/time-schedule.pdf",
+        "quote": "会場：グランキューブ大阪＜大阪国際会議場＞"
+      }
+    ],
+    "notes": "官方學會歷屆頁列出大阪開催；官方大會日程表載明完整會場名稱。"
+  }
+]

@@ -1,0 +1,192 @@
+[
+  {
+    "query": {
+      "societyCode": "JAAM-KINKI",
+      "year": 2026
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jaam-kinki-2026",
+      "societyCode": "JAAM-KINKI",
+      "name": "第132回近畿救急医学研究会（日本救急医学会近畿地方会）",
+      "start": "2026-07-04",
+      "end": "2026-07-04",
+      "city": "堺市",
+      "prefecture": "大阪府",
+      "region": "近畿",
+      "venue": "近畿大学おおさかメディカルキャンパス 3号館・4号館",
+      "topic": "急診醫學・地方會",
+      "topicKey": "emergency",
+      "officialUrl": "https://www.jaam-kinki.jp/meeting2.html",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第132屆近畿急診醫學研究會（日本急診醫學會近畿地方會）",
+    "evidence": [
+      {
+        "url": "https://www.jaam-kinki.jp/meeting2.html",
+        "quote": "第132回 2026.07.04 近畿大学おおさかメディカルキャンパス"
+      },
+      {
+        "url": "https://jaam-132kinki.umin.jp/chair/",
+        "quote": "大阪府堺市南区三原台1丁14番1号"
+      }
+    ],
+    "additionalEvents": [
+      {
+        "event": {
+          "id": "hist-jaam-kinki-131-2026",
+          "societyCode": "JAAM-KINKI",
+          "name": "第131回近畿救急医学研究会",
+          "start": "2026-02-23",
+          "end": "2026-02-23",
+          "city": "京都市",
+          "prefecture": "京都府",
+          "region": "關西",
+          "venue": "京都テルサ",
+          "topic": "急診醫學・地方會",
+          "topicKey": "emergency",
+          "officialUrl": "https://www.jaam-kinki.jp/meeting2.html",
+          "sourceCheckedAt": "2026-11-25",
+          "archiveOnly": true
+        },
+        "nameZh": "第131屆近畿急診醫學研究會",
+        "evidence": [
+          {
+            "url": "https://www.jaam-kinki.jp/meeting2.html",
+            "quote": "第131回 2026.02.23 京都テルサ"
+          },
+          {
+            "url": "https://www.kyoto-terrsa.or.jp/contact/",
+            "quote": "京都府京都市南区東九条下殿田町70"
+          }
+        ]
+      }
+    ],
+    "notes": "2026年另於2月23日舉辦第131回；兩場均納入歷屆資料。"
+  },
+  {
+    "query": {
+      "societyCode": "JSS-STROKE",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jss-stroke-2025",
+      "societyCode": "JSS-STROKE",
+      "name": "STROKE 2025／第50回日本脳卒中学会学術集会・第54回日本脳卒中の外科学会学術集会・第41回SAH/スパズム・シンポジウム",
+      "start": "2025-03-06",
+      "end": "2025-03-08",
+      "city": "大阪市",
+      "prefecture": "大阪府",
+      "region": "近畿",
+      "venue": "大阪国際会議場（グランキューブ大阪）",
+      "topic": "腦中風・急性期治療",
+      "topicKey": "neuro",
+      "officialUrl": "https://nsg.med.tohoku.ac.jp/jsscs/guide.html",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "STROKE 2025／第50屆日本腦中風學會學術集會暨第54屆日本腦中風外科學會學術集會暨第41屆SAH／腦血管痙攣研討會",
+    "evidence": [
+      {
+        "url": "https://nsg.med.tohoku.ac.jp/jsscs/guide.html",
+        "quote": "2025年3月6日（木）～3月8日（土）／大阪国際会議場"
+      }
+    ],
+    "notes": "日本脳卒中の外科学会官方歷屆頁核實三學會名稱、會期與大阪國際會議場。"
+  },
+  {
+    "query": {
+      "societyCode": "JSS-STROKE",
+      "year": 2026
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jss-stroke-2026",
+      "societyCode": "JSS-STROKE",
+      "name": "STROKE 2026／第51回日本脳卒中学会学術集会・第55回日本脳卒中の外科学会学術集会・第42回SAH/スパズム・シンポジウム",
+      "start": "2026-03-12",
+      "end": "2026-03-14",
+      "city": "大阪市",
+      "prefecture": "大阪府",
+      "region": "近畿",
+      "venue": "大阪国際会議場（グランキューブ大阪）",
+      "topic": "腦中風・急性期治療",
+      "topicKey": "neuro",
+      "officialUrl": "https://site2.convention.co.jp/stroke2026/information.html",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "STROKE 2026／第51屆日本腦中風學會學術集會暨第55屆日本腦中風外科學會學術集會暨第42屆SAH／腦血管痙攣研討會",
+    "evidence": [
+      {
+        "url": "https://site2.convention.co.jp/stroke2026/information.html",
+        "quote": "会期 2026年3月12日～14日／会場 大阪国際会議場"
+      }
+    ],
+    "notes": "官方開催概要同時列出三個合同學術集會、會期及完整會場地址。"
+  },
+  {
+    "query": {
+      "societyCode": "JADM",
+      "year": 2026
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jadm-2026",
+      "societyCode": "JADM",
+      "name": "第31回日本災害医学会総会・学術集会",
+      "start": "2026-03-19",
+      "end": "2026-03-21",
+      "city": "新潟市",
+      "prefecture": "新潟県",
+      "region": "中部",
+      "venue": "朱鷺メッセ 新潟コンベンションセンター",
+      "topic": "災害醫學",
+      "topicKey": "disaster",
+      "officialUrl": "https://www.shinsen-mc.co.jp/jadm31/about.html",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第31屆日本災難醫學會總會暨學術集會",
+    "evidence": [
+      {
+        "url": "https://www.shinsen-mc.co.jp/jadm31/about.html",
+        "quote": "会期 2026年3月19日～21日／会場 朱鷺メッセ"
+      }
+    ],
+    "notes": "官方開催概要列明朱鷺 Messe 新潟會展中心地址位於新潟市。"
+  },
+  {
+    "query": {
+      "societyCode": "JCS",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jcs-2025",
+      "societyCode": "JCS",
+      "name": "JCS2025－第89回日本循環器学会学術集会",
+      "start": "2025-03-28",
+      "end": "2025-03-30",
+      "city": "橫濱市",
+      "prefecture": "神奈川縣",
+      "region": "關東",
+      "venue": "パシフィコ横浜",
+      "topic": "循環器・急性心血管",
+      "topicKey": "cardiology",
+      "officialUrl": "https://www.congre.co.jp/jcs2025/index.html",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "JCS2025－第89屆日本循環器學會學術集會",
+    "evidence": [
+      {
+        "url": "https://assets.j-circ.or.jp/events/annual",
+        "quote": "日程2025年3月28日～30日／会場パシフィコ横浜"
+      }
+    ],
+    "notes": "日本循環器學會官方學術集會頁與大會官網一致。"
+  }
+]

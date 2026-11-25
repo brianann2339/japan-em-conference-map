@@ -77,6 +77,17 @@ class MonitorTests(unittest.TestCase):
         second = '<head><title>動態標題二</title></head><main>急診\n會議</main><script>nonce=2</script><noscript>fallback</noscript>'
         self.assertEqual(monitor_sources.content_hash(first), monitor_sources.content_hash(second))
 
+    def test_load_sources_excludes_archive_only_events(self):
+        data = self.root / "conferences.json"
+        watchlist = self.root / "watchlist.json"
+        data.write_text(json.dumps([
+            {"id": "current", "name": "目前場次", "officialUrl": "https://example.test/current"},
+            {"id": "past", "name": "歷屆場次", "officialUrl": "https://example.test/past", "archiveOnly": True},
+        ]), encoding="utf-8")
+        watchlist.write_text("[]", encoding="utf-8")
+        sources = monitor_sources.load_sources(data, watchlist)
+        self.assertEqual(["conference:current"], [source["id"] for source in sources])
+
     def test_normalization_version_change_rebaselines_without_change_report(self):
         self.run_monitor(self.fetcher(), initialize=True)
         state = json.loads(self.state.read_text(encoding="utf-8"))

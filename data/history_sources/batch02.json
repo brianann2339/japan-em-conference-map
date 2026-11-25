@@ -1,0 +1,152 @@
+[
+  {
+    "query": {
+      "societyCode": "JSPM",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jspm-2025",
+      "societyCode": "JSPM",
+      "name": "第20回日本病院前救急診療医学会総会・学術集会",
+      "start": "2025-12-13",
+      "end": "2025-12-13",
+      "city": "會津若松市",
+      "prefecture": "福島県",
+      "region": "東北",
+      "venue": "会津若松ワシントンホテル",
+      "topic": "院前救急／災害醫療",
+      "topicKey": "ems",
+      "officialUrl": "https://sites.google.com/view/the20prehosupitalmedicine/top",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第20屆日本醫院前急診診療醫學會總會暨學術集會",
+    "evidence": [
+      {
+        "url": "https://square.umin.ac.jp/jspm/congress/history.html",
+        "quote": "会期：2025年12月13日（土）／会場：会津若松ワシントンホテル"
+      },
+      {
+        "url": "https://square.umin.ac.jp/jspm/3rd_application_guidelines.pdf",
+        "quote": "開催場所：会津若松ワシントンホテル（福島県会津若松市）"
+      }
+    ],
+    "notes": "學會官方舉辦履歷確認正式名稱、日期與會場；官方講習會 PDF 確認會場地址。"
+  },
+  {
+    "query": {
+      "societyCode": "JSTS",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jsts-2025",
+      "societyCode": "JSTS",
+      "name": "第1回日本搬送学会学術集会・記念大会",
+      "start": "2025-09-12",
+      "end": "2025-09-13",
+      "city": "名古屋市",
+      "prefecture": "愛知県",
+      "region": "中部",
+      "venue": "南山大学",
+      "topic": "搬送醫療",
+      "topicKey": "transport",
+      "officialUrl": "https://jsts-mw1st.com/gaiyo/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第1屆日本搬送學會學術集會暨紀念大會",
+    "evidence": [
+      {
+        "url": "https://jsts-mw1st.com/gaiyo/",
+        "quote": "会期 2025年9月12日・13日／会場 南山大学"
+      }
+    ],
+    "notes": "官方大會網站的開催概要同時列出會名、兩日會期、會場與愛知県名古屋市地址。"
+  },
+  {
+    "query": {
+      "societyCode": "JUHMS",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-juhms-2025",
+      "societyCode": "JUHMS",
+      "name": "第24回日本高気圧潜水医学会関東地方会・学術集会",
+      "start": "2025-11-08",
+      "end": "2025-11-08",
+      "city": "東京都江東區",
+      "prefecture": "東京都",
+      "region": "關東",
+      "venue": "昭和医科大学江東豊洲病院 9階講堂",
+      "topic": "高氣壓・潛水醫學",
+      "topicKey": "environment",
+      "officialUrl": "https://www.juhms.net/file/chihoukai/kanto-2025-24th.pdf",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第24屆日本高壓暨潛水醫學會關東地方會暨學術集會",
+    "evidence": [
+      {
+        "url": "https://www.juhms.net/file/chihoukai/kanto-2025-24th.pdf",
+        "quote": "会期：2025年11月8日／場所：昭和医科大学江東豊洲病院9階講堂"
+      }
+    ],
+    "notes": "學會官方 PDF 載明東京都江東区豊洲5-1-38。"
+  },
+  {
+    "query": {
+      "societyCode": "JUHMS",
+      "year": 2026
+    },
+    "status": "not_held",
+    "searched": [
+      "https://www.juhms.net/syukai/chihoukai/kanto/",
+      "https://www.juhms.net/top/osirassekako/"
+    ],
+    "evidence": [
+      {
+        "url": "https://www.juhms.net/syukai/chihoukai/kanto/",
+        "quote": "第24回 2025年11月8日 昭和医科大学江東豊洲病院"
+      },
+      {
+        "url": "https://www.juhms.net/syukai/chihoukai/kanto/",
+        "quote": "第25回 会期 2027年1月23日"
+      }
+    ],
+    "notes": "關東地方會官方頁按回次列第24回於2025年、第25回於2027年，未列日曆年2026年的同系列學術集會。"
+  },
+  {
+    "query": {
+      "societyCode": "SIRET",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-siret-2025",
+      "societyCode": "SIRET",
+      "name": "第11回救急・外傷IVR症例検討会（SIRET）",
+      "start": "2025-03-01",
+      "end": "2025-03-01",
+      "city": "線上",
+      "prefecture": "線上",
+      "region": "線上",
+      "venue": "Live配信",
+      "topic": "救急放射・外傷IVR",
+      "topicKey": "radiology",
+      "officialUrl": "https://kenkyuukai.m3.com/event/event_detail.asp?id=72447",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第11屆急診與外傷介入放射病例研討會（SIRET）",
+    "evidence": [
+      {
+        "url": "https://kenkyuukai.m3.com/event/event_detail.asp?id=72447",
+        "quote": "開催日時 2025年3月1日／場所 web開催"
+      }
+    ],
+    "notes": "官方活動頁明載會場為 Live 配信，故不虛構實體城市與都道府縣。"
+  }
+]

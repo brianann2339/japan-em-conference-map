@@ -1,0 +1,165 @@
+[
+  {
+    "query": {
+      "societyCode": "JCS",
+      "year": 2026
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jcs-2026",
+      "societyCode": "JCS",
+      "name": "第90回日本循環器学会学術集会（JCS2026）",
+      "start": "2026-03-20",
+      "end": "2026-03-22",
+      "city": "福岡市",
+      "prefecture": "福岡県",
+      "region": "九州",
+      "venue": "福岡国際会議場／福岡サンパレス／マリンメッセ福岡A館・B館",
+      "topic": "循環器・急性心血管",
+      "topicKey": "cardiology",
+      "officialUrl": "https://www.congre.co.jp/jcs2026/outline.html",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "JCS2026－第90屆日本循環器學會學術集會",
+    "evidence": [
+      {
+        "url": "https://www.congre.co.jp/jcs2026/outline.html",
+        "quote": "会期 2026年3月20日～22日／会場 福岡国際会議場ほか"
+      }
+    ],
+    "notes": "日本循環器學會另有各地地方會；本項沿用目前 JCS 代碼所代表的全國年次學術集會系列。"
+  },
+  {
+    "query": {
+      "societyCode": "JSS",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jss-2025",
+      "societyCode": "JSS",
+      "name": "第39回日本Shock学会学術集会",
+      "start": "2025-05-23",
+      "end": "2025-05-24",
+      "city": "東京都新宿區",
+      "prefecture": "東京都",
+      "region": "關東",
+      "venue": "ホテルグランドヒル市ヶ谷（防衛省市ヶ谷会館）",
+      "topic": "休克／重症",
+      "topicKey": "shock",
+      "officialUrl": "https://www.ksi21.com/jss39/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第39屆日本休克學會學術集會",
+    "evidence": [
+      {
+        "url": "https://www.ksi21.com/jss39/",
+        "quote": "2025年5月23日・24日 ホテルグランドヒル市ヶ谷にて開催"
+      },
+      {
+        "url": "https://www.ksi21.com/jss39/index07.html",
+        "quote": "ホテルグランドヒル市ヶ谷 東京都新宿区市谷本村町4-1"
+      }
+    ],
+    "notes": "官方大會網站為 Shift_JIS 舊式頁面；首頁描述與官方交通頁共同確認日期、會場及地址。"
+  },
+  {
+    "query": {
+      "societyCode": "JSS",
+      "year": 2026
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jss-2026",
+      "societyCode": "JSS",
+      "name": "第40回日本Shock学会学術集会",
+      "start": "2026-05-22",
+      "end": "2026-05-23",
+      "city": "名古屋市",
+      "prefecture": "愛知県",
+      "region": "中部",
+      "venue": "AP名古屋",
+      "topic": "休克／重症",
+      "topicKey": "shock",
+      "officialUrl": "https://square.umin.ac.jp/jss40/guide.html",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第40屆日本休克學會學術集會",
+    "evidence": [
+      {
+        "url": "https://square.umin.ac.jp/jss40/guide.html",
+        "quote": "会期 2026年5月22日・23日／会場 AP名古屋"
+      }
+    ],
+    "notes": "官方開催概要載明 AP名古屋地址為愛知県名古屋市中村区。"
+  },
+  {
+    "query": {
+      "societyCode": "JSICM",
+      "year": 2026
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jsicm-2026",
+      "societyCode": "JSICM",
+      "name": "第53回日本集中治療医学会学術集会",
+      "start": "2026-03-05",
+      "end": "2026-03-07",
+      "city": "横浜市",
+      "prefecture": "神奈川県",
+      "region": "關東",
+      "venue": "パシフィコ横浜 会議センター・ノース",
+      "topic": "重症・集中治療",
+      "topicKey": "critical",
+      "officialUrl": "https://www.jsicm.org/meeting/jsicm53/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第53屆日本重症醫學會學術集會",
+    "evidence": [
+      {
+        "url": "https://www.jsicm.org/meeting/jsicm53/",
+        "quote": "会期 2026年3月5日～7日／会場 パシフィコ横浜"
+      },
+      {
+        "url": "https://www.jsicm.org/meeting/PS/53.html",
+        "quote": "パシフィコ横浜（ノース・会議センター）にて開催"
+      }
+    ],
+    "notes": "學會官方頁同年另列北海道、東北、關東甲信越、東海北陸、關西、中國・四國、九州等7場支部學術集會；本項沿用目前 JSICM 代碼所代表的全國年次學術集會系列。"
+  },
+  {
+    "query": {
+      "societyCode": "JAID-JSC",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jaid-jsc-2025",
+      "societyCode": "JAID-JSC",
+      "name": "第99回日本感染症学会総会・学術講演会／第73回日本化学療法学会総会 合同学会",
+      "start": "2025-05-08",
+      "end": "2025-05-10",
+      "city": "横浜市",
+      "prefecture": "神奈川県",
+      "region": "關東",
+      "venue": "パシフィコ横浜 ノース",
+      "topic": "感染・敗血症相關",
+      "topicKey": "infection",
+      "officialUrl": "https://jaid99-jsc73.umin.jp/guide.html",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第99屆日本感染症學會總會暨學術講演會與第73屆日本化學療法學會總會聯合學術大會",
+    "evidence": [
+      {
+        "url": "https://jaid99-jsc73.umin.jp/guide.html",
+        "quote": "会期 2025年5月8日～10日／会場 パシフィコ横浜ノース"
+      }
+    ],
+    "notes": "兩學會在2025年另有東日本、西日本地方支部聯合學術集會；本項沿用目前 JAID-JSC 代碼所代表的兩學會全國總會聯合系列。"
+  }
+]

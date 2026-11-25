@@ -1,0 +1,205 @@
+[
+  {
+    "query": {
+      "societyCode": "JAEN",
+      "year": 2026
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jaen-2026",
+      "societyCode": "JAEN",
+      "name": "第28回日本救急看護学会学術集会",
+      "start": "2026-11-06",
+      "end": "2026-11-07",
+      "city": "岐阜市",
+      "prefecture": "岐阜県",
+      "region": "中部",
+      "venue": "長良川国際会議場／都ホテル岐阜長良川",
+      "topic": "救急看護",
+      "topicKey": "nursing",
+      "officialUrl": "https://jaen.jp/council/council-detail-council_28th/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第28屆日本急診護理學會學術集會",
+    "evidence": [
+      {
+        "url": "https://jaen.jp/council/council-detail-council_28th/",
+        "quote": "第28回日本救急看護学会学術集会"
+      },
+      {
+        "url": "https://jaen.jp/council/council-detail-council_28th/",
+        "quote": "2026年11月6日（金）～7日（土）"
+      },
+      {
+        "url": "https://jaen.jp/council/council-detail-council_28th/",
+        "quote": "長良川国際会議場、都ホテル岐阜長良川（岐阜県）"
+      }
+    ],
+    "notes": "岐阜市依學會頁面所列兩個會場所在地填入；同學會另有研修課程，非本學術集會系列，未混入。"
+  },
+  {
+    "query": {
+      "societyCode": "JHFS",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jhfs-2025",
+      "societyCode": "JHFS",
+      "name": "第29回日本心不全学会学術集会",
+      "start": "2025-10-10",
+      "end": "2025-10-12",
+      "city": "米子市",
+      "prefecture": "鳥取県",
+      "region": "中國",
+      "venue": "米子コンベンションセンター Big Ship／米子市文化ホール",
+      "topic": "心衰竭",
+      "topicKey": "cardiology",
+      "officialUrl": "https://jhfs2025.jp/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第29屆日本心臟衰竭學會學術集會",
+    "evidence": [
+      {
+        "url": "https://www.jhfs.or.jp/info/event_jhfs_kako.html",
+        "quote": "第29回日本心不全学会学術集会"
+      },
+      {
+        "url": "https://www.jhfs.or.jp/info/event_jhfs_kako.html",
+        "quote": "2025年10月10日（金）～12日（日）"
+      },
+      {
+        "url": "https://www.jhfs.or.jp/info/event_jhfs_kako.html",
+        "quote": "米子コンベンションセンター Big Ship / 米子市文化ホール"
+      }
+    ],
+    "notes": "日本心筋症研究會為學會另列系列，未混入本學術集會。"
+  },
+  {
+    "query": {
+      "societyCode": "JHFS",
+      "year": 2026
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jhfs-2026",
+      "societyCode": "JHFS",
+      "name": "第30回日本心不全学会学術集会",
+      "start": "2026-10-23",
+      "end": "2026-10-25",
+      "city": "富山市",
+      "prefecture": "富山県",
+      "region": "中部",
+      "venue": "富山国際会議場／ANAクラウンプラザホテル富山／富山市民プラザ",
+      "topic": "心衰竭",
+      "topicKey": "cardiology",
+      "officialUrl": "https://www.congre.co.jp/jhfs2026/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第30屆日本心臟衰竭學會學術集會",
+    "evidence": [
+      {
+        "url": "https://www.jhfs.or.jp/info/event_jhfs_kako.html",
+        "quote": "第30回日本心不全学会学術集会"
+      },
+      {
+        "url": "https://www.jhfs.or.jp/info/event_jhfs_kako.html",
+        "quote": "2026年10月23日（金）～25日（日）"
+      },
+      {
+        "url": "https://www.jhfs.or.jp/info/event_jhfs_kako.html",
+        "quote": "富山国際会議場 / ANAクラウンプラザホテル富山 / 富山市民プラザ"
+      }
+    ],
+    "notes": "日本心筋症研究會為學會另列系列，未混入本學術集會。"
+  },
+  {
+    "query": {
+      "societyCode": "HOKKAIDO-EM",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-hokkaido-em-2025",
+      "societyCode": "HOKKAIDO-EM",
+      "name": "第49回北海道救急医学会学術集会",
+      "start": "2025-10-18",
+      "end": "2025-10-18",
+      "city": "札幌市",
+      "prefecture": "北海道",
+      "region": "北海道",
+      "venue": "ホテルライフォート札幌",
+      "topic": "急診醫學・地方會",
+      "topicKey": "emergency",
+      "officialUrl": "http://www.qqigaku.jp/meeting.html",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第49屆北海道急診醫學會學術集會",
+    "evidence": [
+      {
+        "url": "http://www.qqigaku.jp/meeting.html",
+        "quote": "第49回北海道救急医学会学術集会"
+      },
+      {
+        "url": "http://www.qqigaku.jp/pdf/2024/place_2025.pdf",
+        "quote": "日程 2025 年 10 月 18 日(土)"
+      },
+      {
+        "url": "http://www.qqigaku.jp/pdf/2024/place_2025.pdf",
+        "quote": "会場 ホテルライフォート札幌"
+      },
+      {
+        "url": "http://www.qqigaku.jp/pdf/2024/place_2025.pdf",
+        "quote": "(札幌市中央区南 10 条西 1 丁目 1-30)"
+      }
+    ],
+    "notes": "收錄北海道救急醫學會本會年度學術集會；未混入日本救急醫學會其他地方會系列。"
+  },
+  {
+    "query": {
+      "societyCode": "HOKKAIDO-EM",
+      "year": 2026
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-hokkaido-em-2026",
+      "societyCode": "HOKKAIDO-EM",
+      "name": "第50回北海道救急医学会学術集会",
+      "start": "2026-10-17",
+      "end": "2026-10-17",
+      "city": "旭川市",
+      "prefecture": "北海道",
+      "region": "北海道",
+      "venue": "旭川市大雪クリスタルホール",
+      "topic": "急診醫學・地方會",
+      "topicKey": "emergency",
+      "officialUrl": "http://www.qqigaku.jp/meeting/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第50屆北海道急診醫學會學術集會",
+    "evidence": [
+      {
+        "url": "http://www.qqigaku.jp/meeting/",
+        "quote": "第50回北海道救急医学会学術集会"
+      },
+      {
+        "url": "http://www.qqigaku.jp/assets/document/pdf/meeting/r8_information.pdf",
+        "quote": "日程 2026 年 10 月 17 日(土)"
+      },
+      {
+        "url": "http://www.qqigaku.jp/assets/document/pdf/meeting/r8_information.pdf",
+        "quote": "会場 旭川市大雪クリスタルホール"
+      },
+      {
+        "url": "http://www.qqigaku.jp/assets/document/pdf/meeting/r8_information.pdf",
+        "quote": "(旭川市神楽 3 条 7 丁目)"
+      }
+    ],
+    "notes": "收錄北海道救急醫學會本會年度學術集會；官方會議頁已明載本屆圓滿結束，未混入其他地方會系列。"
+  }
+]

@@ -1,0 +1,232 @@
+[
+  {
+    "query": {
+      "societyCode": "JAAM-KANTO",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jaam-kanto-2025",
+      "societyCode": "JAAM-KANTO",
+      "name": "第75回日本救急医学会関東地方会学術集会・第62回救急隊員学術研究会",
+      "start": "2025-02-22",
+      "end": "2025-02-22",
+      "city": "東京都千代田區",
+      "prefecture": "東京都",
+      "region": "關東",
+      "venue": "東京国際フォーラム",
+      "topic": "急診醫學・地方會",
+      "topicKey": "emergency",
+      "officialUrl": "https://jaam75kantou.umin.jp/outline.html",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第75屆日本急診醫學會關東地方會學術集會暨第62屆救護隊員學術研究會",
+    "evidence": [
+      {
+        "url": "https://jaam75kantou.umin.jp/outline.html",
+        "quote": "第75回 日本救急医学会関東地方会学術集会"
+      },
+      {
+        "url": "https://jaam75kantou.umin.jp/outline.html",
+        "quote": "会期 2025年2月22日（土）"
+      },
+      {
+        "url": "https://jaam75kantou.umin.jp/outline.html",
+        "quote": "会場 東京国際フォーラム"
+      }
+    ],
+    "notes": "官方頁將第75回地方會與第62回救急隊員學術研究會列為同日同場活動。"
+  },
+  {
+    "query": {
+      "societyCode": "JAAM-KANTO",
+      "year": 2026
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jaam-kanto-2026",
+      "societyCode": "JAAM-KANTO",
+      "name": "第76回日本救急医学会関東地方会学術集会・第63回救急隊員学術研究会",
+      "start": "2026-02-07",
+      "end": "2026-02-07",
+      "city": "小田原市",
+      "prefecture": "神奈川県",
+      "region": "關東",
+      "venue": "小田原三の丸ホール、報徳会館",
+      "topic": "急診醫學・地方會",
+      "topicKey": "emergency",
+      "officialUrl": "https://jaam76kantou.umin.jp/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第76屆日本急診醫學會關東地方會學術集會暨第63屆救護隊員學術研究會",
+    "evidence": [
+      {
+        "url": "https://jaam76kantou.umin.jp/images/pdf/jaam76kantou.pdf",
+        "quote": "第76回日本救急医学会関東地方会学術集会"
+      },
+      {
+        "url": "https://jaam76kantou.umin.jp/images/pdf/jaam76kantou.pdf",
+        "quote": "開催期日 2026年2月7日（土）"
+      },
+      {
+        "url": "https://jaam76kantou.umin.jp/images/pdf/jaam76kantou.pdf",
+        "quote": "小田原三の丸ホール、報徳会館"
+      }
+    ],
+    "notes": "官方企畫書列出小田原市內兩個會場。"
+  },
+  {
+    "query": {
+      "societyCode": "JSAEM",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jsaem-2025",
+      "societyCode": "JSAEM",
+      "name": "第61回日本腹部救急医学会総会",
+      "start": "2025-03-20",
+      "end": "2025-03-21",
+      "city": "名古屋市",
+      "prefecture": "愛知県",
+      "region": "中部",
+      "venue": "ウインクあいち（愛知県産業労働センター）",
+      "topic": "外傷・急性外科",
+      "topicKey": "trauma",
+      "officialUrl": "https://www.congre.co.jp/jsaem61/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第61屆日本腹部急症醫學會總會",
+    "evidence": [
+      {
+        "url": "https://www.congre.co.jp/jsaem61/",
+        "quote": "第61回日本腹部救急医学会総会"
+      },
+      {
+        "url": "https://www.congre.co.jp/jsaem61/",
+        "quote": "会期：2025年3月20日（木・祝）〜21日（金）"
+      },
+      {
+        "url": "https://www.congre.co.jp/jsaem61/",
+        "quote": "会場：ウインクあいち（愛知県産業労働センター）"
+      }
+    ],
+    "notes": "官方頁載明會場地址為愛知県名古屋市中村区名駅4丁目4-38。"
+  },
+  {
+    "query": {
+      "societyCode": "JSAEM",
+      "year": 2026
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jsaem-2026",
+      "societyCode": "JSAEM",
+      "name": "第62回日本腹部救急医学会総会",
+      "start": "2026-03-12",
+      "end": "2026-03-13",
+      "city": "横浜市",
+      "prefecture": "神奈川県",
+      "region": "關東",
+      "venue": "パシフィコ横浜 会議センター",
+      "topic": "外傷・急性外科",
+      "topicKey": "trauma",
+      "officialUrl": "https://www.jsaem62.jp/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第62屆日本腹部急症醫學會總會",
+    "evidence": [
+      {
+        "url": "https://www.jsaem62.jp/sponsorship/files/kyousai.pdf",
+        "quote": "第62回日本腹部救急医学会総会"
+      },
+      {
+        "url": "https://www.jsaem62.jp/sponsorship/files/kyousai.pdf",
+        "quote": "開催期間：2026年3月12日（木）・13日（金）"
+      },
+      {
+        "url": "https://www.jsaem62.jp/sponsorship/files/kyousai.pdf",
+        "quote": "会場：パシフィコ横浜 会議センター"
+      }
+    ],
+    "notes": "官方企畫書載明會場地址為神奈川県横浜市西区みなとみらい1-1-1。"
+  },
+  {
+    "query": {
+      "societyCode": "JAAM-KINKI",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jaam-kinki-2025",
+      "societyCode": "JAAM-KINKI",
+      "name": "第130回近畿救急医学研究会",
+      "start": "2025-07-12",
+      "end": "2025-07-12",
+      "city": "吹田市",
+      "prefecture": "大阪府",
+      "region": "近畿",
+      "venue": "大阪大学コンベンションセンター",
+      "topic": "急診醫學・地方會",
+      "topicKey": "emergency",
+      "officialUrl": "https://www.k-gakkai.jp/130jaam-kinki/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第130屆近畿急診醫學研究會",
+    "evidence": [
+      {
+        "url": "https://www.k-gakkai.jp/130jaam-kinki/",
+        "quote": "第130回近畿救急医学研究会"
+      },
+      {
+        "url": "https://www.k-gakkai.jp/130jaam-kinki/",
+        "quote": "会期 2025年7月12日（土）"
+      },
+      {
+        "url": "https://www.k-gakkai.jp/130jaam-kinki/",
+        "quote": "会場 大阪大学コンベンションセンター"
+      },
+      {
+        "url": "https://www.jaam-kinki.jp/meeting2.html",
+        "quote": "第129回 2025.03.20 滋賀県立文化産業交流会館"
+      }
+    ],
+    "additionalEvents": [
+      {
+        "event": {
+          "id": "hist-jaam-kinki-129-2025",
+          "societyCode": "JAAM-KINKI",
+          "name": "第129回近畿救急医学研究会",
+          "start": "2025-03-20",
+          "end": "2025-03-20",
+          "city": "米原市",
+          "prefecture": "滋賀県",
+          "region": "關西",
+          "venue": "滋賀県立文化産業交流会館",
+          "topic": "急診醫學・地方會",
+          "topicKey": "emergency",
+          "officialUrl": "https://www.jaam-kinki.jp/meeting2.html",
+          "sourceCheckedAt": "2026-11-25",
+          "archiveOnly": true
+        },
+        "nameZh": "第129屆近畿急診醫學研究會",
+        "evidence": [
+          {
+            "url": "https://www.jaam-kinki.jp/meeting2.html",
+            "quote": "第129回 2025.03.20 滋賀県立文化産業交流会館"
+          },
+          {
+            "url": "https://www.s-bunsan.jp/wp-content/uploads/2023/02/1cfc7d51a5b9be9e2905de5a62c5874b.pdf",
+            "quote": "所在地 米原市下多良二丁目137"
+          }
+        ]
+      }
+    ],
+    "notes": "官方歷史頁另列2025年3月20日第129回；兩場均納入歷屆資料。"
+  }
+]

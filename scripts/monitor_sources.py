@@ -39,6 +39,7 @@ def load_sources(data_path: Path = DATA, watchlist_path: Path = WATCHLIST) -> li
             "kind": "conference",
         }
         for row in load_json(data_path)
+        if not row.get("archiveOnly")
     ]
     for row in load_json(watchlist_path):
         if row.get("manual"):

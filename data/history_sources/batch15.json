@@ -1,0 +1,197 @@
+[
+  {
+    "query": {
+      "societyCode": "JAEP",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jaep-2025",
+      "societyCode": "JAEP",
+      "name": "第33回日本精神科救急学会学術総会",
+      "start": "2025-10-16",
+      "end": "2025-10-17",
+      "city": "高崎市",
+      "prefecture": "群馬県",
+      "region": "關東",
+      "venue": "Gメッセ群馬",
+      "topic": "精神科急診",
+      "topicKey": "emergency",
+      "officialUrl": "https://med-gakkai.jp/jaep2025/gaiyo/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第33屆日本精神科急診學會學術總會",
+    "evidence": [
+      {
+        "url": "https://med-gakkai.jp/jaep2025/gaiyo/",
+        "quote": "第33回日本精神科救急学会学術総会"
+      },
+      {
+        "url": "https://med-gakkai.jp/jaep2025/gaiyo/",
+        "quote": "［現地開催］2025年10月16日（木）・17日（金）"
+      },
+      {
+        "url": "https://med-gakkai.jp/jaep2025/gaiyo/",
+        "quote": "Gメッセ群馬 〒370-0044 群馬県高崎市岩押町12番24号"
+      }
+    ],
+    "notes": "官方頁另列後續 WEB 隨選視訊期間；本筆日期採現地學術總會會期。"
+  },
+  {
+    "query": {
+      "societyCode": "JAEP",
+      "year": 2026
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jaep-2026",
+      "societyCode": "JAEP",
+      "name": "第34回日本精神科救急学会学術総会",
+      "start": "2026-09-26",
+      "end": "2026-09-27",
+      "city": "高槻市",
+      "prefecture": "大阪府",
+      "region": "近畿",
+      "venue": "高槻城公園芸術文化劇場",
+      "topic": "精神科急診",
+      "topicKey": "emergency",
+      "officialUrl": "https://med-gakkai.jp/jaep2026/gaiyo/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第34屆日本精神科急診學會學術總會",
+    "evidence": [
+      {
+        "url": "https://med-gakkai.jp/jaep2026/gaiyo/",
+        "quote": "第34回日本精神科救急学会学術総会"
+      },
+      {
+        "url": "https://med-gakkai.jp/jaep2026/gaiyo/",
+        "quote": "2026年9月26日（土）・27日（日）"
+      },
+      {
+        "url": "https://med-gakkai.jp/jaep2026/gaiyo/",
+        "quote": "高槻城公園芸術文化劇場 〒569-0077 大阪府高槻市野見町6-8"
+      }
+    ],
+    "notes": "官方開催概要同頁確認會名、日期、會場與地址。"
+  },
+  {
+    "query": {
+      "societyCode": "JSSM",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jssm-2025",
+      "societyCode": "JSSM",
+      "name": "第36回日本臨床スポーツ医学会学術集会",
+      "start": "2025-11-02",
+      "end": "2025-11-03",
+      "city": "千葉市",
+      "prefecture": "千葉県",
+      "region": "關東",
+      "venue": "幕張メッセ 国際会議場",
+      "topic": "臨床運動醫學",
+      "topicKey": "sports",
+      "officialUrl": "https://www.36rinspo.jp/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第36屆日本臨床運動醫學會學術集會",
+    "evidence": [
+      {
+        "url": "https://www.36rinspo.jp/files/36rinspo_prospectus.pdf",
+        "quote": "第36回日本臨床スポーツ医学会学術集会"
+      },
+      {
+        "url": "https://www.36rinspo.jp/files/36rinspo_prospectus.pdf",
+        "quote": "会期：2025年11月2日（日）・3日（月・祝）"
+      },
+      {
+        "url": "https://www.36rinspo.jp/files/36rinspo_prospectus.pdf",
+        "quote": "会場：幕張メッセ 国際会議場 〒261-8550 千葉市美浜区中瀬2-1"
+      }
+    ],
+    "notes": "官方開催趣意書確認正式會名、兩日會期及千葉市會場地址。"
+  },
+  {
+    "query": {
+      "societyCode": "JSSM",
+      "year": 2026
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jssm-2026",
+      "societyCode": "JSSM",
+      "name": "第37回日本臨床スポーツ医学会学術集会",
+      "start": "2026-11-07",
+      "end": "2026-11-08",
+      "city": "軽井沢町",
+      "prefecture": "長野県",
+      "region": "中部",
+      "venue": "軽井沢プリンスホテル ウエスト",
+      "topic": "臨床運動醫學",
+      "topicKey": "sports",
+      "officialUrl": "https://www.37rinspo.jp/overview.html",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第37屆日本臨床運動醫學會學術集會",
+    "evidence": [
+      {
+        "url": "https://www.37rinspo.jp/overview.html",
+        "quote": "第37回日本臨床スポーツ医学会学術集会"
+      },
+      {
+        "url": "https://www.37rinspo.jp/overview.html",
+        "quote": "2026年11月7日（土）・8日（日）"
+      },
+      {
+        "url": "https://www.37rinspo.jp/overview.html",
+        "quote": "軽井沢プリンスホテル ウエスト 長野県北佐久郡軽井沢町大字軽井沢1016-87"
+      }
+    ],
+    "notes": "官方開催概要確認會期於截止日前結束，故列為 confirmed。"
+  },
+  {
+    "query": {
+      "societyCode": "JSELS",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jsels-2025",
+      "societyCode": "JSELS",
+      "name": "第11回日本救急救命学会学術集会",
+      "start": "2025-10-12",
+      "end": "2025-10-12",
+      "city": "東京都世田谷區",
+      "prefecture": "東京都",
+      "region": "關東",
+      "venue": "国士舘大学世田谷キャンパス メイプルセンチュリーホール",
+      "topic": "救急救命・EMS",
+      "topicKey": "ems",
+      "officialUrl": "https://www.11th-jsels.jp/info/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第11屆日本急救救命學會學術集會",
+    "evidence": [
+      {
+        "url": "https://www.11th-jsels.jp/info/",
+        "quote": "第11回日本救急救命学会 学術集会"
+      },
+      {
+        "url": "https://www.11th-jsels.jp/info/",
+        "quote": "2025年（令和7年）10月12日（日）9:00〜17:40"
+      },
+      {
+        "url": "https://www.11th-jsels.jp/info/",
+        "quote": "国士舘大学世田谷キャンパス メイプルセンチュリーホール（東京都世田谷区世田谷4-28-1）"
+      }
+    ],
+    "notes": "官方開催概要記載為現地與即時網路同步的一日學術集會。"
+  }
+]

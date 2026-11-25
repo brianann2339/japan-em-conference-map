@@ -19,7 +19,9 @@ class RenderTests(unittest.TestCase):
     def setUpClass(cls):
         cls.events = render.load_events(ROOT / "data" / "conferences.json")
         cls.map_svg = (ROOT / "assets" / "map-full.svg").read_text(encoding="utf-8")
-        cls.files = render.build_files(cls.events, cls.map_svg, date(2026, 11, 25))
+        cls.today = date(2026, 11, 25)
+        cls.current, cls.archive = render.split_archive(render.prepare(cls.events), cls.today)
+        cls.files = render.build_files(cls.events, cls.map_svg, cls.today)
 
     def test_source_has_expected_codes(self):
         codes = {event["societyCode"] for event in self.events}
@@ -54,19 +56,45 @@ class RenderTests(unittest.TestCase):
                 merged = {key: by_id[event["id"]][key] for key in event}
                 self.assertEqual(event, merged, f"conflict in {path.name}")
 
+    def test_history_sources_cover_all_tracked_series_and_match_archive(self):
+        current = [event for event in self.events if not event.get("archiveOnly")]
+        expected = {
+            (event["societyCode"], year)
+            for event in current
+            for year in ([2025] if event["start"].startswith("2026") else [2025, 2026])
+        }
+        items = [
+            item
+            for path in sorted((ROOT / "data" / "history_sources").glob("batch*.json"))
+            for item in json.loads(path.read_text(encoding="utf-8"))
+        ]
+        queries = [(item["query"]["societyCode"], item["query"]["year"]) for item in items]
+        self.assertEqual(expected, set(queries))
+        self.assertEqual(len(expected), len(queries))
+        candidates = []
+        for item in items:
+            if item["status"] == "confirmed":
+                candidates.append(item)
+            candidates.extend(item.get("additionalEvents", []))
+        self.assertTrue(all(candidate["evidence"] for candidate in candidates))
+        self.assertEqual(
+            {event["id"] for event in self.archive},
+            {candidate["event"]["id"] for candidate in candidates},
+        )
+
     def test_every_conference_has_a_traditional_chinese_translation(self):
         translations = json.loads(
             (ROOT / "data" / "conference_names_zh-Hant.json").read_text(encoding="utf-8")
         )
         self.assertEqual({event["id"] for event in self.events}, set(translations))
-        self.assertEqual(45, len(translations))
+        self.assertEqual(len(self.events), len(translations))
         self.assertTrue(all(value.strip() for value in translations.values()))
         self.assertEqual(
             "第55屆日本急診醫學會總會暨學術集會",
             translations["jaam-55"],
         )
         page = self.files["index.html"]
-        self.assertEqual(len(self.events), page.count('class="card-title-zh"'))
+        self.assertEqual(len(self.current), page.count('class="card-title-zh"'))
         self.assertIn('class="title-zh"', page)
 
     def test_filter_controls_and_registry_cover_source(self):
@@ -77,9 +105,9 @@ class RenderTests(unittest.TestCase):
         )
         self.assertIsNotNone(match)
         registry = json.loads(match.group(1))
-        self.assertEqual({event["id"] for event in self.events}, {event["id"] for event in registry})
+        self.assertEqual({event["id"] for event in self.current}, {event["id"] for event in registry})
         self.assertEqual(
-            {event["topicKey"] for event in self.events},
+            {event["topicKey"] for event in self.current},
             {event["topic"] for event in registry},
         )
         self.assertTrue(all(event["nameZh"].strip() for event in registry))
@@ -109,7 +137,7 @@ class RenderTests(unittest.TestCase):
 
     def test_filter_hooks_exist_for_every_event(self):
         page = self.files["index.html"]
-        for event in self.events:
+        for event in self.current:
             event_id = re.escape(event["id"])
             self.assertEqual(4, len(re.findall(fr'data-filter-id="{event_id}"', page)))
         self.assertRegex(page, r'data-filter-ids="[^"]*jss-stroke-52[^"]*cvit-35[^"]*"')
@@ -130,10 +158,16 @@ class RenderTests(unittest.TestCase):
         self.assertIn("flagFace.setAttribute('width',String(flagWidth))", page)
         self.assertIn("flagFace.setAttribute('stroke',flagColor)", page)
 
+    def test_map_strip_labels_include_topics(self):
+        page = self.files["index.html"]
+        for event in self.current:
+            label = f'{event["societyCode"]}（{event["topic"]}）'
+            self.assertIn(f'<b>{label}</b>', page)
+
     def test_shared_coordinate_uses_one_group_marker(self):
         page = self.files["index.html"]
         groups = {}
-        for event in self.events:
+        for event in self.current:
             key = (round(event["lat"], 6), round(event["lng"], 6))
             groups[key] = groups.get(key, 0) + 1
         shared = [count for count in groups.values() if count > 1]
@@ -145,7 +179,7 @@ class RenderTests(unittest.TestCase):
         calendar = self.files["conferences.ics"]
         self.assertIn("目前沒有官方已確認的投稿截止日期", page)
         self.assertEqual([], json.loads(self.files["deadlines.json"]))
-        self.assertEqual(len(self.events), calendar.count("BEGIN:VEVENT"))
+        self.assertEqual(len(self.current), calendar.count("BEGIN:VEVENT"))
         self.assertNotIn("VALARM", calendar)
 
     def test_calendar_end_date_is_exclusive(self):
@@ -162,7 +196,14 @@ class RenderTests(unittest.TestCase):
 
     def test_main_and_archive_outputs_always_exist(self):
         self.assertIn("日本急診相關醫學會議追蹤", self.files["index.html"])
-        self.assertIn("目前尚無已結束的收錄會議", self.files["past.html"])
+        self.assertNotIn("目前尚無已結束的收錄會議", self.files["past.html"])
+        self.assertEqual(len(self.archive), self.files["past.html"].count('class="card past"'))
+        self.assertIn("hist-jaam-2025", self.files["past.html"])
+        self.assertIn("hist-jaam-2026", self.files["past.html"])
+        self.assertEqual({"2025": 45, "2026": 37}, {
+            year: sum(event["start"].startswith(year) for event in self.archive)
+            for year in ("2025", "2026")
+        })
 
 
 if __name__ == "__main__":

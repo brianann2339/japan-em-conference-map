@@ -1,0 +1,197 @@
+[
+  {
+    "query": {
+      "societyCode": "JCA",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jca-2025",
+      "societyCode": "JCA",
+      "name": "第38回日本冠疾患学会学術集会",
+      "start": "2025-11-28",
+      "end": "2025-11-29",
+      "city": "名古屋市",
+      "prefecture": "愛知県",
+      "region": "中部",
+      "venue": "名古屋コンベンションホール",
+      "topic": "冠疾患・ACS",
+      "topicKey": "cardiology",
+      "officialUrl": "https://www.c-linkage.co.jp/jca38/outline.html",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第38屆日本冠狀動脈疾病學會學術集會",
+    "evidence": [
+      {
+        "url": "https://www.c-linkage.co.jp/jca38/outline.html",
+        "quote": "第38回日本冠疾患学会学術集会"
+      },
+      {
+        "url": "https://www.c-linkage.co.jp/jca38/outline.html",
+        "quote": "2025年11月28日（金）・29日（土）"
+      },
+      {
+        "url": "https://www.c-linkage.co.jp/jca38/outline.html",
+        "quote": "名古屋コンベンションホール"
+      }
+    ],
+    "notes": "官方會場地址為名古屋市中村區平池町4-60-12。"
+  },
+  {
+    "query": {
+      "societyCode": "JSR",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jsr-2025",
+      "societyCode": "JSR",
+      "name": "日本蘇生学会 第44回大会",
+      "start": "2025-11-21",
+      "end": "2025-11-23",
+      "city": "足利市",
+      "prefecture": "栃木県",
+      "region": "關東",
+      "venue": "ニューミヤコホテル足利、足利デザイン・ビューティ専門学校",
+      "topic": "蘇生／AED",
+      "topicKey": "resuscitation",
+      "officialUrl": "https://jsr44.com/about/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "日本復甦學會第44屆大會",
+    "evidence": [
+      {
+        "url": "https://jsr44.com/about/",
+        "quote": "大会名：日本蘇生学会 第44回大会"
+      },
+      {
+        "url": "https://jsr44.com/about/",
+        "quote": "会期：2025年11月21日(金) ～ 23日(日)"
+      },
+      {
+        "url": "https://jsr44.com/about/",
+        "quote": "会場：ニューミヤコホテル足利、足利デザイン・ビューティ専門学校"
+      }
+    ],
+    "notes": "官方列出兩個足利市會場。"
+  },
+  {
+    "query": {
+      "societyCode": "JSSI",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jssi-2025",
+      "societyCode": "JSSI",
+      "name": "第38回日本外科感染症学会総会学術集会",
+      "start": "2025-11-07",
+      "end": "2025-11-08",
+      "city": "山形市",
+      "prefecture": "山形県",
+      "region": "東北",
+      "venue": "山形テルサ",
+      "topic": "外科感染・敗血症相關",
+      "topicKey": "infection",
+      "officialUrl": "https://square.umin.ac.jp/jssi38/guide.html",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第38屆日本外科感染症學會總會暨學術集會",
+    "evidence": [
+      {
+        "url": "https://square.umin.ac.jp/jssi38/guide.html",
+        "quote": "第38回日本外科感染症学会総会学術集会"
+      },
+      {
+        "url": "https://square.umin.ac.jp/jssi38/guide.html",
+        "quote": "2025年11月7日（金）・8日（土）"
+      },
+      {
+        "url": "https://square.umin.ac.jp/jssi38/guide.html",
+        "quote": "山形テルサ"
+      }
+    ],
+    "notes": "官方會場地址為山形県山形市双葉町1-2-3。"
+  },
+  {
+    "query": {
+      "societyCode": "JSASEM",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jsasem-2025",
+      "societyCode": "JSASEM",
+      "name": "日本宇宙航空環境医学会 第71回大会",
+      "start": "2025-11-20",
+      "end": "2025-11-22",
+      "city": "大津市",
+      "prefecture": "滋賀県",
+      "region": "近畿",
+      "venue": "ピアザ淡海（滋賀県立県民交流センター）",
+      "topic": "宇宙航空環境醫學",
+      "topicKey": "environment",
+      "officialUrl": "https://kenkyuukai.m3.com/event/event_detail.asp?id=72857",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第71屆日本宇宙航空環境醫學會大會",
+    "evidence": [
+      {
+        "url": "https://kenkyuukai.m3.com/event/event_detail.asp?id=72857",
+        "quote": "日本宇宙航空環境医学会 第71回大会"
+      },
+      {
+        "url": "https://kenkyuukai.m3.com/event/event_detail.asp?id=72857",
+        "quote": "11月20日～21日 本大会／11月22日 一般公開講座"
+      },
+      {
+        "url": "https://kenkyuukai.m3.com/event/event_detail.asp?id=72857",
+        "quote": "ピアザ淡海 滋賀県立県民交流センター"
+      }
+    ],
+    "notes": "學會官方活動頁載明會場地址為滋賀県大津市におの浜1丁目1-20。"
+  },
+  {
+    "query": {
+      "societyCode": "JAAM-CHUBU",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jaam-chubu-2025",
+      "societyCode": "JAAM-CHUBU",
+      "name": "第28回日本救急医学会中部地方会学術集会",
+      "start": "2025-11-28",
+      "end": "2025-11-29",
+      "city": "金沢市",
+      "prefecture": "石川県",
+      "region": "中部",
+      "venue": "金沢市文化ホール",
+      "topic": "急診醫學・地方會",
+      "topicKey": "emergency",
+      "officialUrl": "https://99kanazawa2025.com/outline/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第28屆日本急診醫學會中部地方會學術集會",
+    "evidence": [
+      {
+        "url": "https://99kanazawa2025.com/outline/",
+        "quote": "大会名 第28回日本救急医学会中部地方会学術集会"
+      },
+      {
+        "url": "https://99kanazawa2025.com/outline/",
+        "quote": "学術集会：2025年11月28日（金）・29日（土）"
+      },
+      {
+        "url": "https://99kanazawa2025.com/outline/",
+        "quote": "学術集会：金沢市文化ホール"
+      }
+    ],
+    "notes": "另有11月30日的ポストコングレス；本筆只收錄官方標示的學術集會日期。"
+  }
+]

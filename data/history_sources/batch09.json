@@ -1,0 +1,161 @@
+[
+  {
+    "query": {
+      "societyCode": "JAAM-TOHOKU",
+      "year": 2026
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jaam-tohoku-2026",
+      "societyCode": "JAAM-TOHOKU",
+      "name": "第40回東北救急医学会総会・学術集会／第36回日本救急医学会東北地方会",
+      "start": "2026-06-13",
+      "end": "2026-06-13",
+      "city": "仙台市",
+      "prefecture": "宮城県",
+      "region": "東北",
+      "venue": "仙台国際センター 展示棟",
+      "topic": "急診醫學・地方會",
+      "topicKey": "emergency",
+      "officialUrl": "https://www.tohoku-kyoritz.jp/am2026/outline/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第40屆東北急診醫學會總會暨學術集會／第36屆日本急診醫學會東北地方會",
+    "evidence": [
+      {
+        "url": "https://www.tohoku-kyoritz.jp/am2026/outline/",
+        "quote": "会期 2026年6月13日／会場 仙台国際センター展示棟"
+      }
+    ],
+    "notes": "官方開催概要核實兩個合辦會議名稱、日期與仙台市會場；該學會通常每年一次，未發現同年第二場。"
+  },
+  {
+    "query": {
+      "societyCode": "JSTH",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jsth-2025",
+      "societyCode": "JSTH",
+      "name": "第47回日本血栓止血学会学術集会",
+      "start": "2025-06-27",
+      "end": "2025-06-29",
+      "city": "名古屋市",
+      "prefecture": "愛知県",
+      "region": "中部",
+      "venue": "ウインクあいち（愛知県産業労働センター）",
+      "topic": "血栓止血・DIC",
+      "topicKey": "coagulation",
+      "officialUrl": "https://jsth2025.jp/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第47屆日本血栓暨止血學會學術集會",
+    "evidence": [
+      {
+        "url": "https://jsth2025.jp/data/jsth47_poster.pdf",
+        "quote": "2025.6.27～29／会場 ウインクあいち"
+      }
+    ],
+    "notes": "官方大會海報核實會期與會場；學會規程規定年次學術集會原則每年一次，未發現同年第二場。"
+  },
+  {
+    "query": {
+      "societyCode": "JSTH",
+      "year": 2026
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jsth-2026",
+      "societyCode": "JSTH",
+      "name": "第48回日本血栓止血学会学術集会",
+      "start": "2026-05-28",
+      "end": "2026-05-30",
+      "city": "小田原市",
+      "prefecture": "神奈川県",
+      "region": "關東",
+      "venue": "小田原三の丸ホール・報徳二宮神社 報徳会館",
+      "topic": "血栓止血・DIC",
+      "topicKey": "coagulation",
+      "officialUrl": "https://48jsth.com/outline.html",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第48屆日本血栓暨止血學會學術集會",
+    "evidence": [
+      {
+        "url": "https://48jsth.com/outline.html",
+        "quote": "会期 2026年5月28日～30日／会場 小田原三の丸ホール"
+      },
+      {
+        "url": "https://48jsth.com/outline.html",
+        "quote": "報徳二宮神社 報徳会館"
+      }
+    ],
+    "notes": "官方開催概要列明兩個實體會場；學會規程規定年次學術集會原則每年一次，未發現同年第二場。"
+  },
+  {
+    "query": {
+      "societyCode": "JSOA",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jsoa-2025",
+      "societyCode": "JSOA",
+      "name": "日本スポーツ整形外科学会2025（JSOA2025）",
+      "start": "2025-09-12",
+      "end": "2025-09-13",
+      "city": "東京都港區",
+      "prefecture": "東京都",
+      "region": "關東",
+      "venue": "ザ・プリンス パークタワー東京",
+      "topic": "運動外傷・骨科",
+      "topicKey": "sports",
+      "officialUrl": "https://www.huddle-inc.jp/jsoa2025/outline.html",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "日本運動骨科學會2025（JSOA2025）",
+    "evidence": [
+      {
+        "url": "https://www.huddle-inc.jp/jsoa2025/outline.html",
+        "quote": "会期 2025年9月12日～13日／会場 ザ・プリンスパークタワー東京"
+      }
+    ],
+    "notes": "官方開催概要核實日期、港區地址與會場；未發現同年第二場年度學術集會。"
+  },
+  {
+    "query": {
+      "societyCode": "JSOA",
+      "year": 2026
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jsoa-2026",
+      "societyCode": "JSOA",
+      "name": "日本スポーツ整形外科学会2026（JSOA2026）",
+      "start": "2026-08-27",
+      "end": "2026-08-29",
+      "city": "札幌市",
+      "prefecture": "北海道",
+      "region": "北海道",
+      "venue": "札幌コンベンションセンター",
+      "topic": "運動外傷・骨科",
+      "topicKey": "sports",
+      "officialUrl": "https://www.congre.co.jp/jsoa2026/outline/index.html",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "日本運動骨科學會2026（JSOA2026）",
+    "evidence": [
+      {
+        "url": "https://www.congre.co.jp/jsoa2026/outline/index.html",
+        "quote": "会期 2026年8月27日～29日／会場 札幌コンベンションセンター"
+      }
+    ],
+    "notes": "官方開催概要核實日期、札幌市地址與會場；未發現同年第二場年度學術集會。"
+  }
+]

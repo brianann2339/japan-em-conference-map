@@ -1,0 +1,136 @@
+[
+  {
+    "query": {"societyCode": "JAAM", "year": 2025},
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jaam-2025",
+      "societyCode": "JAAM",
+      "name": "第53回日本救急医学会総会・学術集会",
+      "start": "2025-10-28",
+      "end": "2025-10-30",
+      "city": "大阪市",
+      "prefecture": "大阪府",
+      "region": "關西",
+      "venue": "大阪国際会議場（グランキューブ大阪）",
+      "topic": "急診醫學",
+      "topicKey": "emergency",
+      "officialUrl": "https://site.convention.co.jp/jaam53/overview/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第53屆日本急診醫學會總會暨學術集會",
+    "evidence": [
+      {"url": "https://site.convention.co.jp/jaam53/overview/", "quote": "第53回日本救急医学会総会・学術集会"},
+      {"url": "https://site.convention.co.jp/jaam53/overview/", "quote": "2025年10月28日（火）～30日（木）"},
+      {"url": "https://site.convention.co.jp/jaam53/overview/", "quote": "大阪国際会議場（グランキューブ大阪）"}
+    ],
+    "notes": "官方頁列出會場地址為大阪市北区中之島5-3-51。"
+  },
+  {
+    "query": {"societyCode": "JAAM", "year": 2026},
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jaam-2026",
+      "societyCode": "JAAM",
+      "name": "第54回日本救急医学会総会・学術集会",
+      "start": "2026-10-27",
+      "end": "2026-10-29",
+      "city": "長崎市",
+      "prefecture": "長崎県",
+      "region": "九州",
+      "venue": "出島メッセ長崎",
+      "topic": "急診醫學",
+      "topicKey": "emergency",
+      "officialUrl": "https://site2.convention.co.jp/jaam54/index.html",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第54屆日本急診醫學會總會暨學術集會",
+    "evidence": [
+      {"url": "https://site2.convention.co.jp/jaam54/index.html", "quote": "第54回日本救急医学会総会・学術集会"},
+      {"url": "https://site2.convention.co.jp/jaam54/index.html", "quote": "2026.10.27(火)～29(木)"},
+      {"url": "https://site2.convention.co.jp/jaam54/index.html", "quote": "会場：出島メッセ長崎"}
+    ],
+    "notes": "官方頁標示大會已結束。"
+  },
+  {
+    "query": {"societyCode": "JSEM", "year": 2025},
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jsem-2025",
+      "societyCode": "JSEM",
+      "name": "第28回日本臨床救急医学会総会・学術集会",
+      "start": "2025-06-19",
+      "end": "2025-06-21",
+      "city": "横浜市",
+      "prefecture": "神奈川県",
+      "region": "關東",
+      "venue": "パシフィコ横浜 会議センター",
+      "topic": "臨床急診・院前救護",
+      "topicKey": "emergency",
+      "officialUrl": "https://www.jsem.me/annual-meeting/history.html",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第28屆日本臨床急診醫學會總會暨學術集會",
+    "evidence": [
+      {"url": "https://www.jsem.me/annual-meeting/history.html", "quote": "第28回日本臨床救急医学会総会・学術集会"},
+      {"url": "https://www.jsem.me/annual-meeting/history.html", "quote": "2025年6月19日～21日"},
+      {"url": "https://www.jsem.me/annual-meeting/history.html", "quote": "パシフィコ横浜 会議センター"}
+    ],
+    "notes": "學會官方歷屆頁。"
+  },
+  {
+    "query": {"societyCode": "JADM", "year": 2025},
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jadm-2025",
+      "societyCode": "JADM",
+      "name": "第30回日本災害医学会総会・学術集会",
+      "start": "2025-03-06",
+      "end": "2025-03-08",
+      "city": "名古屋市",
+      "prefecture": "愛知県",
+      "region": "中部",
+      "venue": "名古屋市国際展示場（ポートメッセなごや）",
+      "topic": "災害醫學",
+      "topicKey": "disaster",
+      "officialUrl": "https://jadm.or.jp/contents/meeting/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第30屆日本災難醫學會總會暨學術集會",
+    "evidence": [
+      {"url": "https://jadm.or.jp/contents/meeting/", "quote": "第30回 2025年3月6日～8日 名古屋"},
+      {"url": "https://jadm.or.jp/contents/bulletin/pdf/2025_06_01.pdf", "quote": "名古屋市国際展示場（ポートメッセなごや）"}
+    ],
+    "notes": "學會歷屆頁與官方會訊交叉確認。"
+  },
+  {
+    "query": {"societyCode": "JSICM", "year": 2025},
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jsicm-2025",
+      "societyCode": "JSICM",
+      "name": "第52回日本集中治療医学会学術集会",
+      "start": "2025-03-14",
+      "end": "2025-03-16",
+      "city": "福岡市",
+      "prefecture": "福岡県",
+      "region": "九州",
+      "venue": "福岡国際会議場・福岡サンパレス・マリンメッセ福岡B館",
+      "topic": "重症・集中治療",
+      "topicKey": "critical",
+      "officialUrl": "https://www.jsicm.org/meeting/jsicm52/outline/index.html",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第52屆日本重症醫學會學術集會",
+    "evidence": [
+      {"url": "https://www.jsicm.org/meeting/jsicm52/outline/index.html", "quote": "第52回日本集中治療医学会学術集会"},
+      {"url": "https://www.jsicm.org/meeting/jsicm52/outline/index.html", "quote": "2025年3月14日（金）～3月16日（日）"},
+      {"url": "https://www.jsicm.org/meeting/jsicm52/outline/index.html", "quote": "福岡国際会議場、福岡サンパレス、マリンメッセ福岡B館"}
+    ],
+    "notes": "官方開催概要。"
+  }
+]

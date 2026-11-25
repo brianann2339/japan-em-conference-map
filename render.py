@@ -76,8 +76,10 @@ PREFECTURE_CODES = {
 MONTH_ABBR = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"]
 REQUIRED_FIELDS = {
     "id", "name", "start", "end", "city", "prefecture", "region", "venue",
-    "mapVenue", "topic", "topicKey", "lat", "lng", "mapPrecision",
-    "officialUrl", "mapSourceUrl", "sourceCheckedAt", "societyCode",
+    "topic", "topicKey", "officialUrl", "sourceCheckedAt", "societyCode",
+}
+MAP_FIELDS = {
+    "mapVenue", "lat", "lng", "mapPrecision", "mapSourceUrl",
 }
 
 
@@ -102,6 +104,8 @@ def validate_events(events: list[dict]) -> None:
     seen = set()
     for index, event in enumerate(events, start=1):
         missing = REQUIRED_FIELDS - event.keys()
+        if not event.get("archiveOnly"):
+            missing |= MAP_FIELDS - event.keys()
         if missing:
             raise ValueError(f"record {index} missing fields: {', '.join(sorted(missing))}")
         if event["id"] in seen:
@@ -114,11 +118,13 @@ def validate_events(events: list[dict]) -> None:
         date.fromisoformat(event["sourceCheckedAt"])
         if start > end:
             raise ValueError(f"start after end: {event['id']}")
-        if event["mapPrecision"] not in {"venue", "complex"}:
+        if not event.get("archiveOnly") and event["mapPrecision"] not in {"venue", "complex"}:
             raise ValueError(f"unsupported mapPrecision: {event['id']}")
         if "nameZh" in event and not str(event["nameZh"]).strip():
             raise ValueError(f"empty Chinese translation: {event['id']}")
-        if not (-90 <= event["lat"] <= 90 and -180 <= event["lng"] <= 180):
+        if not event.get("archiveOnly") and not (
+            -90 <= event["lat"] <= 90 and -180 <= event["lng"] <= 180
+        ):
             raise ValueError(f"coordinate out of range: {event['id']}")
 
 
@@ -140,7 +146,7 @@ def tokyo_today() -> date:
 
 
 def is_past(row: dict, today: date) -> bool:
-    return row["_end"] < today
+    return row.get("archiveOnly", False) or row["_end"] < today
 
 
 def split_archive(rows: list[dict], today: date) -> tuple[list[dict], list[dict]]:
@@ -532,7 +538,7 @@ def conference_cards(rows: list[dict], today: date) -> str:
         past = is_past(row, today)
         precision = (
             f'<span class="precision">{html.escape(row.get("mapNote") or "地圖點為園區代表位置")}</span>'
-            if row["mapPrecision"] == "complex" else ""
+            if row.get("mapPrecision") == "complex" else ""
         )
         cards.append(
             f'<a class="card{" past" if past else ""}" href="{html.escape(row["officialUrl"])}" '
@@ -760,7 +766,7 @@ def map_strip(year: int, rows: list[dict]) -> str:
             f'<a class="ms-cell" href="{html.escape(row["officialUrl"])}" '
             f'target="_blank" rel="noopener" style="--c:{color_for(row)}" '
             f'data-filter-id="{html.escape(row["id"])}">'
-            f'<b>{html.escape(society_code(row))}</b>'
+            f'<b>{html.escape(society_code(row))}（{html.escape(row["topic"])}）</b>'
             f'<span>{ICON_PIN}{html.escape(row["city"])}</span>'
             f'<span>{ICON_CAL}{html.escape(short_date_range(row))}</span></a>'
         )
@@ -1184,8 +1190,8 @@ def footer_html(rows: list[dict], checked_at: str) -> str:
 </footer>"""
 
 
-def render_html(rows: list[dict], all_rows: list[dict], today: date, checked_at: str,
-                map_svg: str, archive_count: int) -> str:
+def render_html(rows: list[dict], today: date, checked_at: str, map_svg: str,
+                archive_count: int) -> str:
     upcoming = next_up(rows, today)
     if upcoming:
         days = max((upcoming["_start"] - today).days, 0)
@@ -1247,13 +1253,13 @@ def render_html(rows: list[dict], all_rows: list[dict], today: date, checked_at:
   <h2>投稿死線</h2>
   {deadline_section(rows)}
 </section>
-{footer_html(all_rows, checked_at)}
+{footer_html(rows, checked_at)}
 </div><script id="conference-filter-data" type="application/json">{filter_data(rows)}</script>
 <script>{COUNTDOWN_JS}{MAP_JS}{FILTER_JS}</script></body></html>
 """
 
 
-def render_archive(rows: list[dict], all_rows: list[dict], today: date, checked_at: str) -> str:
+def render_archive(rows: list[dict], today: date, checked_at: str) -> str:
     content = (
         conference_cards(rows, today)
         if rows else '<div class="dl"><p class="note">目前尚無已結束的收錄會議。</p></div>'
@@ -1273,7 +1279,7 @@ def render_archive(rows: list[dict], all_rows: list[dict], today: date, checked_
 <section style="margin-top:2.4rem"><p class="intro">已結束的日本急診相關醫學會議。</p></section>
 {f'<section style="margin-top:2rem"><h2>年度節奏</h2>{grid}</section>' if grid else ''}
 <section style="margin-top:3rem"><h2>全部歷屆場次</h2>{content}</section>
-{footer_html(all_rows, checked_at)}
+{footer_html(rows, checked_at)}
 </div></body></html>"""
 
 
@@ -1285,11 +1291,11 @@ def build_files(events: list[dict], map_svg: str, today: date | None = None) -> 
     current, archive = split_archive(rows, today)
     deadlines = deadline_data(current)
     return {
-        "index.html": render_html(current, rows, today, checked_at, map_svg, len(archive)),
-        "past.html": render_archive(archive, rows, today, checked_at),
+        "index.html": render_html(current, today, checked_at, map_svg, len(archive)),
+        "past.html": render_archive(archive, today, checked_at),
         "conferences.json": json.dumps(events, ensure_ascii=False, indent=2) + "\n",
         "conferences.csv": build_csv(events),
-        "conferences.ics": build_ics(rows, checked_at),
+        "conferences.ics": build_ics(current, checked_at),
         "deadlines.json": json.dumps(deadlines, ensure_ascii=False, indent=2) + "\n",
     }
 

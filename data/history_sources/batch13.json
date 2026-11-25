@@ -1,0 +1,197 @@
+[
+  {
+    "query": {
+      "societyCode": "J-POCUS",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-j-pocus-2025",
+      "societyCode": "J-POCUS",
+      "name": "第17回日本ポイントオブケア超音波学会学術集会",
+      "start": "2025-07-26",
+      "end": "2025-07-27",
+      "city": "東京都荒川區",
+      "prefecture": "東京都",
+      "region": "關東",
+      "venue": "東京都立大学 荒川キャンパス",
+      "topic": "POCUS・急診超音波",
+      "topicKey": "pocus",
+      "officialUrl": "https://us-lead.com/jpocus17/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第17屆日本重點式照護超音波學會學術集會",
+    "evidence": [
+      {
+        "url": "https://j-pocus.com/congress.html",
+        "quote": "第17回日本ポイントオブケア超音波学会学術集会"
+      },
+      {
+        "url": "https://j-pocus.com/congress.html",
+        "quote": "2025年7月26日（土）- 27日（日）"
+      },
+      {
+        "url": "https://j-pocus.com/congress.html",
+        "quote": "東京都立大学 荒川キャンパス"
+      }
+    ],
+    "notes": "學會官方歷屆頁同時列出正式名稱、日期及會場。"
+  },
+  {
+    "query": {
+      "societyCode": "J-POCUS",
+      "year": 2026
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-j-pocus-2026",
+      "societyCode": "J-POCUS",
+      "name": "第18回日本ポイントオブケア超音波学会学術集会",
+      "start": "2026-05-30",
+      "end": "2026-05-31",
+      "city": "東京都千代田區",
+      "prefecture": "東京都",
+      "region": "關東",
+      "venue": "東京国際フォーラム",
+      "topic": "POCUS・急診超音波",
+      "topicKey": "pocus",
+      "officialUrl": "https://j-pocus.com/congress.html",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第18屆日本重點式照護超音波學會學術集會",
+    "evidence": [
+      {
+        "url": "https://j-pocus.com/congress.html",
+        "quote": "第18回日本ポイントオブケア超音波学会学術集会"
+      },
+      {
+        "url": "https://j-pocus.com/congress.html",
+        "quote": "2026年5月30日（土）～ 31日（日）"
+      },
+      {
+        "url": "https://j-pocus.com/congress.html",
+        "quote": "東京国際フォーラム"
+      }
+    ],
+    "notes": "官方學會頁載明與日本超音波醫學會第99回學術集會等共同舉辦。"
+  },
+  {
+    "query": {
+      "societyCode": "JSDN",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jsdn-2025",
+      "societyCode": "JSDN",
+      "name": "一般社団法人日本災害看護学会第27回年次大会",
+      "start": "2025-09-06",
+      "end": "2025-09-07",
+      "city": "東京都渋谷區",
+      "prefecture": "東京都",
+      "region": "關東",
+      "venue": "国立オリンピック記念青少年総合センター",
+      "topic": "災害看護",
+      "topicKey": "nursing",
+      "officialUrl": "https://jsdn27.umin.ne.jp/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "日本災難護理學會第27屆年會",
+    "evidence": [
+      {
+        "url": "https://jsdn27.umin.ne.jp/doc/sponsorship-statement.pdf",
+        "quote": "日本災害看護学会第27回年次大会"
+      },
+      {
+        "url": "https://jsdn27.umin.ne.jp/doc/sponsorship-statement.pdf",
+        "quote": "2025年9月6日（土）～7日（日）"
+      },
+      {
+        "url": "https://jsdn27.umin.ne.jp/doc/sponsorship-statement.pdf",
+        "quote": "国立オリンピック記念青少年総合センター"
+      }
+    ],
+    "notes": "官方趣意書載明會場地址為東京都渋谷区代々木神園町3-1。"
+  },
+  {
+    "query": {
+      "societyCode": "JSDN",
+      "year": 2026
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jsdn-2026",
+      "societyCode": "JSDN",
+      "name": "日本災害看護学会第28回年次大会",
+      "start": "2026-10-03",
+      "end": "2026-10-04",
+      "city": "秋田市",
+      "prefecture": "秋田県",
+      "region": "東北",
+      "venue": "あきた芸術劇場ミルハス、秋田市文化創造館",
+      "topic": "災害看護",
+      "topicKey": "nursing",
+      "officialUrl": "https://www.tohoku-kyoritz.jp/jsdn28/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "日本災難護理學會第28屆年會",
+    "evidence": [
+      {
+        "url": "https://www.tohoku-kyoritz.jp/jsdn28/news/20261006/index.html",
+        "quote": "日本災害看護学会第28回年次大会"
+      },
+      {
+        "url": "https://www.tohoku-kyoritz.jp/jsdn28/news/20261006/index.html",
+        "quote": "2026年10月3日・4日の2日間"
+      },
+      {
+        "url": "https://www.tohoku-kyoritz.jp/jsdn28/news/20261006/index.html",
+        "quote": "あきた芸術劇場ミルハスおよび秋田市文化創造館"
+      }
+    ],
+    "notes": "官方開催御禮頁確認秋田市兩個現地會場。"
+  },
+  {
+    "query": {
+      "societyCode": "JAEN",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jaen-2025",
+      "societyCode": "JAEN",
+      "name": "第27回日本救急看護学会学術集会",
+      "start": "2025-11-07",
+      "end": "2025-11-08",
+      "city": "札幌市",
+      "prefecture": "北海道",
+      "region": "北海道",
+      "venue": "札幌コンベンションセンター",
+      "topic": "救急看護",
+      "topicKey": "nursing",
+      "officialUrl": "https://jaen.jp/council/council-detail-council_27th/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第27屆日本急診護理學會學術集會",
+    "evidence": [
+      {
+        "url": "https://jaen.jp/council/council-detail-council_27th/",
+        "quote": "第27回日本救急看護学会学術集会"
+      },
+      {
+        "url": "https://jaen.jp/council/council-detail-council_27th/",
+        "quote": "2025年11月7日（金）～8日（土）"
+      },
+      {
+        "url": "https://jaen.jp/council/council-detail-council_27th/",
+        "quote": "札幌コンベンションセンター（北海道）"
+      }
+    ],
+    "notes": "官方學會頁確認為現地會場開催。"
+  }
+]

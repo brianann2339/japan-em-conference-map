@@ -1,0 +1,161 @@
+[
+  {
+    "query": {
+      "societyCode": "JRCM",
+      "year": 2026
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jrcm-2026",
+      "societyCode": "JRCM",
+      "name": "第48回日本呼吸療法医学会学術集会",
+      "start": "2026-07-04",
+      "end": "2026-07-05",
+      "city": "京都市",
+      "prefecture": "京都府",
+      "region": "關西",
+      "venue": "国立京都国際会館",
+      "topic": "呼吸治療・重症",
+      "topicKey": "respiratory",
+      "officialUrl": "https://jsrcm48.umin.jp/outline.html",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第48屆日本呼吸治療醫學會學術集會",
+    "evidence": [
+      {
+        "url": "https://jsrcm48.umin.jp/outline.html",
+        "quote": "会期 2026年7月4日・5日／会場 国立京都国際会館"
+      }
+    ],
+    "notes": "官方開催概要載明會場地址為京都府京都市左京区。"
+  },
+  {
+    "query": {
+      "societyCode": "JSEM",
+      "year": 2026
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jsem-2026",
+      "societyCode": "JSEM",
+      "name": "第29回日本臨床救急医学会総会・学術集会",
+      "start": "2026-07-16",
+      "end": "2026-07-18",
+      "city": "大阪市",
+      "prefecture": "大阪府",
+      "region": "關西",
+      "venue": "大阪国際会議場",
+      "topic": "臨床急診・院前救護",
+      "topicKey": "emergency",
+      "officialUrl": "https://site.convention.co.jp/jsem29/outline/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第29屆日本臨床急診醫學會總會暨學術集會",
+    "evidence": [
+      {
+        "url": "https://site.convention.co.jp/jsem29/outline/",
+        "quote": "会期 2026年7月16日～18日／会場 大阪国際会議場"
+      }
+    ],
+    "notes": "本項為目前 JSEM 代碼所代表的全國總會暨學術集會系列。"
+  },
+  {
+    "query": {
+      "societyCode": "CVIT",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-cvit-2025",
+      "societyCode": "CVIT",
+      "name": "第33回日本心血管インターベンション治療学会学術集会（CVIT 2025）",
+      "start": "2025-07-17",
+      "end": "2025-07-19",
+      "city": "大阪市",
+      "prefecture": "大阪府",
+      "region": "關西",
+      "venue": "大阪府立国際会議場（グランキューブ大阪）／リーガロイヤルホテル大阪",
+      "topic": "心血管介入・ACS",
+      "topicKey": "cardiology",
+      "officialUrl": "https://www.uproses.co.jp/cvit2025/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第33屆日本心血管介入治療學會學術集會（CVIT 2025）",
+    "evidence": [
+      {
+        "url": "https://www.cvit.jp/webcms/wp-content/uploads/2024/07/CVIT2025.pdf",
+        "quote": "会期 2025年7月17日～19日／会場 大阪府立国際会議場ほか"
+      },
+      {
+        "url": "https://www.cvit.jp/_new/docs/about/reference/2025business_plan.pdf",
+        "quote": "第33回日本心血管インターベンション治療学会; CVIT 2025"
+      }
+    ],
+    "notes": "CVIT官方資料另列多場地方會；本項只收目前 CVIT 代碼所代表的全國年次學術集會系列。"
+  },
+  {
+    "query": {
+      "societyCode": "CVIT",
+      "year": 2026
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-cvit-2026",
+      "societyCode": "CVIT",
+      "name": "第34回日本心血管インターベンション治療学会学術集会（CVIT 2026）",
+      "start": "2026-07-16",
+      "end": "2026-07-18",
+      "city": "東京都千代田區",
+      "prefecture": "東京都",
+      "region": "關東",
+      "venue": "東京国際フォーラム",
+      "topic": "心血管介入・ACS",
+      "topicKey": "cardiology",
+      "officialUrl": "https://www.c-linkage.co.jp/cvit2026/contents/overview.html",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第34屆日本心血管介入治療學會學術集會（CVIT 2026）",
+    "evidence": [
+      {
+        "url": "https://www.c-linkage.co.jp/cvit2026/contents/overview.html",
+        "quote": "会期 2026年7月16日～18日／会場 東京国際フォーラム"
+      }
+    ],
+    "notes": "CVIT官方資料另列多場地方會；本項只收目前 CVIT 代碼所代表的全國年次學術集會系列。"
+  },
+  {
+    "query": {
+      "societyCode": "JSEP",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jsep-2025",
+      "societyCode": "JSEP",
+      "name": "第38回日本小児救急医学会学術集会・第32回小児集中治療ワークショップ",
+      "start": "2025-07-04",
+      "end": "2025-07-06",
+      "city": "東京都港區",
+      "prefecture": "東京都",
+      "region": "關東",
+      "venue": "虎ノ門ヒルズフォーラム",
+      "topic": "兒童急診・兒童重症",
+      "topicKey": "pediatric",
+      "officialUrl": "https://jsep38.umin.jp/outline.html",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第38屆日本兒童急診醫學會學術集會暨第32屆兒童重症照護工作坊",
+    "evidence": [
+      {
+        "url": "https://jsep38.umin.jp/outline.html",
+        "quote": "会期 2025年7月4日～6日／会場 虎ノ門ヒルズフォーラム"
+      }
+    ],
+    "notes": "同一場活動合辦第32回小兒集中治療工作坊，並併設第17回日本蘇生科學研討會；均非同系列的另一場獨立年會。"
+  }
+]

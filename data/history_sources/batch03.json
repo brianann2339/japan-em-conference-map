@@ -1,0 +1,135 @@
+[
+  {
+    "query": {
+      "societyCode": "SIRET",
+      "year": 2026
+    },
+    "status": "not_found",
+    "searched": [
+      "https://kenkyuukai.m3.com/event/event_detail.asp?id=81092",
+      "https://direct.kenkyuukai.jp/event/index.asp"
+    ],
+    "evidence": [
+      {
+        "url": "https://kenkyuukai.m3.com/event/event_detail.asp?id=81092",
+        "quote": "開催日時 2026年2月28日(土)／場所 － －"
+      }
+    ],
+    "notes": "官方活動頁可確認第12回與日期，但會場欄為「－ －」；未能由合格官方來源核實城市、都道府縣與會場，因此不建立 event。"
+  },
+  {
+    "query": {
+      "societyCode": "EMS-SYMP",
+      "year": 2025
+    },
+    "status": "not_held",
+    "searched": [
+      "https://fasd.jp/files/libs/8667/202601290955344994.pdf",
+      "https://www.knt.co.jp/ec/2027/99sympo_35/kako.html"
+    ],
+    "evidence": [
+      {
+        "url": "https://fasd.jp/files/libs/8667/202601290955344994.pdf",
+        "quote": "第33回 令和6年11月21日・22日"
+      },
+      {
+        "url": "https://fasd.jp/files/libs/8667/202601290955344994.pdf",
+        "quote": "第34回 令和8年1月22日・23日"
+      }
+    ],
+    "notes": "救急振興財団官方歷屆表顯示相鄰兩屆分別在2024年11月與2026年1月，日曆年2025無開催場次。"
+  },
+  {
+    "query": {
+      "societyCode": "EMS-SYMP",
+      "year": 2026
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-ems-symp-2026",
+      "societyCode": "EMS-SYMP",
+      "name": "第34回全国救急隊員シンポジウム",
+      "start": "2026-01-22",
+      "end": "2026-01-23",
+      "city": "熊本市",
+      "prefecture": "熊本県",
+      "region": "九州",
+      "venue": "熊本城ホール",
+      "topic": "EMS・救急隊員",
+      "topicKey": "ems",
+      "officialUrl": "https://34kumamoto99sympo.com/?page_id=29",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第34屆全國救護隊員研討會",
+    "evidence": [
+      {
+        "url": "https://34kumamoto99sympo.com/?page_id=29",
+        "quote": "実施日 令和8年1月22日・23日／実施場所 熊本城ホール"
+      }
+    ],
+    "notes": "官方大會開催概要同時核實名稱、日期與熊本城 Hall 地址。"
+  },
+  {
+    "query": {
+      "societyCode": "JNST",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jnst-2025",
+      "societyCode": "JNST",
+      "name": "第48回日本脳神経外傷学会",
+      "start": "2025-02-21",
+      "end": "2025-02-22",
+      "city": "東京都千代田區",
+      "prefecture": "東京都",
+      "region": "關東",
+      "venue": "都市センターホテル",
+      "topic": "腦神經外傷",
+      "topicKey": "neuro",
+      "officialUrl": "https://square.umin.ac.jp/neurotrauma48/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第48屆日本腦神經外傷學會",
+    "evidence": [
+      {
+        "url": "https://square.umin.ac.jp/neurotrauma48/doc/sponsors-letter-of-intent.pdf",
+        "quote": "2025年2月21日、22日に都市センターホテルで開催"
+      }
+    ],
+    "notes": "官方大會網站之協賛趣意書核實會期與會場。"
+  },
+  {
+    "query": {
+      "societyCode": "JNST",
+      "year": 2026
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jnst-2026",
+      "societyCode": "JNST",
+      "name": "第49回日本脳神経外傷学会",
+      "start": "2026-02-20",
+      "end": "2026-02-21",
+      "city": "名古屋市",
+      "prefecture": "愛知県",
+      "region": "中部",
+      "venue": "ウインクあいち（愛知県産業労働センター）",
+      "topic": "腦神經外傷",
+      "topicKey": "neuro",
+      "officialUrl": "https://www.congre.co.jp/ntrauma49/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第49屆日本腦神經外傷學會",
+    "evidence": [
+      {
+        "url": "https://www.congre.co.jp/ntrauma49/",
+        "quote": "会期 2026年2月20日、21日／会場 ウインクあいち"
+      }
+    ],
+    "notes": "官方大會首頁核實會期與會場；地址位於愛知県名古屋市。"
+  }
+]
