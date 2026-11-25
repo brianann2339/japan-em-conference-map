@@ -33,15 +33,19 @@ def load(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def series_code(value: dict) -> str:
+    return value.get("seriesCode", value["societyCode"])
+
+
 def expected_queries(events: list[dict]) -> set[tuple[str, int]]:
     result = set()
     for event in events:
         years = [2025] if event["start"].startswith("2026") else [2025, 2026]
-        result.update((event["societyCode"], year) for year in years)
+        result.update((series_code(event), year) for year in years)
     return result
 
 
-def validate_event(event: dict, name_zh: str, query: tuple[str, int], topics: dict) -> dict:
+def validate_event(event: dict, name_zh: str, query: dict, topics: dict) -> dict:
     required = {
         "id", "societyCode", "name", "start", "end", "city", "prefecture", "region",
         "venue", "topic", "topicKey", "officialUrl", "sourceCheckedAt", "archiveOnly",
@@ -51,14 +55,21 @@ def validate_event(event: dict, name_zh: str, query: tuple[str, int], topics: di
         raise ValueError(f"{query} event missing {sorted(missing)}")
     if not name_zh.strip():
         raise ValueError(f"{query} has empty translation")
-    if event["societyCode"] != query[0] or int(event["start"][:4]) != query[1]:
+    if (
+        event["societyCode"] != query["societyCode"]
+        or series_code(event) != series_code(query)
+        or int(event["start"][:4]) != int(query["year"])
+    ):
         raise ValueError(f"{query} does not match event {event['id']}")
     if date.fromisoformat(event["end"]) >= CUTOFF:
         raise ValueError(f"{event['id']} was not finished before {CUTOFF}")
     if event.get("archiveOnly") is not True:
         raise ValueError(f"{event['id']} must be archiveOnly")
-    if (event["topic"], event["topicKey"]) != topics[event["societyCode"]]:
-        raise ValueError(f"{event['id']} topic differs from current series")
+    topic = (event["topic"], event["topicKey"])
+    key = series_code(event)
+    if key in topics and topic != topics[key]:
+        raise ValueError(f"{event['id']} topic differs from its series")
+    topics.setdefault(key, topic)
     event = dict(event)
     event["prefecture"] = event["prefecture"].replace("縣", "県")
     expected_region = REGIONS.get(event["prefecture"])
@@ -71,27 +82,34 @@ def validate_event(event: dict, name_zh: str, query: tuple[str, int], topics: di
 def main() -> None:
     existing = load(DATA)
     current = [event for event in existing if not event.get("archiveOnly")]
-    topics = {event["societyCode"]: (event["topic"], event["topicKey"]) for event in current}
+    topics = {series_code(event): (event["topic"], event["topicKey"]) for event in current}
     queries = {}
+    regular_queries = set()
     history = []
     names = {}
     allowed_statuses = {"confirmed", "not_held", "not_found", "not_expired"}
 
     for path in sorted(SOURCES.glob("batch*.json")):
         for item in load(path):
-            query = (item["query"]["societyCode"], int(item["query"]["year"]))
-            if query in queries:
-                raise ValueError(f"duplicate query {query} in {path.name} and {queries[query]}")
-            queries[query] = path.name
+            query = item["query"]
+            key = (series_code(query), int(query["year"]))
+            if key in queries:
+                raise ValueError(f"duplicate query {key} in {path.name} and {queries[key]}")
+            queries[key] = path.name
+            if item.get("supplemental"):
+                if key in expected_queries(current):
+                    raise ValueError(f"supplemental query duplicates current series {key}")
+            else:
+                regular_queries.add(key)
             if item["status"] not in allowed_statuses:
-                raise ValueError(f"unsupported status {item['status']} for {query}")
+                raise ValueError(f"unsupported status {item['status']} for {key}")
             candidates = []
             if item["status"] == "confirmed":
                 candidates.append(item)
             candidates.extend(item.get("additionalEvents", []))
             for candidate in candidates:
                 if not candidate.get("evidence"):
-                    raise ValueError(f"{query} has no source evidence")
+                    raise ValueError(f"{key} has no source evidence")
                 event = validate_event(candidate["event"], candidate["nameZh"], query, topics)
                 if event["id"] in names:
                     raise ValueError(f"duplicate history id {event['id']}")
@@ -99,9 +117,9 @@ def main() -> None:
                 names[event["id"]] = candidate["nameZh"]
 
     expected = expected_queries(current)
-    if set(queries) != expected:
-        missing = sorted(expected - set(queries))
-        extra = sorted(set(queries) - expected)
+    if regular_queries != expected:
+        missing = sorted(expected - regular_queries)
+        extra = sorted(regular_queries - expected)
         raise ValueError(f"history query coverage differs; missing={missing}, extra={extra}")
 
     history.sort(key=lambda event: (event["start"], event["id"]))

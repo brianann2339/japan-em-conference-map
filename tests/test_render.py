@@ -18,14 +18,18 @@ class RenderTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.events = render.load_events(ROOT / "data" / "conferences.json")
+        cls.watchlist = render.load_watchlist(ROOT / "data" / "watchlist.json")
         cls.map_svg = (ROOT / "assets" / "map-full.svg").read_text(encoding="utf-8")
         cls.today = date(2026, 11, 25)
         cls.current, cls.archive = render.split_archive(render.prepare(cls.events), cls.today)
-        cls.files = render.build_files(cls.events, cls.map_svg, cls.today)
+        cls.files = render.build_files(cls.events, cls.map_svg, cls.today, cls.watchlist)
 
     def test_source_has_expected_codes(self):
         codes = {event["societyCode"] for event in self.events}
-        self.assertTrue({"JSAEM", "JADM", "JSICM", "JSEM", "JSCT", "JAAM"} <= codes)
+        self.assertTrue({
+            "JSAEM", "JADM", "JSICM", "JSEM", "JSCT", "JAAM",
+            "JSCCM", "JSACS", "JSER", "JCTS",
+        } <= codes)
         self.assertTrue(all(re.fullmatch(r"[A-Z0-9-]+", code) for code in codes))
 
     def test_japan_map_and_credits_are_rendered(self):
@@ -59,7 +63,7 @@ class RenderTests(unittest.TestCase):
     def test_history_sources_cover_all_tracked_series_and_match_archive(self):
         current = [event for event in self.events if not event.get("archiveOnly")]
         expected = {
-            (event["societyCode"], year)
+            (event.get("seriesCode", event["societyCode"]), year)
             for event in current
             for year in ([2025] if event["start"].startswith("2026") else [2025, 2026])
         }
@@ -68,9 +72,14 @@ class RenderTests(unittest.TestCase):
             for path in sorted((ROOT / "data" / "history_sources").glob("batch*.json"))
             for item in json.loads(path.read_text(encoding="utf-8"))
         ]
-        queries = [(item["query"]["societyCode"], item["query"]["year"]) for item in items]
-        self.assertEqual(expected, set(queries))
-        self.assertEqual(len(expected), len(queries))
+        queries = [
+            (item["query"].get("seriesCode", item["query"]["societyCode"]), item["query"]["year"])
+            for item in items
+        ]
+        regular = [query for query, item in zip(queries, items) if not item.get("supplemental")]
+        self.assertEqual(expected, set(regular))
+        self.assertEqual(len(expected), len(regular))
+        self.assertEqual(len(queries), len(set(queries)))
         candidates = []
         for item in items:
             if item["status"] == "confirmed":
@@ -81,6 +90,32 @@ class RenderTests(unittest.TestCase):
             {event["id"] for event in self.archive},
             {candidate["event"]["id"] for candidate in candidates},
         )
+
+    def test_archive_lists_only_explicit_pending_series(self):
+        page = self.files["past.html"]
+        visible = [item for item in self.watchlist if item.get("showOnArchive")]
+        self.assertEqual(5, len(visible))
+        self.assertEqual(5, page.count('data-tracking-id="'))
+        for item in visible:
+            self.assertIn(f'data-tracking-id="{item["id"]}"', page)
+            self.assertIn(item["displayCode"], page)
+            self.assertIn(item["nameZh"], page)
+            self.assertIn(item["url"], page)
+        self.assertNotIn('data-tracking-id="national-mc-next"', page)
+        self.assertNotIn('data-tracking-id="j-cimels"', page)
+        self.assertIn("下一屆日期、城市或會場仍未完整公告", page)
+
+    def test_juhms_annual_and_regional_series_stay_distinct(self):
+        annual = [event for event in self.archive if event.get("seriesCode") == "JUHMS-ANNUAL"]
+        regional = [
+            event for event in self.archive
+            if event["societyCode"] == "JUHMS" and event.get("seriesCode") != "JUHMS-ANNUAL"
+        ]
+        self.assertEqual(2, len(annual))
+        self.assertTrue(regional)
+        self.assertTrue(all(event["societyCode"] == "JUHMS" for event in annual))
+        self.assertIn("hist-juhms-annual-2025", self.files["past.html"])
+        self.assertIn("hist-juhms-2025", self.files["past.html"])
 
     def test_every_conference_has_a_traditional_chinese_translation(self):
         translations = json.loads(
@@ -200,7 +235,7 @@ class RenderTests(unittest.TestCase):
         self.assertEqual(len(self.archive), self.files["past.html"].count('class="card past"'))
         self.assertIn("hist-jaam-2025", self.files["past.html"])
         self.assertIn("hist-jaam-2026", self.files["past.html"])
-        self.assertEqual({"2025": 45, "2026": 37}, {
+        self.assertEqual({"2025": 50, "2026": 42}, {
             year: sum(event["start"].startswith(year) for event in self.archive)
             for year in ("2025", "2026")
         })

@@ -1,0 +1,354 @@
+[
+  {
+    "query": {
+      "societyCode": "JCTS",
+      "seriesCode": "JCTS",
+      "year": 2025
+    },
+    "supplemental": true,
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jcts-2025",
+      "societyCode": "JCTS",
+      "seriesCode": "JCTS",
+      "name": "第61回日本交通科学学会・学術講演会",
+      "start": "2025-06-14",
+      "end": "2025-06-15",
+      "city": "横浜市",
+      "prefecture": "神奈川県",
+      "region": "關東",
+      "venue": "横浜労災看護専門学校",
+      "topic": "交通醫學・創傷",
+      "topicKey": "trauma",
+      "officialUrl": "https://jcts61.jp/about/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第61屆日本交通科學學會學術講演會",
+    "evidence": [
+      {
+        "url": "https://jcts61.jp/about/",
+        "quote": "会期は令和7年（2025年）6月14日（土）・15日（日）で、会場は横浜労災看護専門学校"
+      }
+    ],
+    "notes": "官方開催概要列出神奈川県横浜市港北区完整地址；下一屆第63回尚未公布。"
+  },
+  {
+    "query": {
+      "societyCode": "JUHMS",
+      "seriesCode": "JUHMS-ANNUAL",
+      "year": 2025
+    },
+    "supplemental": true,
+    "status": "confirmed",
+    "event": {
+      "id": "hist-juhms-annual-2025",
+      "societyCode": "JUHMS",
+      "seriesCode": "JUHMS-ANNUAL",
+      "name": "第59回日本高気圧潜水医学会学術総会",
+      "start": "2025-06-27",
+      "end": "2025-06-28",
+      "city": "東京都墨田區",
+      "prefecture": "東京都",
+      "region": "關東",
+      "venue": "すみだ保健子育て総合センター",
+      "topic": "高氣壓・潛水醫學",
+      "topicKey": "environment",
+      "officialUrl": "https://www.juhms.net/syukai/soukai/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第59屆日本高壓暨潛水醫學會學術總會",
+    "evidence": [
+      {
+        "url": "https://www.juhms.net/syukai/soukai/",
+        "quote": "第59回JUHMS 2025年6月27日(金)〜28日(土) すみだ保健子育て総合センター（東京都墨田区）"
+      }
+    ],
+    "notes": "全國學術總會與既有關東地方會分屬不同系列，以seriesCode區分。"
+  },
+  {
+    "query": {
+      "societyCode": "JSACS",
+      "seriesCode": "JSACS",
+      "year": 2025
+    },
+    "supplemental": true,
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jsacs-2025",
+      "societyCode": "JSACS",
+      "seriesCode": "JSACS",
+      "name": "第17回日本Acute Care Surgery学会学術集会",
+      "start": "2025-09-19",
+      "end": "2025-09-20",
+      "city": "佐賀市",
+      "prefecture": "佐賀県",
+      "region": "九州",
+      "venue": "アバンセ",
+      "topic": "急性照護外科",
+      "topicKey": "trauma",
+      "officialUrl": "https://17jsacs.nksconv.com/gaiyo.html",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第17屆日本急性照護外科學會學術集會",
+    "evidence": [
+      {
+        "url": "https://17jsacs.nksconv.com/gaiyo.html",
+        "quote": "会期 2025年9月19日(金)・20日（土）／会場 アバンセ"
+      }
+    ],
+    "notes": "官方開催概要列出佐賀県佐賀市完整地址；第19回尚未公布。"
+  },
+  {
+    "query": {
+      "societyCode": "JSER",
+      "seriesCode": "JSER",
+      "year": 2025
+    },
+    "supplemental": true,
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jser-2025",
+      "societyCode": "JSER",
+      "seriesCode": "JSER",
+      "name": "第35回日本救急放射線研究会",
+      "start": "2025-10-18",
+      "end": "2025-10-18",
+      "city": "名古屋市",
+      "prefecture": "愛知県",
+      "region": "中部",
+      "venue": "ウインクあいち 第6会場（8F 805）",
+      "topic": "急診放射線",
+      "topicKey": "radiology",
+      "officialUrl": "https://kenkyuukai.m3.com/sp/event/event_detail.asp?id=75083",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第35屆日本急診放射線研究會",
+    "evidence": [
+      {
+        "url": "https://kenkyuukai.m3.com/sp/event/event_detail.asp?id=75083",
+        "quote": "期日：2025年10月18日（土）／会場：ウインクあいち"
+      },
+      {
+        "url": "https://www.congre.co.jp/jrs61/program/files/timetable.pdf",
+        "quote": "第35回日本救急放射線研究会／第6会場 8F 展示室805"
+      }
+    ],
+    "notes": "第37回尚未正式公布；未以2027母大會日期代替研究會日期。"
+  },
+  {
+    "query": {
+      "societyCode": "JSCCM",
+      "seriesCode": "JSCCM",
+      "year": 2025
+    },
+    "supplemental": true,
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jsccm-2025",
+      "societyCode": "JSCCM",
+      "seriesCode": "JSCCM",
+      "name": "第40回日本救命医療学会総会・学術集会",
+      "start": "2025-11-07",
+      "end": "2025-11-07",
+      "city": "佐賀市",
+      "prefecture": "佐賀県",
+      "region": "九州",
+      "venue": "佐賀メディカルセンター 城内記念ホール",
+      "topic": "救命醫療・急重症",
+      "topicKey": "critical",
+      "officialUrl": "https://square.umin.ac.jp/~js-ccm/gakujutsusyukai.html",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第40屆日本救命醫療學會總會暨學術集會",
+    "evidence": [
+      {
+        "url": "https://square.umin.ac.jp/~js-ccm/gakujutsusyukai.html",
+        "quote": "2025年11月7日（金）佐賀メディカルセンター 城内記念ホール（佐賀県）"
+      }
+    ],
+    "notes": "第42回僅公布會長，日期、城市與會場尚未公布。"
+  },
+  {
+    "query": {
+      "societyCode": "JUHMS",
+      "seriesCode": "JUHMS-ANNUAL",
+      "year": 2026
+    },
+    "supplemental": true,
+    "status": "confirmed",
+    "event": {
+      "id": "hist-juhms-annual-2026",
+      "societyCode": "JUHMS",
+      "seriesCode": "JUHMS-ANNUAL",
+      "name": "第60回日本高気圧潜水医学会学術総会",
+      "start": "2026-06-05",
+      "end": "2026-06-06",
+      "city": "岐阜市",
+      "prefecture": "岐阜県",
+      "region": "中部",
+      "venue": "じゅうろくプラザ",
+      "topic": "高氣壓・潛水醫學",
+      "topicKey": "environment",
+      "officialUrl": "https://www.juhms.net/syukai/soukai/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第60屆日本高壓暨潛水醫學會學術總會",
+    "evidence": [
+      {
+        "url": "https://www.juhms.net/syukai/soukai/",
+        "quote": "第60回JUHMS 2026年6月5日（金）～6日（土）じゅうろくプラザ（岐阜県岐阜市）"
+      }
+    ],
+    "notes": "2027年第61回只公布會長，日期、城市與會場尚未公布。"
+  },
+  {
+    "query": {
+      "societyCode": "JCTS",
+      "seriesCode": "JCTS",
+      "year": 2026
+    },
+    "supplemental": true,
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jcts-2026",
+      "societyCode": "JCTS",
+      "seriesCode": "JCTS",
+      "name": "第62回日本交通科学学会・学術講演会",
+      "start": "2026-09-14",
+      "end": "2026-09-15",
+      "city": "東京都千代田區",
+      "prefecture": "東京都",
+      "region": "關東",
+      "venue": "一橋講堂（学術総合センター内）",
+      "topic": "交通醫學・創傷",
+      "topicKey": "trauma",
+      "officialUrl": "https://plaza.umin.ac.jp/jcts/%E7%AC%AC62%E5%9B%9E%E6%97%A5%E6%9C%AC%E4%BA%A4%E9%80%9A%E7%A7%91%E5%AD%A6%E5%AD%A6%E4%BC%9A-%E5%AD%A6%E8%A1%93%E8%AC%9B%E6%BC%94%E4%BC%9A%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第62屆日本交通科學學會學術講演會",
+    "evidence": [
+      {
+        "url": "https://plaza.umin.ac.jp/jcts/%E7%AC%AC62%E5%9B%9E%E6%97%A5%E6%9C%AC%E4%BA%A4%E9%80%9A%E7%A7%91%E5%AD%A6%E5%AD%A6%E4%BC%9A-%E5%AD%A6%E8%A1%93%E8%AC%9B%E6%BC%94%E4%BC%9A%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/",
+        "quote": "会期：2026年9月14日(月) ～ 15日(火)／会場：一橋講堂"
+      }
+    ],
+    "notes": "官方學術講演會索引最新仍為第62回，未列第63回。"
+  },
+  {
+    "query": {
+      "societyCode": "JSER",
+      "seriesCode": "JSER",
+      "year": 2026
+    },
+    "supplemental": true,
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jser-2026",
+      "societyCode": "JSER",
+      "seriesCode": "JSER",
+      "name": "第36回日本救急放射線研究会",
+      "start": "2026-09-12",
+      "end": "2026-09-12",
+      "city": "旭川市",
+      "prefecture": "北海道",
+      "region": "北海道",
+      "venue": "OMO7旭川 第7会場（2F 白鳥）",
+      "topic": "急診放射線",
+      "topicKey": "radiology",
+      "officialUrl": "https://www.congre.co.jp/jrs62/meeting/index.html",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第36屆日本急診放射線研究會",
+    "evidence": [
+      {
+        "url": "https://www.congre.co.jp/jrs62/meeting/index.html",
+        "quote": "第36回日本救急放射線研究会／日時：9月12日（土）8:30～17:15／第7会場（OMO7旭川 2F 白鳥）"
+      },
+      {
+        "url": "https://www.congre.co.jp/jrs62/outline/index.html",
+        "quote": "会期 2026年9月11日（金）～13日（日）／会場 旭川市民文化会館・OMO7旭川"
+      }
+    ],
+    "notes": "第37回尚未正式公布；未以2027母大會日期代替研究會日期。"
+  },
+  {
+    "query": {
+      "societyCode": "JSACS",
+      "seriesCode": "JSACS",
+      "year": 2026
+    },
+    "supplemental": true,
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jsacs-2026",
+      "societyCode": "JSACS",
+      "seriesCode": "JSACS",
+      "name": "第18回日本Acute Care Surgery学会学術集会",
+      "start": "2026-11-13",
+      "end": "2026-11-14",
+      "city": "別府市",
+      "prefecture": "大分県",
+      "region": "九州",
+      "venue": "別府国際コンベンションセンター ビーコンプラザ",
+      "topic": "急性照護外科",
+      "topicKey": "trauma",
+      "officialUrl": "https://www.c-linkage.co.jp/18jsacs/overview.html",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第18屆日本急性照護外科學會學術集會",
+    "evidence": [
+      {
+        "url": "https://www.c-linkage.co.jp/18jsacs/overview.html",
+        "quote": "会期 2026年11月13日（金）・14日（土）／会場 別府国際コンベンションセンター ビーコンプラザ"
+      }
+    ],
+    "notes": "官方開催概要列出大分県別府市完整地址；第19回尚未公布。"
+  },
+  {
+    "query": {
+      "societyCode": "JSCCM",
+      "seriesCode": "JSCCM",
+      "year": 2026
+    },
+    "supplemental": true,
+    "status": "confirmed",
+    "event": {
+      "id": "hist-jsccm-2026",
+      "societyCode": "JSCCM",
+      "seriesCode": "JSCCM",
+      "name": "第41回日本救命医療学会総会・学術集会",
+      "start": "2026-11-14",
+      "end": "2026-11-14",
+      "city": "甲府市",
+      "prefecture": "山梨県",
+      "region": "中部",
+      "venue": "山梨県立図書館 2階多目的ホール",
+      "topic": "救命醫療・急重症",
+      "topicKey": "critical",
+      "officialUrl": "https://www.jsccm41.com/%E9%96%8B%E5%82%AC%E6%A6%82%E8%A6%81-1",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第41屆日本救命醫療學會總會暨學術集會",
+    "evidence": [
+      {
+        "url": "https://square.umin.ac.jp/~js-ccm/gakujutsusyukai.html",
+        "quote": "2026年11月14日（土）山梨県立図書館（山梨県）"
+      },
+      {
+        "url": "https://www.jsccm41.com/%E9%96%8B%E5%82%AC%E6%A6%82%E8%A6%81-1",
+        "quote": "山梨県立図書館 2階多目的ホール／山梨県甲府市北口2-8-1"
+      }
+    ],
+    "notes": "第42回僅公布會長，日期、城市與會場尚未公布。"
+  }
+]

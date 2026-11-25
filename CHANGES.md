@@ -1,11 +1,11 @@
 # 官方來源監測結果
 
-時間：2026-11-25T05:13:54+09:00（Asia/Tokyo）
+時間：2026-11-25T12:44:30+09:00（Asia/Tokyo）
 
 ## 已完成複核
 
-- [第43回日本救急医学会中国四国地方会](https://med-gakkai.jp/jaam-cs43/)：已改用可讀取的官方大會頁。
-- [第51回北海道救急医学会学術集会](http://www.qqigaku.jp/assets/document/pdf/top/2026/r9_information.pdf)：已核對官方 PDF 並加入正式資料。
-- 感染症學會的頁面變動來自動態 `<head>`；已調整正規化規則並重建監測基準。
+- [第35回全国救急隊員シンポジウム YOKOHAMA 2027](https://www.knt.co.jp/ec/2027/99sympo_35/)：頁面新增出演者及參加資訊；會名、2027-02-04 至 05 會期與パシフィコ横浜會場均未變。
+- [第42回日本救命医療学会総会・学術集会](https://square.umin.ac.jp/~js-ccm/gakujutsusyukai.html)：新增為待續辦監測基準；目前仍僅公布會長。
+- [日本交通科学学会 次回学術講演会](https://plaza.umin.ac.jp/jcts/conference/)：新增為待續辦監測基準；官方索引目前仍只列到2026年第62回。
 
 目前沒有待處理的來源變動；後續新變動仍須重新查證後才可更新正式會議資料。

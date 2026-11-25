@@ -98,6 +98,25 @@ def load_events(path: Path) -> list[dict]:
     return events
 
 
+def load_watchlist(path: Path) -> list[dict]:
+    items = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(items, list):
+        raise ValueError("watchlist data must be a list")
+    seen = set()
+    required = {"id", "name", "url", "status", "reason"}
+    display_required = {"displayCode", "nameZh", "topic"}
+    for index, item in enumerate(items, start=1):
+        missing = required - item.keys()
+        if item.get("showOnArchive"):
+            missing |= display_required - item.keys()
+        if missing:
+            raise ValueError(f"watchlist record {index} missing fields: {', '.join(sorted(missing))}")
+        if item["id"] in seen:
+            raise ValueError(f"duplicate watchlist id: {item['id']}")
+        seen.add(item["id"])
+    return items
+
+
 def validate_events(events: list[dict]) -> None:
     if not isinstance(events, list) or not events:
         raise ValueError("conference data must be a non-empty list")
@@ -113,6 +132,8 @@ def validate_events(events: list[dict]) -> None:
         seen.add(event["id"])
         if not re.fullmatch(r"[A-Z0-9-]+", event["societyCode"]):
             raise ValueError(f"invalid societyCode: {event['id']}")
+        if "seriesCode" in event and not re.fullmatch(r"[A-Z0-9-]+", event["seriesCode"]):
+            raise ValueError(f"invalid seriesCode: {event['id']}")
         start = date.fromisoformat(event["start"])
         end = date.fromisoformat(event["end"])
         date.fromisoformat(event["sourceCheckedAt"])
@@ -424,6 +445,9 @@ h2{font-size:1.05rem; font-weight:600; margin:0 0 1rem;
 .dl .left{font-size:.85rem; white-space:nowrap; text-align:right}
 .dl li.tba .when,.dl li.tba .left{color:var(--muted); font-style:italic}
 .dl .note{margin:.7rem 0 0; font-size:.8rem; color:var(--muted)}
+.tracking-list .what a{text-decoration:none}
+.tracking-list .what a:hover b,.tracking-list .what a:focus-visible b{text-decoration:underline}
+.tracking-list .what .reason{margin-top:.2rem}
 footer{margin-top:3.5rem; padding-top:1rem; border-top:1px solid var(--rule);
   font-size:.82rem; color:var(--muted)}
 footer p{margin:.35rem 0}
@@ -612,6 +636,38 @@ def deadline_section(rows: list[dict]) -> str:
         '<div class="dl"><p class="note">目前沒有官方已確認的投稿截止日期。'
         '未確認日期不會寫入 ICS 行事曆；來源頁已納入每日變動監測，'
         '確認公告後才會顯示。</p></div>'
+    )
+
+
+def tracking_list(items: list[dict]) -> str:
+    visible = [item for item in items if item.get("showOnArchive")]
+    if not visible:
+        return ""
+    status_labels = {
+        "waiting": "尚未公告",
+        "partial": "部分公告",
+        "manual": "人工追蹤",
+    }
+    entries = []
+    for item in visible:
+        status = status_labels.get(item["status"], item["status"])
+        entries.append(
+            f'<li data-tracking-id="{html.escape(item["id"])}">'
+            f'<span class="when">{html.escape(status)}</span>'
+            '<span class="what">'
+            f'<a href="{html.escape(item["url"])}" target="_blank" rel="noopener">'
+            f'<b>{html.escape(item["displayCode"])} · {html.escape(item["topic"])}</b></a>'
+            f'<span>{html.escape(item["nameZh"])}</span>'
+            f'<span lang="ja">{html.escape(item["name"])}</span>'
+            f'<span class="reason">{html.escape(item["reason"])}</span>'
+            '</span>'
+            f'<span class="left"><a href="{html.escape(item["url"])}" target="_blank" '
+            'rel="noopener">官方頁 ↗</a></span>'
+            '</li>'
+        )
+    return (
+        '<div class="dl tracking-list"><ol>' + "".join(entries) + '</ol>'
+        '<p class="note">只列 2025、2026 均有實際舉辦紀錄，且下一屆日期、城市或會場仍未完整公告的固定系列；已完整公告下一屆者不列入。</p></div>'
     )
 
 
@@ -1259,12 +1315,14 @@ def render_html(rows: list[dict], today: date, checked_at: str, map_svg: str,
 """
 
 
-def render_archive(rows: list[dict], today: date, checked_at: str) -> str:
+def render_archive(rows: list[dict], today: date, checked_at: str,
+                   watchlist: list[dict]) -> str:
     content = (
         conference_cards(rows, today)
         if rows else '<div class="dl"><p class="note">目前尚無已結束的收錄會議。</p></div>'
     )
     grid = season_grid(rows, today) if rows else ""
+    tracking = tracking_list(watchlist)
     return f"""<!DOCTYPE html>
 <html lang="zh-Hant"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -1276,23 +1334,26 @@ def render_archive(rows: list[dict], today: date, checked_at: str) -> str:
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,600&display=swap" rel="stylesheet">
 <style>{CSS}</style></head><body><div class="wrap">
 <header class="masthead"><h1>歷屆會議</h1><p class="stamp"><a href="index.html">回到主頁</a></p></header>
-<section style="margin-top:2.4rem"><p class="intro">已結束的日本急診相關醫學會議。</p></section>
+<section style="margin-top:2.4rem"><p class="intro">已結束的日本急診相關醫學會議；另列出 2025、2026 曾舉辦、但下一屆尚未完整公告的系列，供後續依官方入口追蹤。</p></section>
+{f'<section style="margin-top:2rem"><h2>後續場次待公告的系列</h2>{tracking}</section>' if tracking else ''}
 {f'<section style="margin-top:2rem"><h2>年度節奏</h2>{grid}</section>' if grid else ''}
 <section style="margin-top:3rem"><h2>全部歷屆場次</h2>{content}</section>
 {footer_html(rows, checked_at)}
 </div></body></html>"""
 
 
-def build_files(events: list[dict], map_svg: str, today: date | None = None) -> dict[str, str]:
+def build_files(events: list[dict], map_svg: str, today: date | None = None,
+                watchlist: list[dict] | None = None) -> dict[str, str]:
     validate_events(events)
     rows = prepare(events)
+    watchlist = watchlist or []
     today = today or tokyo_today()
     checked_at = source_checked_at(events)
     current, archive = split_archive(rows, today)
     deadlines = deadline_data(current)
     return {
         "index.html": render_html(current, today, checked_at, map_svg, len(archive)),
-        "past.html": render_archive(archive, today, checked_at),
+        "past.html": render_archive(archive, today, checked_at, watchlist),
         "conferences.json": json.dumps(events, ensure_ascii=False, indent=2) + "\n",
         "conferences.csv": build_csv(events),
         "conferences.ics": build_ics(current, checked_at),
@@ -1301,8 +1362,8 @@ def build_files(events: list[dict], map_svg: str, today: date | None = None) -> 
 
 
 def write_site(events: list[dict], map_svg: str, outdir: Path, license_text: str,
-               today: date | None = None) -> None:
-    files = build_files(events, map_svg, today)
+               today: date | None = None, watchlist: list[dict] | None = None) -> None:
+    files = build_files(events, map_svg, today, watchlist)
     outdir.mkdir(parents=True, exist_ok=True)
     for relative, content in files.items():
         path = outdir / relative
@@ -1319,6 +1380,7 @@ def main() -> None:
     parser.add_argument("--input", type=Path, default=Path("data/conferences.json"))
     parser.add_argument("--map", dest="map_path", type=Path, default=Path("assets/map-full.svg"))
     parser.add_argument("--license", type=Path, default=Path("MAP-LICENSE.md"))
+    parser.add_argument("--watchlist", type=Path, default=Path("data/watchlist.json"))
     parser.add_argument("--out", type=Path, default=Path("docs"))
     args = parser.parse_args()
     write_site(
@@ -1326,6 +1388,7 @@ def main() -> None:
         args.map_path.read_text(encoding="utf-8"),
         args.out,
         args.license.read_text(encoding="utf-8"),
+        watchlist=load_watchlist(args.watchlist),
     )
 
 

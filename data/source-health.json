@@ -98,9 +98,9 @@
       "kind": "conference",
       "status": 200,
       "finalUrl": "https://www.knt.co.jp/ec/2027/99sympo_35/",
-      "contentHash": "5b2d9ca64195ef10b0a9c8afd845cdf705ad6fd5f93feeaf6b4b38259314584b",
+      "contentHash": "6ce522e07b8b29c531a7f8ed922c4e66170bbb444c7aa89daf8e7584e3fa67bf",
       "error": null,
-      "lastChangedAt": "2026-11-25T05:14:59+09:00"
+      "lastChangedAt": "2026-11-25T12:44:30+09:00"
     },
     "conference:jnst-50": {
       "name": "第50回日本脳神経外傷学会",
@@ -451,6 +451,26 @@
       "contentHash": "fe51b64624832751a3996ef59970015b51aad07f66749ddfc0a44e349dce377d",
       "error": null,
       "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "watch:jsccm-next": {
+      "name": "第42回日本救命医療学会総会・学術集会",
+      "url": "https://square.umin.ac.jp/~js-ccm/gakujutsusyukai.html",
+      "kind": "watchlist",
+      "status": 200,
+      "finalUrl": "https://square.umin.ac.jp/~js-ccm/gakujutsusyukai.html",
+      "contentHash": "6db9578cb2fceb4ba786aad477cb2eeb7f2638131c1265e8942089f258b17682",
+      "error": null,
+      "lastChangedAt": "2026-11-25T12:44:30+09:00"
+    },
+    "watch:jcts-next": {
+      "name": "日本交通科学学会 次回学術講演会",
+      "url": "https://plaza.umin.ac.jp/jcts/conference/",
+      "kind": "watchlist",
+      "status": 200,
+      "finalUrl": "https://plaza.umin.ac.jp/jcts/conference/",
+      "contentHash": "572414c253fa999dcba76898630575e1b8aa97df542ef61eb02c7ef824a9e9d4",
+      "error": null,
+      "lastChangedAt": "2026-11-25T12:44:30+09:00"
     },
     "watch:national-mc-next": {
       "name": "全国メディカルコントロール協議会連絡会 次回会議",

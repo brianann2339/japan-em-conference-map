@@ -117,6 +117,21 @@ class MonitorTests(unittest.TestCase):
                     "status": "manual",
                     "reason": "無法穩定抓取",
                     "manual": True,
+                    "showOnArchive": True,
+                    "displayCode": "MANUAL",
+                    "nameZh": "人工追蹤來源",
+                    "topic": "測試",
+                },
+                {
+                    "id": "visible-test",
+                    "name": "可見追蹤來源",
+                    "url": "https://visible.test/",
+                    "status": "waiting",
+                    "reason": "尚未公告",
+                    "showOnArchive": True,
+                    "displayCode": "VISIBLE",
+                    "nameZh": "可見追蹤來源",
+                    "topic": "測試",
                 }
             ]),
             encoding="utf-8",
@@ -124,8 +139,8 @@ class MonitorTests(unittest.TestCase):
 
         sources = monitor_sources.load_sources(data, watchlist)
 
-        self.assertEqual(1, len(sources))
-        self.assertEqual("conference:test", sources[0]["id"])
+        self.assertEqual(2, len(sources))
+        self.assertEqual(["conference:test", "watch:visible-test"], [source["id"] for source in sources])
 
 
 if __name__ == "__main__":
