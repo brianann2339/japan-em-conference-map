@@ -78,11 +78,24 @@ class RenderTests(unittest.TestCase):
         self.assertTrue({event["topicKey"] for event in self.events} <= render.TOPIC_LABELS.keys())
         self.assertIn('id="filter-prefecture"', page)
         self.assertIn('id="filter-topic"', page)
-        self.assertIn('id="filter-time"', page)
-        self.assertIn('<option value="days:30">未來 30 天</option>', page)
-        self.assertIn('<option value="year:2027">2027 年</option>', page)
+        self.assertIn('id="filter-start" type="date"', page)
+        self.assertIn('id="filter-end" type="date"', page)
+        self.assertIn('id="filter-date-error" role="alert" hidden>起日不可晚於迄日。</span>', page)
+        self.assertNotIn('id="filter-time"', page)
+        self.assertNotIn('value="days:30"', page)
+        self.assertNotIn('value="year:2027"', page)
         self.assertIn('<option value="神奈川県">神奈川県</option>', page)
         self.assertNotIn('<option value="神奈川縣">', page)
+
+    def test_date_range_uses_inclusive_overlap_and_validates_order(self):
+        page = self.files["index.html"]
+        self.assertIn("var day = 86400000", page)
+        self.assertIn("dateValue(event.end) < dateValue(startDate.value)", page)
+        self.assertIn("dateValue(event.start) > dateValue(endDate.value)", page)
+        self.assertIn("startDate.value > endDate.value", page)
+        self.assertIn("startDate.setAttribute('aria-invalid','true')", page)
+        self.assertIn("var matches = valid ? events.filter(selected) : lastMatches", page)
+        self.assertIn("count.textContent = '顯示 '+matches.length+' 場會議'", page)
 
     def test_filter_hooks_exist_for_every_event(self):
         page = self.files["index.html"]

@@ -300,7 +300,7 @@ body{
 }
 .wrap{max-width:1080px; margin:0 auto; padding:2.5rem 1.5rem 5rem}
 a{color:inherit; text-decoration-thickness:1px; text-underline-offset:2px}
-a:focus-visible,button:focus-visible,select:focus-visible{outline:2px solid var(--ink); outline-offset:3px}
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--ink); outline-offset:3px}
 .masthead{display:flex; justify-content:space-between; align-items:baseline;
   gap:1rem; flex-wrap:wrap; border-bottom:1px solid var(--ink); padding-bottom:.6rem}
 .masthead h1{font-size:1.5rem; font-weight:600; margin:0; letter-spacing:.01em}
@@ -309,15 +309,23 @@ a:focus-visible,button:focus-visible,select:focus-visible{outline:2px solid var(
 .filters{margin:1.5rem 0 2.2rem; padding:.9rem 0; border-top:1px solid var(--rule);
   border-bottom:1px solid var(--rule); display:flex; align-items:flex-end; gap:.8rem 1rem; flex-wrap:wrap}
 .filter-field{display:flex; flex-direction:column; gap:.22rem; flex:1 1 12rem; min-width:0}
-.filter-field span{font-size:.76rem; color:var(--muted); font-weight:600}
-.filter-field select{width:100%; min-height:2.45rem; border:1px solid var(--rule); border-radius:2px;
-  color:var(--ink); background-color:var(--surface); font:inherit; font-size:.9rem; padding:.35rem 2.1rem .35rem .65rem;
+.filter-field span{font-size:.875rem; color:var(--muted); font-weight:600}
+.filter-field select,.filter-date input{width:100%; min-height:2.45rem; border:1px solid var(--rule); border-radius:2px;
+  color:var(--ink); background-color:var(--surface); font:inherit; font-size:.9rem; box-sizing:border-box}
+.filter-field select{padding:.35rem 2.1rem .35rem .65rem;
   appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%235f747e' stroke-width='1.4'/%3E%3C/svg%3E");
   background-repeat:no-repeat; background-position:right .7rem center; background-size:.7rem .48rem}
+.filter-range{margin:0; padding:0; border:0; flex:2 1 20rem}
+.filter-range legend{padding:0; margin:0 0 .22rem; color:var(--muted); font-size:.875rem; font-weight:600}
+.filter-dates{display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); gap:.35rem .5rem; align-items:end}
+.filter-date{display:flex; flex-direction:column; gap:.22rem; min-width:0}
+.filter-date input{padding:.35rem .5rem}
+.filter-date-separator{padding:0 0 .65rem; font-weight:400!important}
+.filter-date-error{grid-column:1/-1; color:#9f3540!important; font-weight:600!important}
 .filter-actions{display:flex; align-items:center; gap:.8rem; flex:0 0 auto; min-height:2.45rem}
-.filter-count{font-size:.86rem; color:var(--muted); white-space:nowrap}
+.filter-count{font-size:.875rem; color:var(--muted); white-space:nowrap}
 .filter-reset{border:1px solid var(--rule); border-radius:2px; background:transparent; color:var(--ink);
-  font:inherit; font-size:.82rem; padding:.42rem .65rem; cursor:pointer}
+  font:inherit; font-size:.875rem; padding:.42rem .65rem; cursor:pointer}
 .filter-reset:hover{background:var(--surface)}
 .filter-empty{margin:1rem 0 0; padding:.9rem 1rem; border:1px solid var(--rule); background:var(--surface);
   color:var(--muted); font-size:.9rem}
@@ -591,7 +599,6 @@ def deadline_section(rows: list[dict]) -> str:
 def filter_controls(rows: list[dict]) -> str:
     prefectures = sorted({canonical_prefecture(row["prefecture"]) for row in rows})
     topics = sorted({row["topicKey"] for row in rows}, key=lambda key: TOPIC_LABELS[key])
-    years = sorted({row["_year"] for row in rows})
     prefecture_options = "".join(
         f'<option value="{html.escape(prefecture)}">{html.escape(prefecture)}</option>'
         for prefecture in prefectures
@@ -599,9 +606,6 @@ def filter_controls(rows: list[dict]) -> str:
     topic_options = "".join(
         f'<option value="{html.escape(key)}">{html.escape(TOPIC_LABELS[key])}</option>'
         for key in topics
-    )
-    year_options = "".join(
-        f'<option value="year:{year}">{year} 年</option>' for year in years
     )
     return f"""
 <form class="filters" id="conference-filters" aria-label="篩選會議">
@@ -615,15 +619,19 @@ def filter_controls(rows: list[dict]) -> str:
       <option value="all">全部領域</option>{topic_options}
     </select>
   </label>
-  <label class="filter-field" for="filter-time"><span>時間</span>
-    <select id="filter-time" aria-controls="conference-cards">
-      <option value="all">全部時間</option>
-      <option value="days:30">未來 30 天</option>
-      <option value="days:90">未來 90 天</option>
-      <option value="days:180">未來 180 天</option>
-      {year_options}
-    </select>
-  </label>
+  <fieldset class="filter-field filter-range">
+    <legend>時間區間</legend>
+    <div class="filter-dates">
+      <label class="filter-date" for="filter-start"><span>起日</span>
+        <input id="filter-start" type="date" aria-controls="conference-cards" aria-describedby="filter-date-error">
+      </label>
+      <span class="filter-date-separator" aria-hidden="true">至</span>
+      <label class="filter-date" for="filter-end"><span>迄日</span>
+        <input id="filter-end" type="date" aria-controls="conference-cards" aria-describedby="filter-date-error">
+      </label>
+      <span class="filter-date-error" id="filter-date-error" role="alert" hidden>起日不可晚於迄日。</span>
+    </div>
+  </fieldset>
   <div class="filter-actions">
     <output class="filter-count" id="filter-count" aria-live="polite" aria-atomic="true">{len(rows)} 場會議</output>
     <button class="filter-reset" type="reset">清除篩選</button>
@@ -929,10 +937,13 @@ FILTER_JS = r"""
   var source = document.getElementById('conference-filter-data');
   if(!form || !source) return;
   var events = JSON.parse(source.textContent), byId = {};
+  var lastMatches = events.slice();
   events.forEach(function(event){ byId[event.id] = event; });
   var prefecture = document.getElementById('filter-prefecture');
   var topic = document.getElementById('filter-topic');
-  var time = document.getElementById('filter-time');
+  var startDate = document.getElementById('filter-start');
+  var endDate = document.getElementById('filter-end');
+  var dateError = document.getElementById('filter-date-error');
   var count = document.getElementById('filter-count');
   var empty = document.querySelector('.cards-empty');
   var map = document.querySelector('.worldmap');
@@ -945,15 +956,26 @@ FILTER_JS = r"""
     return Date.UTC(+p.year,+p.month-1,+p.day);
   }
   function dateValue(value){ return Date.parse(value+'T00:00:00Z'); }
-  function selected(event, today){
+  function selected(event){
     if(prefecture.value !== 'all' && event.prefecture !== prefecture.value) return false;
     if(topic.value !== 'all' && event.topic !== topic.value) return false;
-    if(time.value.indexOf('year:') === 0) return String(event.year) === time.value.slice(5);
-    if(time.value.indexOf('days:') === 0){
-      var limit = today + Number(time.value.slice(5)) * day;
-      return dateValue(event.end) >= today && dateValue(event.start) <= limit;
-    }
+    if(startDate.value && dateValue(event.end) < dateValue(startDate.value)) return false;
+    if(endDate.value && dateValue(event.start) > dateValue(endDate.value)) return false;
     return true;
+  }
+  function dateRangeValid(){
+    var invalid = startDate.value && endDate.value && startDate.value > endDate.value;
+    startDate.setCustomValidity(invalid ? '起日不可晚於迄日。' : '');
+    endDate.setCustomValidity(invalid ? '起日不可晚於迄日。' : '');
+    if(invalid){
+      startDate.setAttribute('aria-invalid','true');
+      endDate.setAttribute('aria-invalid','true');
+    }else{
+      startDate.removeAttribute('aria-invalid');
+      endDate.removeAttribute('aria-invalid');
+    }
+    dateError.hidden = !invalid;
+    return !invalid;
   }
   function elementIds(element){ return (element.dataset.filterIds || '').split(' ').filter(Boolean); }
   function hasVisibleId(element, visible){
@@ -971,7 +993,7 @@ FILTER_JS = r"""
   function updateHero(matches, today){
     if(!hero) return;
     var next = matches.find(function(event){ return dateValue(event.end) >= today; });
-    var active = prefecture.value !== 'all' || topic.value !== 'all' || time.value !== 'all';
+    var active = prefecture.value !== 'all' || topic.value !== 'all' || startDate.value || endDate.value;
     var lede = hero.querySelector('.lede');
     var title = hero.querySelector('.title');
     var titleZh = hero.querySelector('.title-zh');
@@ -1026,7 +1048,9 @@ FILTER_JS = r"""
   }
   function apply(){
     var today = tokyoDay();
-    var matches = events.filter(function(event){ return selected(event,today); });
+    var valid = dateRangeValid();
+    var matches = valid ? events.filter(selected) : lastMatches;
+    if(valid) lastMatches = matches;
     var visible = new Set(matches.map(function(event){ return event.id; }));
     document.querySelectorAll('.card[data-filter-id],.ms-cell[data-filter-id],.bar[data-filter-id]').forEach(function(element){
       element.hidden = !visible.has(element.dataset.filterId);
@@ -1053,6 +1077,9 @@ FILTER_JS = r"""
     updateHero(matches,today);
   }
   form.addEventListener('change',apply);
+  form.addEventListener('input',function(event){
+    if(event.target === startDate || event.target === endDate) apply();
+  });
   form.addEventListener('submit',function(event){ event.preventDefault(); });
   form.addEventListener('reset',function(){ requestAnimationFrame(apply); });
   apply();
