@@ -136,7 +136,7 @@
       "prefecture": "東京都",
       "region": "關東",
       "venue": "京王プラザホテル",
-      "topic": "世界災難・急診醫學",
+      "topic": "國際災難・急診醫學",
       "topicKey": "disaster",
       "cadence": "每2年1次",
       "officialUrl": "https://wadem.org/congress/tokyo-2025/",
@@ -154,6 +154,6 @@
         "quote": "WADEM's biennial Congress"
       }
     ],
-    "notes": "國際WADEM世界大會在東京舉辦，依官方大會與會議總覽補入歷屆追蹤。"
+    "notes": "WADEM為跨國輪辦的國際雙年會，不列入『每年跨國輪辦』的世界級分類；東京場仍依急診相關性補入歷屆追蹤。"
   }
 ]
