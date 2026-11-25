@@ -38,6 +38,15 @@ class RenderTests(unittest.TestCase):
         self.assertIn('rel="icon" href="data:image/svg+xml,', page)
         self.assertNotIn("assets/acep.png", page)
 
+    def test_prefecture_codes_match_map_groups(self):
+        self.assertEqual(set(range(1, 48)), set(render.PREFECTURE_CODES.values()))
+        for prefecture, code in render.PREFECTURE_CODES.items():
+            label = prefecture if prefecture == "北海道" else prefecture[:-1]
+            self.assertRegex(
+                self.map_svg,
+                fr'<g[^>]+data-code="{code}"[^>]*>\s*<title>{re.escape(label)} /',
+            )
+
     def test_addition_batches_match_merged_source(self):
         by_id = {event["id"]: event for event in self.events}
         for path in sorted((ROOT / "data" / "additions").glob("*.json")):
@@ -84,8 +93,9 @@ class RenderTests(unittest.TestCase):
         self.assertNotIn('id="filter-time"', page)
         self.assertNotIn('value="days:30"', page)
         self.assertNotIn('value="year:2027"', page)
-        self.assertIn('<option value="神奈川県">神奈川県</option>', page)
+        self.assertIn('<option value="神奈川県" data-map-code="14">神奈川県</option>', page)
         self.assertNotIn('<option value="神奈川縣">', page)
+        self.assertIn('<option value="東京都" data-map-code="13">東京都</option>', page)
 
     def test_date_range_uses_inclusive_overlap_and_validates_order(self):
         page = self.files["index.html"]
@@ -103,6 +113,16 @@ class RenderTests(unittest.TestCase):
             event_id = re.escape(event["id"])
             self.assertEqual(4, len(re.findall(fr'data-filter-id="{event_id}"', page)))
         self.assertRegex(page, r'data-filter-ids="[^"]*jss-stroke-52[^"]*cvit-35[^"]*"')
+        self.assertIn('[hidden]{display:none!important}', page)
+
+    def test_prefecture_filter_dispatches_map_fit(self):
+        page = self.files["index.html"]
+        self.assertIn("KMAX = 24", page)
+        self.assertIn("map:fit-prefecture", page)
+        self.assertIn("visibleVenueBounds", page)
+        self.assertIn(".prefecture[data-code=", page)
+        self.assertIn("svg.querySelectorAll('.m-z,.m-cz')", page)
+        self.assertIn("transform-origin:50% 100%", page)
 
     def test_filter_resizes_grouped_map_flags(self):
         page = self.files["index.html"]

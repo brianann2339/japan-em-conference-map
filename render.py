@@ -60,6 +60,18 @@ TOPIC_LABELS = {
     "environment": "航空／潛水／登山／環境",
     "sports": "運動醫學",
 }
+PREFECTURE_CODES = {
+    "北海道": 1, "青森県": 2, "岩手県": 3, "宮城県": 4, "秋田県": 5,
+    "山形県": 6, "福島県": 7, "茨城県": 8, "栃木県": 9, "群馬県": 10,
+    "埼玉県": 11, "千葉県": 12, "東京都": 13, "神奈川県": 14, "新潟県": 15,
+    "富山県": 16, "石川県": 17, "福井県": 18, "山梨県": 19, "長野県": 20,
+    "岐阜県": 21, "静岡県": 22, "愛知県": 23, "三重県": 24, "滋賀県": 25,
+    "京都府": 26, "大阪府": 27, "兵庫県": 28, "奈良県": 29, "和歌山県": 30,
+    "鳥取県": 31, "島根県": 32, "岡山県": 33, "広島県": 34, "山口県": 35,
+    "徳島県": 36, "香川県": 37, "愛媛県": 38, "高知県": 39, "福岡県": 40,
+    "佐賀県": 41, "長崎県": 42, "熊本県": 43, "大分県": 44, "宮崎県": 45,
+    "鹿児島県": 46, "沖縄県": 47,
+}
 
 MONTH_ABBR = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"]
 REQUIRED_FIELDS = {
@@ -298,6 +310,7 @@ body{
               "Noto Serif TC","Noto Serif JP","PingFang TC","Microsoft JhengHei",serif;
   font-size:17px; line-height:1.55; font-variant-numeric:tabular-nums;
 }
+[hidden]{display:none!important}
 .wrap{max-width:1080px; margin:0 auto; padding:2.5rem 1.5rem 5rem}
 a{color:inherit; text-decoration-thickness:1px; text-underline-offset:2px}
 a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--ink); outline-offset:3px}
@@ -457,7 +470,7 @@ MAP_CSS = """
 .m-base{fill:rgba(0,0,0,.52)}
 .m-flagface{fill:#fff; stroke-width:2; filter:url(#m-shadow)}
 .m-flag-txt{font-size:10px; font-weight:700}
-.m-flag{cursor:pointer; transition:transform .12s}
+.m-flag{cursor:pointer; transition:transform .12s; transform-box:fill-box; transform-origin:50% 100%}
 .m-callout,.m-lead{opacity:0; pointer-events:none; transition:opacity .12s}
 .m-item:hover .m-callout,.m-item:hover .m-lead,
 .m-item:focus .m-callout,.m-item:focus .m-lead{opacity:1}
@@ -600,7 +613,8 @@ def filter_controls(rows: list[dict]) -> str:
     prefectures = sorted({canonical_prefecture(row["prefecture"]) for row in rows})
     topics = sorted({row["topicKey"] for row in rows}, key=lambda key: TOPIC_LABELS[key])
     prefecture_options = "".join(
-        f'<option value="{html.escape(prefecture)}">{html.escape(prefecture)}</option>'
+        f'<option value="{html.escape(prefecture)}" data-map-code="{PREFECTURE_CODES[prefecture]}">'
+        f'{html.escape(prefecture)}</option>'
         for prefecture in prefectures
     )
     topic_options = "".join(
@@ -721,13 +735,13 @@ def map_marker(group: list[dict]) -> str:
         f'data-location-count="{len(group)}" data-filter-ids="{html.escape(ids)}" '
         f'data-map-venue="{html.escape(first["mapVenue"])}" aria-label="{html.escape(description)}">'
         f'<title>{html.escape(description)}</title>'
-        f'<line x1="{x:.1f}" y1="{y - 18:.1f}" x2="{leader_x:.1f}" '
+        f'<g class="m-cz" data-x="{x:.1f}" data-y="{y:.1f}"><line x1="{x:.1f}" y1="{y - 18:.1f}" x2="{leader_x:.1f}" '
         f'y2="{callout_y + callout_height / 2:.1f}" class="m-lead"/>'
         f'<g class="m-callout"><rect x="{callout_x:.1f}" y="{callout_y:.1f}" '
         f'width="{callout_width}" height="{callout_height}" rx="5" class="m-card"/>'
         f'<text x="{callout_x + 12:.1f}" y="{callout_y + 21:.1f}" '
         f'class="m-s m-location-title">'
-        f'{html.escape(title)}</text>{"".join(lines)}</g>'
+        f'{html.escape(title)}</text>{"".join(lines)}</g></g>'
         f'<g class="m-z" data-x="{x:.1f}" data-y="{y:.1f}"><g class="m-flag">'
         f'<line x1="{x:.1f}" y1="{y - 44:.1f}" x2="{x:.1f}" y2="{y:.1f}" class="m-pole"/>'
         f'<circle cx="{x:.1f}" cy="{y - 45:.1f}" r="3.2" class="m-knob"/>'
@@ -835,8 +849,8 @@ MAP_JS = r"""
   document.querySelectorAll('.m-stage').forEach(function(stage){
     var svg = stage.querySelector('svg.m-svg'), layer = svg.querySelector('.m-layer');
     var vb = svg.viewBox.baseVal, W = vb.width, H = vb.height;
-    var k = 1, tx = 0, ty = 0, KMAX = 10;
-    var marks = Array.prototype.slice.call(svg.querySelectorAll('.m-z'));
+    var k = 1, tx = 0, ty = 0, KMAX = 24;
+    var marks = Array.prototype.slice.call(svg.querySelectorAll('.m-z,.m-cz'));
     function clamp(){
       k = Math.min(KMAX, Math.max(1, k));
       tx = Math.min(0, Math.max(W - W * k, tx));
@@ -860,9 +874,52 @@ MAP_JS = r"""
       var nk = Math.min(KMAX, Math.max(1, k * f)); f = nk / k;
       tx = sx - (sx - tx) * f; ty = sy - (sy - ty) * f; k = nk; apply();
     }
+    function resetView(){ k = 1; tx = ty = 0; apply(); }
+    function boundsInLayer(target){
+      var b = target.getBBox();
+      var m = layer.getCTM().inverse().multiply(target.getCTM());
+      var corners = [[b.x,b.y],[b.x+b.width,b.y],[b.x,b.y+b.height],[b.x+b.width,b.y+b.height]];
+      var points = corners.map(function(p){
+        return {x:m.a*p[0]+m.c*p[1]+m.e,y:m.b*p[0]+m.d*p[1]+m.f};
+      });
+      var xs = points.map(function(p){ return p.x; });
+      var ys = points.map(function(p){ return p.y; });
+      return {x:Math.min.apply(null,xs),y:Math.min.apply(null,ys),
+        width:Math.max.apply(null,xs)-Math.min.apply(null,xs),
+        height:Math.max.apply(null,ys)-Math.min.apply(null,ys)};
+    }
+    function visibleVenueBounds(){
+      var anchors = Array.prototype.slice.call(svg.querySelectorAll('.m-item:not(.is-filtered) .m-z'));
+      if(!anchors.length) return null;
+      var xs = anchors.map(function(m){ return Number(m.dataset.x); });
+      var ys = anchors.map(function(m){ return Number(m.dataset.y); });
+      var minX = Math.min.apply(null,xs), maxX = Math.max.apply(null,xs);
+      var minY = Math.min.apply(null,ys), maxY = Math.max.apply(null,ys);
+      var width = Math.max(44,maxX-minX), height = Math.max(44,maxY-minY);
+      return {x:(minX+maxX-width)/2,y:(minY+maxY-height)/2,width:width,height:height};
+    }
+    function fitBox(b){
+      var pad = 90;
+      if(!b || !isFinite(b.width) || !isFinite(b.height) || b.width <= 0 || b.height <= 0) return false;
+      k = Math.min(KMAX,(W-pad*2)/b.width,(H-pad*2)/b.height);
+      tx = W/2-(b.x+b.width/2)*k;
+      ty = H/2-(b.y+b.height/2)*k;
+      apply(); return true;
+    }
+    function fitPrefecture(code){
+      if(!code){ resetView(); return; }
+      var focus = visibleVenueBounds();
+      if(focus && fitBox(focus)) return;
+      var target = svg.querySelector('.prefecture[data-code="'+code+'"]');
+      if(!target || !fitBox(boundsInLayer(target))) resetView();
+    }
+    var world = stage.closest('.worldmap');
+    world.addEventListener('map:fit-prefecture',function(e){
+      fitPrefecture(e.detail && e.detail.code ? e.detail.code : null);
+    });
     stage.querySelectorAll('.m-zoom button').forEach(function(b){
       b.addEventListener('click', function(){
-        if(b.dataset.z === 'reset'){ k = 1; tx = ty = 0; apply(); return; }
+        if(b.dataset.z === 'reset'){ resetView(); return; }
         zoomAt(b.dataset.z === 'in' ? 1.6 : 1 / 1.6, W / 2, H / 2);
       });
     });
@@ -1046,6 +1103,13 @@ FILTER_JS = r"""
     var y = Number(card.getAttribute('y'));
     marker.querySelector('.m-lead').setAttribute('y2',String(y + height / 2));
   }
+  function fitPrefecture(){
+    if(!map) return;
+    var option = prefecture.options[prefecture.selectedIndex];
+    map.dispatchEvent(new CustomEvent('map:fit-prefecture',{
+      detail:{code:option && option.dataset.mapCode ? option.dataset.mapCode : null}
+    }));
+  }
   function apply(){
     var today = tokyoDay();
     var valid = dateRangeValid();
@@ -1076,12 +1140,17 @@ FILTER_JS = r"""
     if(seasonEmpty) seasonEmpty.hidden = matches.length !== 0;
     updateHero(matches,today);
   }
-  form.addEventListener('change',apply);
+  form.addEventListener('change',function(event){
+    apply();
+    if(event.target === prefecture) requestAnimationFrame(fitPrefecture);
+  });
   form.addEventListener('input',function(event){
     if(event.target === startDate || event.target === endDate) apply();
   });
   form.addEventListener('submit',function(event){ event.preventDefault(); });
-  form.addEventListener('reset',function(){ requestAnimationFrame(apply); });
+  form.addEventListener('reset',function(){
+    requestAnimationFrame(function(){ apply(); fitPrefecture(); });
+  });
   apply();
 })();
 """
