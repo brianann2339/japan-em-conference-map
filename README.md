@@ -1,6 +1,6 @@
 # 日本急診相關醫學會議追蹤
 
-以日本地圖、會議卡片、年度節奏與投稿死線整理日本國內急診及急性照護相關醫學會議。目前收錄 45 場已由官方來源確認日期與會場的未來會議。
+以日本地圖、會議卡片、年度節奏與投稿死線整理日本國內急診及急性照護相關醫學會議。目前收錄 45 場已由官方來源確認日期與會場的未來會議；可用都道府縣、領域與時間交集篩選，並附官方日文名稱及繁體中文譯名。
 
 - 公開網站：<https://brianann2339.github.io/japan-em-conference-map/>
 - GitHub repository：<https://github.com/brianann2339/japan-em-conference-map>
@@ -13,7 +13,7 @@
 python3 build.py
 ```
 
-`build.py` 讀取 `data/conferences.json` 與 `assets/map-full.svg`，先產生 GitHub Pages 使用的 `docs/`，再同步完全相同的內容到 Sites 使用的 `dist/`。
+`build.py` 讀取 `data/conferences.json`、`data/conference_names_zh-Hant.json` 與 `assets/map-full.svg`，先產生 GitHub Pages 使用的 `docs/`，再同步完全相同的內容到 Sites 使用的 `dist/`。
 
 若只需產生單一輸出目錄：
 

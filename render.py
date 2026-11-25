@@ -37,6 +37,29 @@ TOPIC_HUES = {
     "environment": "#2f6a56",
     "sports": "#3d698f",
 }
+TOPIC_LABELS = {
+    "emergency": "急診",
+    "ems": "院前／EMS",
+    "disaster": "災難醫學",
+    "trauma": "外傷／急性外科",
+    "critical": "重症／集中治療",
+    "infection": "感染／敗血症",
+    "burn": "燒傷",
+    "pediatric": "兒童急診",
+    "toxicology": "臨床毒物",
+    "resuscitation": "蘇生",
+    "shock": "休克",
+    "nursing": "救急／災難護理",
+    "respiratory": "呼吸治療",
+    "transport": "搬送醫療",
+    "cardiology": "心血管急症",
+    "neuro": "腦神經急症",
+    "pocus": "POCUS",
+    "radiology": "救急放射／IVR",
+    "coagulation": "血栓止血／DIC",
+    "environment": "航空／潛水／登山／環境",
+    "sports": "運動醫學",
+}
 
 MONTH_ABBR = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"]
 REQUIRED_FIELDS = {
@@ -48,6 +71,15 @@ REQUIRED_FIELDS = {
 
 def load_events(path: Path) -> list[dict]:
     events = json.loads(path.read_text(encoding="utf-8"))
+    translations_path = path.with_name("conference_names_zh-Hant.json")
+    if translations_path.exists():
+        translations = json.loads(translations_path.read_text(encoding="utf-8"))
+        event_ids = {event["id"] for event in events}
+        if set(translations) != event_ids:
+            missing = sorted(event_ids - set(translations))
+            extra = sorted(set(translations) - event_ids)
+            raise ValueError(f"translation IDs differ; missing={missing}, extra={extra}")
+        events = [{**event, "nameZh": translations[event["id"]]} for event in events]
     validate_events(events)
     return events
 
@@ -72,6 +104,8 @@ def validate_events(events: list[dict]) -> None:
             raise ValueError(f"start after end: {event['id']}")
         if event["mapPrecision"] not in {"venue", "complex"}:
             raise ValueError(f"unsupported mapPrecision: {event['id']}")
+        if "nameZh" in event and not str(event["nameZh"]).strip():
+            raise ValueError(f"empty Chinese translation: {event['id']}")
         if not (-90 <= event["lat"] <= 90 and -180 <= event["lng"] <= 180):
             raise ValueError(f"coordinate out of range: {event['id']}")
 
@@ -114,6 +148,10 @@ def society_code(row: dict) -> str:
 
 def color_for(row: dict) -> str:
     return TOPIC_HUES.get(row["topicKey"], "#526b73")
+
+
+def canonical_prefecture(value: str) -> str:
+    return value.replace("縣", "県")
 
 
 def date_range(row: dict) -> str:
@@ -236,7 +274,7 @@ def fold_ics_line(line: str) -> list[str]:
 def build_csv(events: list[dict]) -> str:
     fields = list(dict.fromkeys(key for event in events for key in event))
     stream = io.StringIO(newline="")
-    writer = csv.DictWriter(stream, fieldnames=fields)
+    writer = csv.DictWriter(stream, fieldnames=fields, lineterminator="\n")
     writer.writeheader()
     for event in events:
         writer.writerow(event)
@@ -262,16 +300,33 @@ body{
 }
 .wrap{max-width:1080px; margin:0 auto; padding:2.5rem 1.5rem 5rem}
 a{color:inherit; text-decoration-thickness:1px; text-underline-offset:2px}
-a:focus-visible,button:focus-visible{outline:2px solid var(--ink); outline-offset:3px}
+a:focus-visible,button:focus-visible,select:focus-visible{outline:2px solid var(--ink); outline-offset:3px}
 .masthead{display:flex; justify-content:space-between; align-items:baseline;
   gap:1rem; flex-wrap:wrap; border-bottom:1px solid var(--ink); padding-bottom:.6rem}
 .masthead h1{font-size:1.5rem; font-weight:600; margin:0; letter-spacing:.01em}
 .masthead .stamp{color:var(--muted); font-size:.85rem}
 .intro{margin:.65rem 0 0; color:var(--muted); font-size:.95rem; line-height:1.6; max-width:55rem}
+.filters{margin:1.5rem 0 2.2rem; padding:.9rem 0; border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule); display:flex; align-items:flex-end; gap:.8rem 1rem; flex-wrap:wrap}
+.filter-field{display:flex; flex-direction:column; gap:.22rem; flex:1 1 12rem; min-width:0}
+.filter-field span{font-size:.76rem; color:var(--muted); font-weight:600}
+.filter-field select{width:100%; min-height:2.45rem; border:1px solid var(--rule); border-radius:2px;
+  color:var(--ink); background-color:var(--surface); font:inherit; font-size:.9rem; padding:.35rem 2.1rem .35rem .65rem;
+  appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%235f747e' stroke-width='1.4'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right .7rem center; background-size:.7rem .48rem}
+.filter-actions{display:flex; align-items:center; gap:.8rem; flex:0 0 auto; min-height:2.45rem}
+.filter-count{font-size:.86rem; color:var(--muted); white-space:nowrap}
+.filter-reset{border:1px solid var(--rule); border-radius:2px; background:transparent; color:var(--ink);
+  font:inherit; font-size:.82rem; padding:.42rem .65rem; cursor:pointer}
+.filter-reset:hover{background:var(--surface)}
+.filter-empty{margin:1rem 0 0; padding:.9rem 1rem; border:1px solid var(--rule); background:var(--surface);
+  color:var(--muted); font-size:.9rem}
 .hero{margin:2.6rem 0 3rem}
 .hero .lede{color:var(--muted); font-size:.95rem; margin:0 0 .5rem}
 .hero .title{font-size:clamp(1.7rem,4.4vw,2.6rem); line-height:1.2;
   font-weight:300; margin:0 0 .7rem; max-width:28ch}
+.hero .title-zh{font-size:1.05rem; line-height:1.4; color:var(--muted); margin:-.2rem 0 .7rem;
+  max-width:48rem}
 .hero .meta{font-size:1.05rem; margin:0}
 .hero .count{color:var(--muted); font-size:.95rem; margin:.55rem 0 0}
 .hero .count b{color:var(--ink); font-weight:600; font-size:1.25rem}
@@ -317,7 +372,9 @@ h2{font-size:1.05rem; font-weight:600; margin:0 0 1rem;
 .card .soc-line{display:block; font-size:.76rem; font-weight:600;
   margin:.6rem 0 -.35rem}
 .card .card-title{display:block; font-weight:600; font-size:1rem; line-height:1.3;
-  margin:.7rem 0 .45rem}
+  margin:.7rem 0 .2rem}
+.card .card-title-zh{display:block; color:var(--muted); font-size:.86rem; line-height:1.35;
+  margin:0 0 .5rem}
 .card:hover .card-title,.card:focus-visible .card-title{text-decoration:underline}
 .card .meta{display:flex; align-items:flex-start; gap:.4rem;
   font-size:.88rem; color:var(--muted); margin:.18rem 0}
@@ -347,11 +404,16 @@ footer ul{margin:.4rem 0; padding-left:1.1rem}
 .template-credit{margin:1.25rem 0; padding:.75rem .9rem; color:var(--ink);
   border-left:4px solid #1d3550; background:rgba(255,255,255,.58)}
 .license-note{font-size:.78rem}
+.maker-credit{margin-top:1.3rem!important; padding-top:.8rem; border-top:1px solid var(--rule-soft);
+  color:var(--ink); font-weight:600; letter-spacing:.03em}
 @media (max-width:640px){
   body{font-size:16px}
   .wrap{padding:1.6rem 1rem 3rem}
   .dl li{grid-template-columns:5.5rem 1fr; gap:.5rem}
   .dl .left{display:none}
+  .filters{align-items:stretch}
+  .filter-field{flex-basis:100%}
+  .filter-actions{width:100%; justify-content:space-between}
 }
 """
 
@@ -365,6 +427,7 @@ MAP_CSS = """
 .wm-tabs button{font:inherit; font-size:.82rem; padding:.18rem .6rem; cursor:pointer;
   border:1px solid var(--rule); background:var(--surface); color:var(--muted); border-radius:2px}
 .wm-tabs button[aria-pressed="true"]{background:#1d3550; border-color:#1d3550; color:#fff}
+.wm-tabs button:disabled{opacity:.38; cursor:not-allowed}
 .wm-board{background:#b0a497; border-radius:14px; padding:1.1rem 1.1rem 1.2rem;
   background-image:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1.3px),
     radial-gradient(rgba(0,0,0,.07) 1px,transparent 1.3px);
@@ -373,6 +436,7 @@ MAP_CSS = """
   font-family:"Inter","Helvetica Neue",Arial,"Noto Sans JP","Noto Sans TC",sans-serif}
 .m-svg{display:block; width:100%; height:auto; max-height:670px}
 .m-year[hidden]{display:none}
+.m-item.is-filtered{display:none}
 .jp-map .prefecture{fill:#1e262d!important; stroke:#b0a497!important;
   stroke-width:1.15!important; stroke-linejoin:round!important}
 .jp-map .boundary-line{stroke:#b0a497!important}
@@ -394,6 +458,7 @@ MAP_CSS = """
 .m-item:focus{outline:none}
 .ms-strip{display:flex; gap:.9rem; margin-top:.9rem; align-items:stretch}
 .ms-strip[hidden]{display:none}
+.worldmap.filter-no-results .ms-strip{display:none}
 .ms-flag{flex:0 0 auto; display:flex; align-items:center; gap:.6rem; color:#fff;
   background:#1d3550; padding:.6rem 1.6rem .6rem .9rem; font-size:.82rem; line-height:1.2;
   clip-path:polygon(0 0,calc(100% - 14px) 0,100% 50%,calc(100% - 14px) 100%,0 100%);
@@ -450,11 +515,12 @@ def conference_cards(rows: list[dict], today: date) -> str:
         )
         cards.append(
             f'<a class="card{" past" if past else ""}" href="{html.escape(row["officialUrl"])}" '
-            f'target="_blank" rel="noopener">'
+            f'target="_blank" rel="noopener" data-filter-id="{html.escape(row["id"])}">'
             f'<span class="band">{band(row)}<em>{row["_year"]}</em></span>'
             f'<span class="soc-line" style="color:{color}">{html.escape(society_code(row))} · '
             f'{html.escape(row["topic"])}</span>'
             f'<span class="card-title">{html.escape(row["name"])}</span>'
+            f'<span class="card-title-zh">{html.escape(row.get("nameZh", row["name"]))}</span>'
             f'<span class="meta" style="color:{color}">{ICON_CAL}'
             f'<span>{html.escape(date_range(row))}</span></span>'
             f'<span class="meta" style="color:{color}">{ICON_PIN}'
@@ -462,7 +528,7 @@ def conference_cards(rows: list[dict], today: date) -> str:
             f'<span class="venue">{html.escape(row["venue"])}</span>{precision}</span></span>'
             f'</a>'
         )
-    return '<div class="cards">' + "".join(cards) + "</div>"
+    return '<div class="cards" id="conference-cards">' + "".join(cards) + "</div>"
 
 
 def season_grid(rows: list[dict], today: date) -> str:
@@ -481,27 +547,37 @@ def season_grid(rows: list[dict], today: date) -> str:
             color = color_for(row)
             bars.append(
                 f'<div class="bar" style="grid-column:{row["_month"] + 1};grid-row:{lane};'
-                f'color:{color}" title="{html.escape(row["name"])}">'
+                f'color:{color}" title="{html.escape(row["name"])}" '
+                f'data-filter-id="{html.escape(row["id"])}">'
                 f'<b>{html.escape(society_code(row))}</b>'
                 f'<span>{html.escape(short_date_range(row))}</span>'
                 f'<span>{html.escape(row["city"])}</span></div>'
             )
         now = " now" if year == today.year else ""
+        ids = " ".join(row["id"] for row in year_rows)
         bands.append(
-            f'<div class="gridrow"><span class="yr{now}" style="grid-row:span {lane_count}">{year}</span>'
+            f'<div class="gridrow season-year" data-filter-ids="{html.escape(ids)}">'
+            f'<span class="yr{now}" style="grid-row:span {lane_count}">{year}</span>'
             + "".join(bars) + "</div>"
         )
 
-    legend_rows = {}
+    legend_groups = {}
     for row in rows:
-        legend_rows.setdefault(row["society"], row)
-    legend = "".join(
-        f'<span style="color:{color_for(row)}"><span class="lg-txt">'
-        f'<b>{html.escape(code)}</b><em>{html.escape(row["topic"])}</em>'
-        f'</span></span>'
-        for code, row in legend_rows.items()
+        legend_groups.setdefault(row["society"], []).append(row)
+    legend = []
+    for code, group in legend_groups.items():
+        row = group[0]
+        ids = " ".join(item["id"] for item in group)
+        legend.append(
+            f'<span style="color:{color_for(row)}" data-filter-ids="{html.escape(ids)}">'
+            f'<span class="lg-txt"><b>{html.escape(code)}</b>'
+            f'<em>{html.escape(row["topic"])}</em></span></span>'
+        )
+    return (
+        f'<div class="grid">{months}{"".join(bands)}</div>'
+        f'<p class="legend">{"".join(legend)}</p>'
+        '<p class="filter-empty season-empty" hidden>年度節奏中沒有符合條件的會議。</p>'
     )
-    return f'<div class="grid">{months}{"".join(bands)}</div><p class="legend">{legend}</p>'
 
 
 def deadline_section(rows: list[dict]) -> str:
@@ -510,6 +586,72 @@ def deadline_section(rows: list[dict]) -> str:
         '未確認日期不會寫入 ICS 行事曆；來源頁已納入每日變動監測，'
         '確認公告後才會顯示。</p></div>'
     )
+
+
+def filter_controls(rows: list[dict]) -> str:
+    prefectures = sorted({canonical_prefecture(row["prefecture"]) for row in rows})
+    topics = sorted({row["topicKey"] for row in rows}, key=lambda key: TOPIC_LABELS[key])
+    years = sorted({row["_year"] for row in rows})
+    prefecture_options = "".join(
+        f'<option value="{html.escape(prefecture)}">{html.escape(prefecture)}</option>'
+        for prefecture in prefectures
+    )
+    topic_options = "".join(
+        f'<option value="{html.escape(key)}">{html.escape(TOPIC_LABELS[key])}</option>'
+        for key in topics
+    )
+    year_options = "".join(
+        f'<option value="year:{year}">{year} 年</option>' for year in years
+    )
+    return f"""
+<form class="filters" id="conference-filters" aria-label="篩選會議">
+  <label class="filter-field" for="filter-prefecture"><span>都道府縣</span>
+    <select id="filter-prefecture" aria-controls="conference-cards">
+      <option value="all">全部都道府縣</option>{prefecture_options}
+    </select>
+  </label>
+  <label class="filter-field" for="filter-topic"><span>領域</span>
+    <select id="filter-topic" aria-controls="conference-cards">
+      <option value="all">全部領域</option>{topic_options}
+    </select>
+  </label>
+  <label class="filter-field" for="filter-time"><span>時間</span>
+    <select id="filter-time" aria-controls="conference-cards">
+      <option value="all">全部時間</option>
+      <option value="days:30">未來 30 天</option>
+      <option value="days:90">未來 90 天</option>
+      <option value="days:180">未來 180 天</option>
+      {year_options}
+    </select>
+  </label>
+  <div class="filter-actions">
+    <output class="filter-count" id="filter-count" aria-live="polite" aria-atomic="true">{len(rows)} 場會議</output>
+    <button class="filter-reset" type="reset">清除篩選</button>
+  </div>
+</form>"""
+
+
+def filter_data(rows: list[dict]) -> str:
+    payload = [
+        {
+            "id": row["id"],
+            "code": society_code(row),
+            "color": color_for(row),
+            "name": row["name"],
+            "nameZh": row.get("nameZh", row["name"]),
+            "prefecture": canonical_prefecture(row["prefecture"]),
+            "topic": row["topicKey"],
+            "start": row["start"],
+            "end": row["end"],
+            "year": row["_year"],
+            "date": date_range(row),
+            "location": location_text(row),
+            "venue": row["venue"],
+            "url": row["officialUrl"],
+        }
+        for row in rows
+    ]
+    return json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
 
 
 def extract_svg_inner(svg_text: str) -> str:
@@ -555,23 +697,28 @@ def map_marker(group: list[dict]) -> str:
     for index, row in enumerate(group):
         line_y = callout_y + 42 + index * 31
         lines.append(
-            f'<rect x="{callout_x + 10:.1f}" y="{line_y - 14:.1f}" width="4" height="18" '
+            f'<g class="m-filter-entry" data-filter-id="{html.escape(row["id"])}" '
+            f'data-index="{index}"><rect x="{callout_x + 10:.1f}" '
+            f'y="{line_y - 14:.1f}" width="4" height="18" '
             f'rx="1" fill="{color_for(row)}"/>'
             f'<text x="{callout_x + 21:.1f}" y="{line_y - 2:.1f}" class="m-t">'
             f'{html.escape(society_code(row))} · {html.escape(truncate_map_name(row["name"]))}</text>'
             f'<text x="{callout_x + 21:.1f}" y="{line_y + 12:.1f}" class="m-s">'
-            f'{html.escape(short_date_range(row))} · {html.escape(row["city"])}</text>'
+            f'{html.escape(short_date_range(row))} · {html.escape(row["city"])}</text></g>'
         )
     description = "；".join(f'{society_code(row)} {row["name"]}' for row in group)
+    ids = " ".join(row["id"] for row in group)
     return (
         f'<a href="{html.escape(first["officialUrl"])}" class="m-item" '
-        f'data-location-count="{len(group)}" aria-label="{html.escape(description)}">'
+        f'data-location-count="{len(group)}" data-filter-ids="{html.escape(ids)}" '
+        f'data-map-venue="{html.escape(first["mapVenue"])}" aria-label="{html.escape(description)}">'
         f'<title>{html.escape(description)}</title>'
         f'<line x1="{x:.1f}" y1="{y - 18:.1f}" x2="{leader_x:.1f}" '
         f'y2="{callout_y + callout_height / 2:.1f}" class="m-lead"/>'
         f'<g class="m-callout"><rect x="{callout_x:.1f}" y="{callout_y:.1f}" '
         f'width="{callout_width}" height="{callout_height}" rx="5" class="m-card"/>'
-        f'<text x="{callout_x + 12:.1f}" y="{callout_y + 21:.1f}" class="m-s">'
+        f'<text x="{callout_x + 12:.1f}" y="{callout_y + 21:.1f}" '
+        f'class="m-s m-location-title">'
         f'{html.escape(title)}</text>{"".join(lines)}</g>'
         f'<g class="m-z" data-x="{x:.1f}" data-y="{y:.1f}"><g class="m-flag">'
         f'<line x1="{x:.1f}" y1="{y - 44:.1f}" x2="{x:.1f}" y2="{y:.1f}" class="m-pole"/>'
@@ -589,7 +736,8 @@ def map_strip(year: int, rows: list[dict]) -> str:
     for row in rows:
         cells.append(
             f'<a class="ms-cell" href="{html.escape(row["officialUrl"])}" '
-            f'target="_blank" rel="noopener" style="--c:{color_for(row)}">'
+            f'target="_blank" rel="noopener" style="--c:{color_for(row)}" '
+            f'data-filter-id="{html.escape(row["id"])}">'
             f'<b>{html.escape(society_code(row))}</b>'
             f'<span>{ICON_PIN}{html.escape(row["city"])}</span>'
             f'<span>{ICON_CAL}{html.escape(short_date_range(row))}</span></a>'
@@ -645,6 +793,7 @@ def japan_map_section(rows: list[dict], map_svg: str) -> str:
         f'<span class="wm-year">{active_year}</span></h2>'
         f'<div class="wm-tabs" role="group" aria-label="選擇年份">{tabs}</div></div>'
         f'<div class="wm-board"><div class="m-stage">{ZOOM_CONTROLS}{svg}</div>{"".join(strips)}</div>'
+        '<p class="filter-empty map-empty" hidden>地圖上沒有符合條件的會議。</p>'
         '<p class="wm-note">旗桿底端對應會場座標；滑鼠移到旗子或以鍵盤聚焦可看會議資訊，'
         '下方每場會議分開列示。同座標的會議共用旗子，沒有用假位移拆開。'
         '縮放可使用右上角按鈕、Ctrl／⌘＋滾輪、雙擊或手機雙指；放大後可拖曳。</p></section>'
@@ -657,11 +806,10 @@ MAP_JS = r"""
   if(!box) return;
   var btns = box.querySelectorAll('.wm-tabs button');
   function show(y){
-    box.querySelectorAll('[data-year]').forEach(function(el){
-      if(el.tagName === 'BUTTON'){
-        el.setAttribute('aria-pressed', el.dataset.year === y ? 'true' : 'false');
-        return;
-      }
+    btns.forEach(function(el){
+      el.setAttribute('aria-pressed', el.dataset.year === y ? 'true' : 'false');
+    });
+    box.querySelectorAll('.m-year,.ms-strip').forEach(function(el){
       if(el.dataset.year === y) el.removeAttribute('hidden');
       else el.setAttribute('hidden','');
     });
@@ -775,6 +923,143 @@ COUNTDOWN_JS = r"""
 """
 
 
+FILTER_JS = r"""
+(function(){
+  var form = document.getElementById('conference-filters');
+  var source = document.getElementById('conference-filter-data');
+  if(!form || !source) return;
+  var events = JSON.parse(source.textContent), byId = {};
+  events.forEach(function(event){ byId[event.id] = event; });
+  var prefecture = document.getElementById('filter-prefecture');
+  var topic = document.getElementById('filter-topic');
+  var time = document.getElementById('filter-time');
+  var count = document.getElementById('filter-count');
+  var empty = document.querySelector('.cards-empty');
+  var map = document.querySelector('.worldmap');
+  var hero = document.getElementById('next-conference');
+  var day = 86400000;
+
+  function tokyoDay(){
+    var p = new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit'})
+      .formatToParts(new Date()).reduce(function(a,x){ if(x.type !== 'literal') a[x.type] = x.value; return a; },{});
+    return Date.UTC(+p.year,+p.month-1,+p.day);
+  }
+  function dateValue(value){ return Date.parse(value+'T00:00:00Z'); }
+  function selected(event, today){
+    if(prefecture.value !== 'all' && event.prefecture !== prefecture.value) return false;
+    if(topic.value !== 'all' && event.topic !== topic.value) return false;
+    if(time.value.indexOf('year:') === 0) return String(event.year) === time.value.slice(5);
+    if(time.value.indexOf('days:') === 0){
+      var limit = today + Number(time.value.slice(5)) * day;
+      return dateValue(event.end) >= today && dateValue(event.start) <= limit;
+    }
+    return true;
+  }
+  function elementIds(element){ return (element.dataset.filterIds || '').split(' ').filter(Boolean); }
+  function hasVisibleId(element, visible){
+    return elementIds(element).some(function(id){ return visible.has(id); });
+  }
+  function countdown(element, today){
+    var start = Math.round((dateValue(element.start) - today) / day);
+    var end = Math.round((dateValue(element.end) - today) / day);
+    if(start > 1) return '<b>'+start+'</b> 天後開幕';
+    if(start === 1) return '<b>明天</b> 開幕';
+    if(start === 0) return '<b>今天</b> 開幕';
+    if(end >= 0) return '<b>進行中</b>';
+    return '<b>已閉幕</b>';
+  }
+  function updateHero(matches, today){
+    if(!hero) return;
+    var next = matches.find(function(event){ return dateValue(event.end) >= today; });
+    var active = prefecture.value !== 'all' || topic.value !== 'all' || time.value !== 'all';
+    var lede = hero.querySelector('.lede');
+    var title = hero.querySelector('.title');
+    var titleZh = hero.querySelector('.title-zh');
+    var meta = hero.querySelector('.meta');
+    var status = hero.querySelector('.count');
+    lede.textContent = active ? '篩選後下一場' : '下一場';
+    if(!next){
+      title.textContent = '目前沒有符合條件的未來會議。';
+      if(titleZh) titleZh.hidden = true;
+      meta.hidden = true; status.hidden = true; return;
+    }
+    title.textContent = next.name;
+    if(titleZh){ titleZh.textContent = next.nameZh; titleZh.hidden = false; }
+    meta.textContent = next.date+'　·　'+next.location+'　·　'+next.venue;
+    meta.hidden = false; status.hidden = false;
+    status.dataset.start = next.start; status.dataset.end = next.end;
+    status.innerHTML = countdown(next, today);
+  }
+  function updateMarker(marker, visible){
+    var ids = elementIds(marker).filter(function(id){ return visible.has(id); });
+    marker.classList.toggle('is-filtered', ids.length === 0);
+    if(!ids.length){ marker.setAttribute('aria-hidden','true'); return; }
+    marker.removeAttribute('aria-hidden');
+    var entries = marker.querySelectorAll('.m-filter-entry');
+    entries.forEach(function(entry){
+      var position = ids.indexOf(entry.dataset.filterId);
+      if(position < 0){ entry.style.display = 'none'; return; }
+      entry.style.display = '';
+      entry.setAttribute('transform','translate(0 '+((position-Number(entry.dataset.index))*31)+')');
+    });
+    var first = byId[ids[0]], label = first.code+(ids.length > 1 ? '+'+(ids.length-1) : '');
+    var description = ids.map(function(id){ return byId[id].code+' '+byId[id].name; }).join('；');
+    marker.setAttribute('href',first.url);
+    marker.setAttribute('aria-label',description);
+    marker.setAttribute('data-location-count',String(ids.length));
+    marker.querySelector('title').textContent = description;
+    var flagText = marker.querySelector('.m-flag-txt');
+    var flagFace = marker.querySelector('.m-flagface');
+    var flagWidth = Math.max(42,label.length * 7 + 14);
+    var flagX = Number(marker.querySelector('.m-z').dataset.x) - flagWidth / 2;
+    var flagColor = new Set(ids.map(function(id){ return byId[id].code; })).size === 1 ? first.color : '#1d3550';
+    flagText.textContent = label;
+    flagText.setAttribute('fill',flagColor);
+    flagFace.setAttribute('x',String(flagX));
+    flagFace.setAttribute('width',String(flagWidth));
+    flagFace.setAttribute('stroke',flagColor);
+    marker.querySelector('.m-location-title').textContent = marker.dataset.mapVenue+(ids.length > 1 ? ' · '+ids.length+' 場' : '');
+    var card = marker.querySelector('.m-card'), height = 34 + ids.length * 31;
+    card.setAttribute('height',String(height));
+    var y = Number(card.getAttribute('y'));
+    marker.querySelector('.m-lead').setAttribute('y2',String(y + height / 2));
+  }
+  function apply(){
+    var today = tokyoDay();
+    var matches = events.filter(function(event){ return selected(event,today); });
+    var visible = new Set(matches.map(function(event){ return event.id; }));
+    document.querySelectorAll('.card[data-filter-id],.ms-cell[data-filter-id],.bar[data-filter-id]').forEach(function(element){
+      element.hidden = !visible.has(element.dataset.filterId);
+    });
+    document.querySelectorAll('.season-year[data-filter-ids],.legend [data-filter-ids]').forEach(function(element){
+      element.hidden = !hasVisibleId(element,visible);
+    });
+    document.querySelectorAll('.m-item[data-filter-ids]').forEach(function(marker){ updateMarker(marker,visible); });
+    var years = new Set(matches.map(function(event){ return String(event.year); }));
+    var buttons = map ? map.querySelectorAll('.wm-tabs button') : [];
+    buttons.forEach(function(button){ button.disabled = !years.has(button.dataset.year); });
+    var current = map ? map.querySelector('.wm-tabs button[aria-pressed="true"]') : null;
+    if(matches.length && (!current || !years.has(current.dataset.year))){
+      var available = Array.prototype.find.call(buttons,function(button){ return !button.disabled; });
+      if(available) available.click();
+    }
+    if(map) map.classList.toggle('filter-no-results',matches.length === 0);
+    count.textContent = '顯示 '+matches.length+' 場會議';
+    empty.hidden = matches.length !== 0;
+    var mapEmpty = document.querySelector('.map-empty');
+    var seasonEmpty = document.querySelector('.season-empty');
+    if(mapEmpty) mapEmpty.hidden = matches.length !== 0;
+    if(seasonEmpty) seasonEmpty.hidden = matches.length !== 0;
+    updateHero(matches,today);
+  }
+  form.addEventListener('change',apply);
+  form.addEventListener('submit',function(event){ event.preventDefault(); });
+  form.addEventListener('reset',function(){ requestAnimationFrame(apply); });
+  apply();
+})();
+"""
+
+
 def source_list(rows: list[dict]) -> str:
     return "".join(
         f'<li><a href="{html.escape(row["officialUrl"])}" target="_blank" rel="noopener">'
@@ -799,6 +1084,7 @@ def footer_html(rows: list[dict], checked_at: str) -> str:
     源自 Wikipedia「日本地図.svg」，依
     <a href="https://www.gnu.org/licenses/fdl-1.3.html" target="_blank" rel="noopener">GNU Free Documentation License（GFDL）</a>使用。
     專案內保留原始 SVG 與授權說明。</p>
+  <p class="maker-credit">山上有草一直燒資訊有限公司製作</p>
 </footer>"""
 
 
@@ -808,8 +1094,9 @@ def render_html(rows: list[dict], all_rows: list[dict], today: date, checked_at:
     if upcoming:
         days = max((upcoming["_start"] - today).days, 0)
         hero = (
-            '<section class="hero"><p class="lede">下一場</p>'
+            '<section class="hero" id="next-conference"><p class="lede">下一場</p>'
             f'<p class="title">{html.escape(upcoming["name"])}</p>'
+            f'<p class="title-zh">{html.escape(upcoming.get("nameZh", upcoming["name"]))}</p>'
             f'<p class="meta">{html.escape(date_range(upcoming))}　·　'
             f'{html.escape(location_text(upcoming))}　·　{html.escape(upcoming["venue"])}</p>'
             f'<p class="count" data-start="{upcoming["start"]}" data-end="{upcoming["end"]}">'
@@ -817,8 +1104,10 @@ def render_html(rows: list[dict], all_rows: list[dict], today: date, checked_at:
         )
     else:
         hero = (
-            '<section class="hero"><p class="lede">下一場</p>'
-            '<p class="title">目前沒有尚未結束的收錄會議。</p></section>'
+            '<section class="hero" id="next-conference"><p class="lede">下一場</p>'
+            '<p class="title">目前沒有尚未結束的收錄會議。</p>'
+            '<p class="title-zh" hidden></p>'
+            '<p class="meta" hidden></p><p class="count" hidden></p></section>'
         )
     archive_link = (
         f'<p class="archive-link"><a href="past.html">查看已結束的 {archive_count} 場歷屆會議</a></p>'
@@ -845,11 +1134,13 @@ def render_html(rows: list[dict], all_rows: list[dict], today: date, checked_at:
   <p class="stamp">資料查核 {html.escape(checked_at)}</p>
 </header>
 <p class="intro">收錄日本國內與急診醫學相關的急診、院前／EMS、災難、創傷、重症、敗血症／感染、毒物、心臟急症、航空、潛水／高壓氧、登山與運動醫學等會議；日期、城市、會場與連結均取自官方頁面。</p>
+{filter_controls(rows)}
 {japan_map_section(rows, map_svg)}
 {hero}
 <section>
   <h2>即將舉行的場次</h2>
   {conference_cards(rows, today)}
+  <p class="filter-empty cards-empty" hidden>沒有符合條件的會議。</p>
   {archive_link}
 </section>
 <section style="margin-top:3rem">
@@ -861,7 +1152,8 @@ def render_html(rows: list[dict], all_rows: list[dict], today: date, checked_at:
   {deadline_section(rows)}
 </section>
 {footer_html(all_rows, checked_at)}
-</div><script>{COUNTDOWN_JS}{MAP_JS}</script></body></html>
+</div><script id="conference-filter-data" type="application/json">{filter_data(rows)}</script>
+<script>{COUNTDOWN_JS}{MAP_JS}{FILTER_JS}</script></body></html>
 """
 
 

@@ -22,16 +22,33 @@ body{
 }
 .wrap{max-width:1080px; margin:0 auto; padding:2.5rem 1.5rem 5rem}
 a{color:inherit; text-decoration-thickness:1px; text-underline-offset:2px}
-a:focus-visible,button:focus-visible{outline:2px solid var(--ink); outline-offset:3px}
+a:focus-visible,button:focus-visible,select:focus-visible{outline:2px solid var(--ink); outline-offset:3px}
 .masthead{display:flex; justify-content:space-between; align-items:baseline;
   gap:1rem; flex-wrap:wrap; border-bottom:1px solid var(--ink); padding-bottom:.6rem}
 .masthead h1{font-size:1.5rem; font-weight:600; margin:0; letter-spacing:.01em}
 .masthead .stamp{color:var(--muted); font-size:.85rem}
 .intro{margin:.65rem 0 0; color:var(--muted); font-size:.95rem; line-height:1.6; max-width:55rem}
+.filters{margin:1.5rem 0 2.2rem; padding:.9rem 0; border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule); display:flex; align-items:flex-end; gap:.8rem 1rem; flex-wrap:wrap}
+.filter-field{display:flex; flex-direction:column; gap:.22rem; flex:1 1 12rem; min-width:0}
+.filter-field span{font-size:.76rem; color:var(--muted); font-weight:600}
+.filter-field select{width:100%; min-height:2.45rem; border:1px solid var(--rule); border-radius:2px;
+  color:var(--ink); background-color:var(--surface); font:inherit; font-size:.9rem; padding:.35rem 2.1rem .35rem .65rem;
+  appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%235f747e' stroke-width='1.4'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right .7rem center; background-size:.7rem .48rem}
+.filter-actions{display:flex; align-items:center; gap:.8rem; flex:0 0 auto; min-height:2.45rem}
+.filter-count{font-size:.86rem; color:var(--muted); white-space:nowrap}
+.filter-reset{border:1px solid var(--rule); border-radius:2px; background:transparent; color:var(--ink);
+  font:inherit; font-size:.82rem; padding:.42rem .65rem; cursor:pointer}
+.filter-reset:hover{background:var(--surface)}
+.filter-empty{margin:1rem 0 0; padding:.9rem 1rem; border:1px solid var(--rule); background:var(--surface);
+  color:var(--muted); font-size:.9rem}
 .hero{margin:2.6rem 0 3rem}
 .hero .lede{color:var(--muted); font-size:.95rem; margin:0 0 .5rem}
 .hero .title{font-size:clamp(1.7rem,4.4vw,2.6rem); line-height:1.2;
   font-weight:300; margin:0 0 .7rem; max-width:28ch}
+.hero .title-zh{font-size:1.05rem; line-height:1.4; color:var(--muted); margin:-.2rem 0 .7rem;
+  max-width:48rem}
 .hero .meta{font-size:1.05rem; margin:0}
 .hero .count{color:var(--muted); font-size:.95rem; margin:.55rem 0 0}
 .hero .count b{color:var(--ink); font-weight:600; font-size:1.25rem}
@@ -77,7 +94,9 @@ h2{font-size:1.05rem; font-weight:600; margin:0 0 1rem;
 .card .soc-line{display:block; font-size:.76rem; font-weight:600;
   margin:.6rem 0 -.35rem}
 .card .card-title{display:block; font-weight:600; font-size:1rem; line-height:1.3;
-  margin:.7rem 0 .45rem}
+  margin:.7rem 0 .2rem}
+.card .card-title-zh{display:block; color:var(--muted); font-size:.86rem; line-height:1.35;
+  margin:0 0 .5rem}
 .card:hover .card-title,.card:focus-visible .card-title{text-decoration:underline}
 .card .meta{display:flex; align-items:flex-start; gap:.4rem;
   font-size:.88rem; color:var(--muted); margin:.18rem 0}
@@ -107,11 +126,16 @@ footer ul{margin:.4rem 0; padding-left:1.1rem}
 .template-credit{margin:1.25rem 0; padding:.75rem .9rem; color:var(--ink);
   border-left:4px solid #1d3550; background:rgba(255,255,255,.58)}
 .license-note{font-size:.78rem}
+.maker-credit{margin-top:1.3rem!important; padding-top:.8rem; border-top:1px solid var(--rule-soft);
+  color:var(--ink); font-weight:600; letter-spacing:.03em}
 @media (max-width:640px){
   body{font-size:16px}
   .wrap{padding:1.6rem 1rem 3rem}
   .dl li{grid-template-columns:5.5rem 1fr; gap:.5rem}
   .dl .left{display:none}
+  .filters{align-items:stretch}
+  .filter-field{flex-basis:100%}
+  .filter-actions{width:100%; justify-content:space-between}
 }
 </style></head><body><div class="wrap">
 <header class="masthead"><h1>歷屆會議</h1><p class="stamp"><a href="index.html">回到主頁</a></p></header>
@@ -133,5 +157,6 @@ footer ul{margin:.4rem 0; padding-left:1.1rem}
     源自 Wikipedia「日本地図.svg」，依
     <a href="https://www.gnu.org/licenses/fdl-1.3.html" target="_blank" rel="noopener">GNU Free Documentation License（GFDL）</a>使用。
     專案內保留原始 SVG 與授權說明。</p>
+  <p class="maker-credit">山上有草一直燒資訊有限公司製作</p>
 </footer>
 </div></body></html>
