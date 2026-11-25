@@ -128,6 +128,19 @@ URL:https://www.knt.co.jp/ec/2027/99sympo_35/
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
+UID:93d86454c05c087c98834d47@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270205
+DTEND;VALUE=DATE:20270206
+SUMMARY:NATIONAL-MC — 令和8年度第2回全国メディカルコント
+ ロール協議会連絡会
+LOCATION:神奈川県 · 横浜市 · パシフィコ横浜
+DESCRIPTION:院前救急・醫療管制\\n官方來源：https://www.mhlw.g
+ o.jp/content/10800000/001724499.pdf
+URL:https://www.mhlw.go.jp/content/10800000/001724499.pdf
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:04b3817d49bd2a7015f908e3@japan-em-conference
 DTSTAMP:20261125T000000Z
 DTSTART;VALUE=DATE:20270226
@@ -371,6 +384,19 @@ URL:https://crbd.umin.jp/syukai.html
 TRANSP:TRANSPARENT
 END:VEVENT
 BEGIN:VEVENT
+UID:4581584e8af0d37f83faeef8@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20270703
+DTEND;VALUE=DATE:20270704
+SUMMARY:JAAM-KINKI — 第134回近畿救急医学研究会（日本救急
+ 医学会近畿地方会）
+LOCATION:大阪府 · 東大阪市 · 東大阪市文化創造館
+DESCRIPTION:急診醫學・地方會\\n官方來源：https://www.jaam-kink
+ i.jp/meeting.html
+URL:https://www.jaam-kinki.jp/meeting.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
 UID:1c5123a3b31a0479a92aaab1@japan-em-conference
 DTSTAMP:20261125T000000Z
 DTSTART;VALUE=DATE:20270703
@@ -569,6 +595,20 @@ LOCATION:鹿児島県 · 鹿兒島市 · カクイックス交流センタ
 DESCRIPTION:航空醫療／院前救急\\n官方來源：https://jsas1994.j
  p/meeting.html
 URL:https://jsas1994.jp/meeting.html
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:479a84d59b05be4fe4faddb7@japan-em-conference
+DTSTAMP:20261125T000000Z
+DTSTART;VALUE=DATE:20290831
+DTEND;VALUE=DATE:20290904
+SUMMARY:WCICC — 第20回世界集中治療医学会学術集会（WCICC20
+ 29）
+LOCATION:京都府 · 京都市 · 国立京都国際会館・ザ・プリ
+ ンス京都宝ヶ池
+DESCRIPTION:世界重症・集中治療\\n官方來源：https://www.jsicm.
+ org/en/news/news251118.html
+URL:https://www.jsicm.org/en/news/news251118.html
 TRANSP:TRANSPARENT
 END:VEVENT
 END:VCALENDAR

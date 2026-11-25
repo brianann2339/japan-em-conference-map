@@ -19,6 +19,7 @@ from bs4 import BeautifulSoup
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "conferences.json"
 WATCHLIST = ROOT / "data" / "watchlist.json"
+DEADLINES = ROOT / "data" / "submission_deadlines.json"
 STATE = ROOT / "data" / "source-health.json"
 CHANGES = ROOT / "CHANGES.md"
 CHANGELOG = ROOT / "CHANGELOG.md"
@@ -30,7 +31,8 @@ def load_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def load_sources(data_path: Path = DATA, watchlist_path: Path = WATCHLIST) -> list[dict]:
+def load_sources(data_path: Path = DATA, watchlist_path: Path = WATCHLIST,
+                 deadlines_path: Path | None = None) -> list[dict]:
     sources = [
         {
             "id": f'conference:{row["id"]}',
@@ -49,6 +51,20 @@ def load_sources(data_path: Path = DATA, watchlist_path: Path = WATCHLIST) -> li
             "name": row["name"],
             "url": row["url"],
             "kind": "watchlist",
+        })
+    deadlines_path = deadlines_path or data_path.with_name(DEADLINES.name)
+    deadline_urls = set()
+    for row in load_json(deadlines_path) if deadlines_path.exists() else []:
+        key = (row["eventId"], row["officialUrl"])
+        if key in deadline_urls:
+            continue
+        deadline_urls.add(key)
+        url_hash = hashlib.sha256(row["officialUrl"].encode("utf-8")).hexdigest()[:10]
+        sources.append({
+            "id": f'deadline:{row["eventId"]}:{url_hash}',
+            "name": f'{row["eventId"]} — 投稿資料',
+            "url": row["officialUrl"],
+            "kind": "deadline",
         })
     ids = [source["id"] for source in sources]
     if len(ids) != len(set(ids)):

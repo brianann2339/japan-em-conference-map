@@ -142,6 +142,38 @@ class MonitorTests(unittest.TestCase):
         self.assertEqual(2, len(sources))
         self.assertEqual(["conference:test", "watch:visible-test"], [source["id"] for source in sources])
 
+    def test_load_sources_includes_each_deadline_page_once_per_event(self):
+        data = self.root / "conferences.json"
+        watchlist = self.root / "watchlist.json"
+        deadlines = self.root / "submission_deadlines.json"
+        data.write_text(
+            json.dumps([{"id": "test", "name": "測試會議", "officialUrl": "https://event.test/"}]),
+            encoding="utf-8",
+        )
+        watchlist.write_text("[]", encoding="utf-8")
+        deadlines.write_text(
+            json.dumps([
+                {
+                    "eventId": "test",
+                    "label": "一般演題",
+                    "officialUrl": "https://event.test/cfa",
+                },
+                {
+                    "eventId": "test",
+                    "label": "公募演題",
+                    "officialUrl": "https://event.test/cfa",
+                },
+            ]),
+            encoding="utf-8",
+        )
+
+        sources = monitor_sources.load_sources(data, watchlist, deadlines)
+
+        self.assertEqual(2, len(sources))
+        deadline_sources = [source for source in sources if source["kind"] == "deadline"]
+        self.assertEqual(1, len(deadline_sources))
+        self.assertEqual("https://event.test/cfa", deadline_sources[0]["url"])
+
 
 if __name__ == "__main__":
     unittest.main()

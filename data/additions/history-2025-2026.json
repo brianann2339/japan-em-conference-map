@@ -107,6 +107,7 @@
     "venue": "滋賀県立文化産業交流会館",
     "topic": "急診醫學・地方會",
     "topicKey": "emergency",
+    "cadence": "每年2次",
     "officialUrl": "https://www.jaam-kinki.jp/meeting2.html",
     "sourceCheckedAt": "2026-11-25",
     "archiveOnly": true
@@ -140,6 +141,23 @@
     "topic": "循環器・急性心血管",
     "topicKey": "cardiology",
     "officialUrl": "https://www.congre.co.jp/jcs2025/index.html",
+    "sourceCheckedAt": "2026-11-25",
+    "archiveOnly": true
+  },
+  {
+    "id": "hist-wadem-2025",
+    "societyCode": "WADEM",
+    "name": "23rd Congress on Disaster and Emergency Medicine (WADEM 2025)",
+    "start": "2025-05-02",
+    "end": "2025-05-06",
+    "city": "東京都新宿區",
+    "prefecture": "東京都",
+    "region": "關東",
+    "venue": "京王プラザホテル",
+    "topic": "世界災難・急診醫學",
+    "topicKey": "disaster",
+    "cadence": "每2年1次",
+    "officialUrl": "https://wadem.org/congress/tokyo-2025/",
     "sourceCheckedAt": "2026-11-25",
     "archiveOnly": true
   },
@@ -273,6 +291,23 @@
     "archiveOnly": true
   },
   {
+    "id": "hist-national-mc-2025-1",
+    "societyCode": "NATIONAL-MC",
+    "name": "令和7年度第1回全国メディカルコントロール協議会連絡会",
+    "start": "2025-06-19",
+    "end": "2025-06-19",
+    "city": "横浜市",
+    "prefecture": "神奈川県",
+    "region": "關東",
+    "venue": "パシフィコ横浜",
+    "topic": "院前救急・醫療管制",
+    "topicKey": "ems",
+    "cadence": "每年2次",
+    "officialUrl": "https://www.mhlw.go.jp/content/10800000/001505712.pdf",
+    "sourceCheckedAt": "2026-11-25",
+    "archiveOnly": true
+  },
+  {
     "id": "hist-jaam-kyushu-2025",
     "societyCode": "JAAM-KYUSHU",
     "name": "第29回日本救急医学会九州地方会",
@@ -365,6 +400,7 @@
     "venue": "大阪大学コンベンションセンター",
     "topic": "急診醫學・地方會",
     "topicKey": "emergency",
+    "cadence": "每年2次",
     "officialUrl": "https://www.k-gakkai.jp/130jaam-kinki/",
     "sourceCheckedAt": "2026-11-25",
     "archiveOnly": true
@@ -821,6 +857,23 @@
     "archiveOnly": true
   },
   {
+    "id": "hist-national-mc-2026-2",
+    "societyCode": "NATIONAL-MC",
+    "name": "令和7年度第2回全国メディカルコントロール協議会連絡会",
+    "start": "2026-01-23",
+    "end": "2026-01-23",
+    "city": "熊本市",
+    "prefecture": "熊本県",
+    "region": "九州",
+    "venue": "熊本城ホール メインホール",
+    "topic": "院前救急・醫療管制",
+    "topicKey": "ems",
+    "cadence": "每年2次",
+    "officialUrl": "https://www.mhlw.go.jp/stf/newpage_62593.html",
+    "sourceCheckedAt": "2026-11-25",
+    "archiveOnly": true
+  },
+  {
     "id": "hist-jaam-kanto-2026",
     "societyCode": "JAAM-KANTO",
     "name": "第76回日本救急医学会関東地方会学術集会・第63回救急隊員学術研究会",
@@ -864,6 +917,7 @@
     "venue": "京都テルサ",
     "topic": "急診醫學・地方會",
     "topicKey": "emergency",
+    "cadence": "每年2次",
     "officialUrl": "https://www.jaam-kinki.jp/meeting2.html",
     "sourceCheckedAt": "2026-11-25",
     "archiveOnly": true
@@ -1153,6 +1207,7 @@
     "venue": "近畿大学おおさかメディカルキャンパス 3号館・4号館",
     "topic": "急診醫學・地方會",
     "topicKey": "emergency",
+    "cadence": "每年2次",
     "officialUrl": "https://www.jaam-kinki.jp/meeting2.html",
     "sourceCheckedAt": "2026-11-25",
     "archiveOnly": true
@@ -1202,6 +1257,23 @@
     "topic": "臨床急診・院前救護",
     "topicKey": "emergency",
     "officialUrl": "https://site.convention.co.jp/jsem29/outline/",
+    "sourceCheckedAt": "2026-11-25",
+    "archiveOnly": true
+  },
+  {
+    "id": "hist-national-mc-2026-1",
+    "societyCode": "NATIONAL-MC",
+    "name": "令和8年度第1回全国メディカルコントロール協議会連絡会",
+    "start": "2026-07-16",
+    "end": "2026-07-16",
+    "city": "大阪市",
+    "prefecture": "大阪府",
+    "region": "近畿",
+    "venue": "大阪府立国際会議場",
+    "topic": "院前救急・醫療管制",
+    "topicKey": "ems",
+    "cadence": "每年2次",
+    "officialUrl": "https://www.mhlw.go.jp/stf/newpage_73153.html",
     "sourceCheckedAt": "2026-11-25",
     "archiveOnly": true
   },

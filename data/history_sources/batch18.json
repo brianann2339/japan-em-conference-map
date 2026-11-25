@@ -1,0 +1,159 @@
+[
+  {
+    "query": {
+      "societyCode": "NATIONAL-MC",
+      "year": 2025
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-national-mc-2025-1",
+      "societyCode": "NATIONAL-MC",
+      "name": "令和7年度第1回全国メディカルコントロール協議会連絡会",
+      "start": "2025-06-19",
+      "end": "2025-06-19",
+      "city": "横浜市",
+      "prefecture": "神奈川県",
+      "region": "關東",
+      "venue": "パシフィコ横浜",
+      "topic": "院前救急・醫療管制",
+      "topicKey": "ems",
+      "cadence": "每年2次",
+      "officialUrl": "https://www.mhlw.go.jp/content/10800000/001505712.pdf",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "2025年度第1次全國醫療管制協議會聯絡會",
+    "evidence": [
+      {
+        "url": "https://www.mhlw.go.jp/content/10800000/001505712.pdf",
+        "quote": "令和7年6月19日（木）15:00～18:00／パシフィコ横浜"
+      }
+    ],
+    "notes": "厚生勞動省官方議程載明日期與橫濱會場。"
+  },
+  {
+    "query": {
+      "societyCode": "NATIONAL-MC",
+      "year": 2026
+    },
+    "status": "confirmed",
+    "event": {
+      "id": "hist-national-mc-2026-1",
+      "societyCode": "NATIONAL-MC",
+      "name": "令和8年度第1回全国メディカルコントロール協議会連絡会",
+      "start": "2026-07-16",
+      "end": "2026-07-16",
+      "city": "大阪市",
+      "prefecture": "大阪府",
+      "region": "近畿",
+      "venue": "大阪府立国際会議場",
+      "topic": "院前救急・醫療管制",
+      "topicKey": "ems",
+      "cadence": "每年2次",
+      "officialUrl": "https://www.mhlw.go.jp/stf/newpage_73153.html",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "2026年度第1次全國醫療管制協議會聯絡會",
+    "evidence": [
+      {
+        "url": "https://www.mhlw.go.jp/stf/newpage_73153.html",
+        "quote": "令和8年7月16日（木）15時00分から18時00分まで／大阪府立国際会議場"
+      }
+    ],
+    "additionalEvents": [
+      {
+        "event": {
+          "id": "hist-national-mc-2026-2",
+          "societyCode": "NATIONAL-MC",
+          "name": "令和7年度第2回全国メディカルコントロール協議会連絡会",
+          "start": "2026-01-23",
+          "end": "2026-01-23",
+          "city": "熊本市",
+          "prefecture": "熊本県",
+          "region": "九州",
+          "venue": "熊本城ホール メインホール",
+          "topic": "院前救急・醫療管制",
+          "topicKey": "ems",
+          "cadence": "每年2次",
+          "officialUrl": "https://www.mhlw.go.jp/stf/newpage_62593.html",
+          "sourceCheckedAt": "2026-11-25",
+          "archiveOnly": true
+        },
+        "nameZh": "2025年度第2次全國醫療管制協議會聯絡會",
+        "evidence": [
+          {
+            "url": "https://www.mhlw.go.jp/stf/newpage_62593.html",
+            "quote": "令和8年1月23日（金）14時00分から17時00分まで／熊本城ホール"
+          }
+        ]
+      }
+    ],
+    "notes": "本系列以年度分第1回與第2回；2026曆年包含2025年度第2回及2026年度第1回。"
+  },
+  {
+    "query": {
+      "societyCode": "WCICC",
+      "year": 2025
+    },
+    "status": "not_held",
+    "notes": "2025年第17屆在加拿大溫哥華舉辦，並非日本場。",
+    "evidence": [
+      {
+        "url": "https://www.wficc.com/17th-world-congress-2025/",
+        "quote": "September 16-19, 2025／Vancouver, Canada"
+      }
+    ]
+  },
+  {
+    "query": {
+      "societyCode": "WCICC",
+      "year": 2026
+    },
+    "status": "not_held",
+    "notes": "官方資料顯示第17屆為2025溫哥華、第18屆為2027印度；2026沒有WCICC。",
+    "evidence": [
+      {
+        "url": "https://www.wficc.com/news/wficc-council-approves-change-to-an-annual-world-congress-from-2027/",
+        "quote": "Following the 18th World Congress ... in Delhi in 2027, the first annual event will be hosted in 2028."
+      }
+    ]
+  },
+  {
+    "query": {
+      "societyCode": "WADEM",
+      "year": 2025
+    },
+    "supplemental": true,
+    "status": "confirmed",
+    "event": {
+      "id": "hist-wadem-2025",
+      "societyCode": "WADEM",
+      "name": "23rd Congress on Disaster and Emergency Medicine (WADEM 2025)",
+      "start": "2025-05-02",
+      "end": "2025-05-06",
+      "city": "東京都新宿區",
+      "prefecture": "東京都",
+      "region": "關東",
+      "venue": "京王プラザホテル",
+      "topic": "世界災難・急診醫學",
+      "topicKey": "disaster",
+      "cadence": "每2年1次",
+      "officialUrl": "https://wadem.org/congress/tokyo-2025/",
+      "sourceCheckedAt": "2026-11-25",
+      "archiveOnly": true
+    },
+    "nameZh": "第23屆世界災難暨急診醫學大會（WADEM 2025）",
+    "evidence": [
+      {
+        "url": "https://wadem.org/congress/tokyo-2025/",
+        "quote": "23rd Congress on Disaster and Emergency Medicine／2-6 May 2025／Keio Plaza Hotel, Tokyo"
+      },
+      {
+        "url": "https://wadem.org/congress/congress-overview/",
+        "quote": "WADEM's biennial Congress"
+      }
+    ],
+    "notes": "國際WADEM世界大會在東京舉辦，依官方大會與會議總覽補入歷屆追蹤。"
+  }
+]

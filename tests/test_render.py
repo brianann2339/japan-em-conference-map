@@ -19,16 +19,19 @@ class RenderTests(unittest.TestCase):
     def setUpClass(cls):
         cls.events = render.load_events(ROOT / "data" / "conferences.json")
         cls.watchlist = render.load_watchlist(ROOT / "data" / "watchlist.json")
+        cls.deadlines = render.load_deadlines(ROOT / "data" / "submission_deadlines.json")
         cls.map_svg = (ROOT / "assets" / "map-full.svg").read_text(encoding="utf-8")
         cls.today = date(2026, 11, 25)
         cls.current, cls.archive = render.split_archive(render.prepare(cls.events), cls.today)
-        cls.files = render.build_files(cls.events, cls.map_svg, cls.today, cls.watchlist)
+        cls.files = render.build_files(
+            cls.events, cls.map_svg, cls.today, cls.watchlist, cls.deadlines
+        )
 
     def test_source_has_expected_codes(self):
         codes = {event["societyCode"] for event in self.events}
         self.assertTrue({
             "JSAEM", "JADM", "JSICM", "JSEM", "JSCT", "JAAM",
-            "JSCCM", "JSACS", "JSER", "JCTS",
+            "JSCCM", "JSACS", "JSER", "JCTS", "WADEM", "WCICC", "NATIONAL-MC",
         } <= codes)
         self.assertTrue(all(re.fullmatch(r"[A-Z0-9-]+", code) for code in codes))
 
@@ -174,7 +177,11 @@ class RenderTests(unittest.TestCase):
         page = self.files["index.html"]
         for event in self.current:
             event_id = re.escape(event["id"])
-            self.assertEqual(4, len(re.findall(fr'data-filter-id="{event_id}"', page)))
+            deadline_count = sum(item["eventId"] == event["id"] for item in self.deadlines)
+            self.assertEqual(
+                4 + deadline_count,
+                len(re.findall(fr'data-filter-id="{event_id}"', page)),
+            )
         self.assertRegex(page, r'data-filter-ids="[^"]*jss-stroke-52[^"]*cvit-35[^"]*"')
         self.assertIn('[hidden]{display:none!important}', page)
 
@@ -196,26 +203,42 @@ class RenderTests(unittest.TestCase):
     def test_map_strip_labels_include_topics(self):
         page = self.files["index.html"]
         for event in self.current:
-            label = f'{event["societyCode"]}（{event["topic"]}）'
+            label = f'{event["societyCode"]}（{render.topic_with_cadence(event)}）'
             self.assertIn(f'<b>{label}</b>', page)
+
+    def test_nonannual_cadence_is_visible(self):
+        page = self.files["index.html"]
+        archive = self.files["past.html"]
+        self.assertIn("JAAM-KINKI（急診醫學・地方會（每年2次））", page)
+        self.assertIn("NATIONAL-MC（院前救急・醫療管制（每年2次））", page)
+        self.assertIn("WCICC（世界重症・集中治療（自2028起每年1次；此前非年度制））", page)
+        self.assertIn("WADEM", archive)
+        self.assertIn("世界災難・急診醫學（每2年1次）", archive)
 
     def test_shared_coordinate_uses_one_group_marker(self):
         page = self.files["index.html"]
         groups = {}
         for event in self.current:
-            key = (round(event["lat"], 6), round(event["lng"], 6))
+            key = (event["start"][:4], round(event["lat"], 6), round(event["lng"], 6))
             groups[key] = groups.get(key, 0) + 1
         shared = [count for count in groups.values() if count > 1]
         self.assertEqual(len(shared), page.count('data-location-count="') - page.count('data-location-count="1"'))
         self.assertIn("同座標的會議共用旗子", page)
 
-    def test_deadlines_are_tba_and_not_calendar_events(self):
+    def test_official_deadlines_are_rendered_and_not_calendar_events(self):
         page = self.files["index.html"]
         calendar = self.files["conferences.ics"]
-        self.assertIn("目前沒有官方已確認的投稿截止日期", page)
-        self.assertEqual([], json.loads(self.files["deadlines.json"]))
+        exported = json.loads(self.files["deadlines.json"])
+        self.assertTrue(exported)
+        self.assertEqual(len(self.deadlines), len(exported))
+        self.assertTrue(all(item["officialUrl"].startswith("https://") for item in exported))
+        self.assertIn('class="deadline-item upcoming"', page)
+        self.assertIn('class="deadline-item closed"', page)
+        self.assertIn("每週二 23:00（日本時間）複核", page)
+        self.assertIn("JST", page)
         self.assertEqual(len(self.current), calendar.count("BEGIN:VEVENT"))
         self.assertNotIn("VALARM", calendar)
+        self.assertNotIn("投稿", calendar)
 
     def test_calendar_end_date_is_exclusive(self):
         calendar = self.files["conferences.ics"]
@@ -235,7 +258,7 @@ class RenderTests(unittest.TestCase):
         self.assertEqual(len(self.archive), self.files["past.html"].count('class="card past"'))
         self.assertIn("hist-jaam-2025", self.files["past.html"])
         self.assertIn("hist-jaam-2026", self.files["past.html"])
-        self.assertEqual({"2025": 50, "2026": 42}, {
+        self.assertEqual({"2025": 52, "2026": 44}, {
             year: sum(event["start"].startswith(year) for event in self.archive)
             for year in ("2025", "2026")
         })

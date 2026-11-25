@@ -17,6 +17,7 @@
       "venue": "近畿大学おおさかメディカルキャンパス 3号館・4号館",
       "topic": "急診醫學・地方會",
       "topicKey": "emergency",
+      "cadence": "每年2次",
       "officialUrl": "https://www.jaam-kinki.jp/meeting2.html",
       "sourceCheckedAt": "2026-11-25",
       "archiveOnly": true
@@ -46,6 +47,7 @@
           "venue": "京都テルサ",
           "topic": "急診醫學・地方會",
           "topicKey": "emergency",
+          "cadence": "每年2次",
           "officialUrl": "https://www.jaam-kinki.jp/meeting2.html",
           "sourceCheckedAt": "2026-11-25",
           "archiveOnly": true

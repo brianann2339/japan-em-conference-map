@@ -53,6 +53,7 @@
     "mapVenue": "神戸学院大学 ポートアイランド第1キャンパス",
     "topic": "急診醫學・地方會",
     "topicKey": "emergency",
+    "cadence": "每年2次",
     "lat": 34.6695566,
     "lng": 135.2040128,
     "mapPrecision": "complex",

@@ -1,14 +1,15 @@
 name: 追蹤日本急診相關醫學會議
 
 on:
-  schedule:
-    - cron: "30 0 * * *"
   workflow_dispatch:
   push:
     branches: [main]
     paths:
       - "data/conferences.json"
       - "data/watchlist.json"
+      - "data/submission_deadlines.json"
+      - "data/history_sources/**"
+      - "data/additions/**"
       - "render.py"
       - "build.py"
       - "assets/**"

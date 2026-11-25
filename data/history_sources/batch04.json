@@ -173,6 +173,7 @@
       "venue": "大阪大学コンベンションセンター",
       "topic": "急診醫學・地方會",
       "topicKey": "emergency",
+      "cadence": "每年2次",
       "officialUrl": "https://www.k-gakkai.jp/130jaam-kinki/",
       "sourceCheckedAt": "2026-11-25",
       "archiveOnly": true
@@ -210,6 +211,7 @@
           "venue": "滋賀県立文化産業交流会館",
           "topic": "急診醫學・地方會",
           "topicKey": "emergency",
+          "cadence": "每年2次",
           "officialUrl": "https://www.jaam-kinki.jp/meeting2.html",
           "sourceCheckedAt": "2026-11-25",
           "archiveOnly": true

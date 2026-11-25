@@ -102,6 +102,16 @@
       "error": null,
       "lastChangedAt": "2026-11-25T12:44:30+09:00"
     },
+    "conference:national-mc-2027-2": {
+      "name": "令和8年度第2回全国メディカルコントロール協議会連絡会",
+      "url": "https://www.mhlw.go.jp/content/10800000/001724499.pdf",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://www.mhlw.go.jp/content/10800000/001724499.pdf",
+      "contentHash": "c9f89ae70f47a3aedbb5b6de8d905f68b955584aaced02cdaaae03bc46f6fd39",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
     "conference:jnst-50": {
       "name": "第50回日本脳神経外傷学会",
       "url": "https://neurotrauma50.umin.jp/overview.html",
@@ -292,6 +302,16 @@
       "error": null,
       "lastChangedAt": "2026-11-25T05:14:59+09:00"
     },
+    "conference:jaam-kinki-134": {
+      "name": "第134回近畿救急医学研究会（日本救急医学会近畿地方会）",
+      "url": "https://www.jaam-kinki.jp/meeting.html",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://www.jaam-kinki.jp/meeting.html",
+      "contentHash": "fe9702165fc2bcf36af28d5c16f776b69c73b078a38d1cfe556d233c9eebdc5f",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
     "conference:jrcm-49": {
       "name": "第49回日本呼吸療法医学会学術集会",
       "url": "https://square.umin.ac.jp/jrcm/aca-conferences/",
@@ -402,16 +422,6 @@
       "error": null,
       "lastChangedAt": "2026-11-25T05:14:59+09:00"
     },
-    "conference:hokkaido-em-51": {
-      "name": "第51回北海道救急医学会学術集会",
-      "url": "http://www.qqigaku.jp/assets/document/pdf/top/2026/r9_information.pdf",
-      "kind": "conference",
-      "status": 200,
-      "finalUrl": "http://www.qqigaku.jp/assets/document/pdf/top/2026/r9_information.pdf",
-      "contentHash": "cf1e4468921e6aad47954f4c9ea1803a5f042ebfd13136d6bc94e27017481982",
-      "error": null,
-      "lastChangedAt": "2026-11-25T05:13:31+09:00"
-    },
     "conference:jaep-35": {
       "name": "第35回日本精神科救急学会学術総会",
       "url": "https://jaep2027.planningwill.com/outline.html",
@@ -421,6 +431,16 @@
       "contentHash": "15b5ed12361e1ae6d6fbe9ccd19ac510daccfc081e551a8b3cc65d4440fceff3",
       "error": null,
       "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "conference:hokkaido-em-51": {
+      "name": "第51回北海道救急医学会学術集会",
+      "url": "http://www.qqigaku.jp/assets/document/pdf/top/2026/r9_information.pdf",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "http://www.qqigaku.jp/assets/document/pdf/top/2026/r9_information.pdf",
+      "contentHash": "cf1e4468921e6aad47954f4c9ea1803a5f042ebfd13136d6bc94e27017481982",
+      "error": null,
+      "lastChangedAt": "2026-11-25T05:13:31+09:00"
     },
     "conference:jssm-38": {
       "name": "第38回日本臨床スポーツ医学会学術集会",
@@ -452,6 +472,16 @@
       "error": null,
       "lastChangedAt": "2026-11-25T05:14:59+09:00"
     },
+    "conference:wcicc-2029": {
+      "name": "第20回世界集中治療医学会学術集会（WCICC2029）",
+      "url": "https://www.jsicm.org/en/news/news251118.html",
+      "kind": "conference",
+      "status": 200,
+      "finalUrl": "https://www.jsicm.org/en/news/news251118.html",
+      "contentHash": "8feb2d394c344035a206c0f53153ed8814b361977ee1dc892a4413724dbd9f8a",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
     "watch:jsccm-next": {
       "name": "第42回日本救命医療学会総会・学術集会",
       "url": "https://square.umin.ac.jp/~js-ccm/gakujutsusyukai.html",
@@ -473,7 +503,7 @@
       "lastChangedAt": "2026-11-25T12:44:30+09:00"
     },
     "watch:national-mc-next": {
-      "name": "全国メディカルコントロール協議会連絡会 次回会議",
+      "name": "全国メディカルコントロール協議会連絡会 次回以後の会議",
       "url": "https://www.mhlw.go.jp/stf/shingi/other-isei_202743.html",
       "kind": "watchlist",
       "status": 200,
@@ -481,6 +511,16 @@
       "contentHash": "61ff396cb74b82a1812d15b78264ecdba48724fd48a7859f3b8250738a9e1db9",
       "error": null,
       "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "watch:jaam-kinki-135": {
+      "name": "第135回近畿救急医学研究会",
+      "url": "https://www.jaam-kinki.jp/meeting.html",
+      "kind": "watchlist",
+      "status": 200,
+      "finalUrl": "https://www.jaam-kinki.jp/meeting.html",
+      "contentHash": "fe9702165fc2bcf36af28d5c16f776b69c73b078a38d1cfe556d233c9eebdc5f",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
     },
     "watch:j-cimels": {
       "name": "日本母体救命システム普及協議会",
@@ -511,6 +551,426 @@
       "contentHash": "dd3d9dbdb9e513e0678b2d9f1c65ecbd0b22055be1b57cf0ad6d45d0edcb5344",
       "error": null,
       "lastChangedAt": "2026-11-25T05:14:59+09:00"
+    },
+    "deadline:jca-39:328d1f3040": {
+      "name": "jca-39 — 投稿資料",
+      "url": "https://www.jca39.com/cfa.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://www.jca39.com/cfa.html",
+      "contentHash": "67a69859398dbd84cdf9f3cbe275dfd30e68aaf84b290c43db9837f698a170e5",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jsr-45:bc7dde2288": {
+      "name": "jsr-45 — 投稿資料",
+      "url": "https://jsr45.umin.jp/subject.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://jsr45.umin.jp/subject.html",
+      "contentHash": "0af9bcc072ce14607d5057378abd954e9f0a6d3146809d0036de79358e9ca828",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jssi-39:3f0eabb71d": {
+      "name": "jssi-39 — 投稿資料",
+      "url": "https://med-gakkai.jp/39jssi/endai/",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://med-gakkai.jp/39jssi/endai/",
+      "contentHash": "4d88f28c5147e98cc7c617fa4512323ae5aec96db953abe205543a128ad8c801",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jsasem-72:6c198f80c5": {
+      "name": "jsasem-72 — 投稿資料",
+      "url": "https://jsasem72.com/abstract.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://jsasem72.com/abstract.html",
+      "contentHash": "418746283bec01db7e9d56be7c7d3c15ee37da2b9e1075c703f30a47f493a9e7",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jaam-chubu-29:8c6858969e": {
+      "name": "jaam-chubu-29 — 投稿資料",
+      "url": "https://jaam29.com/cfa.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://jaam29.com/cfa.html",
+      "contentHash": "8cefb9bc0d842f3350df481b67d4d35e635ad883b9e899a9c7aa8d9bd1d78221",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jspm-21:6160a7651e": {
+      "name": "jspm-21 — 投稿資料",
+      "url": "https://jspm21.global-convention.jp/",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://jspm21.global-convention.jp/",
+      "contentHash": "459ad18058120487705ee690b8daa2a0993bcf73bcaf97ea8f0d195f58b2c951",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jsts-2:8cdd594e53": {
+      "name": "jsts-2 — 投稿資料",
+      "url": "https://2nd.jsts-mw.jp/abstracts",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://2nd.jsts-mw.jp/abstracts",
+      "contentHash": "c3ba3566a9c5ff9398f75b8c9faa8e4633dff2b0e911c689eab8a953a63cbf4e",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:juhms-kanto-tohoku-25:528fab02a8": {
+      "name": "juhms-kanto-tohoku-25 — 投稿資料",
+      "url": "https://www.juhms.net/syukai/chihoukai/kanto/",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://www.juhms.net/syukai/chihoukai/kanto/",
+      "contentHash": "5108e32c4a37f9823d95f21432ea161b1feb323726361e05399c8ce499d05c90",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:siret-13:95c6348b35": {
+      "name": "siret-13 — 投稿資料",
+      "url": "https://kenkyuukai.m3.com/event/event_detail.asp?id=86881",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://kenkyuukai.m3.com/event/event_detail.asp?id=86881",
+      "contentHash": "17f271399bf77925083c12d371ad73105752dfc92e0bba3a913a473482c67f6f",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:ems-symp-35:a5b697d0a6": {
+      "name": "ems-symp-35 — 投稿資料",
+      "url": "https://www.knt.co.jp/ec/2027/99sympo_35/endai.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://www.knt.co.jp/ec/2027/99sympo_35/endai.html",
+      "contentHash": "19bbf52d3971f9c9bf42c1ab82bb3b74bf61f561f3a9188a6581646593638ee9",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:ems-symp-35:9771265d52": {
+      "name": "ems-symp-35 — 投稿資料",
+      "url": "https://www.knt.co.jp/ec/2027/99sympo_35/shitei_endai.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://www.knt.co.jp/ec/2027/99sympo_35/shitei_endai.html",
+      "contentHash": "0eab0521faafc7c2148d8e30dff60904e9e50e638943b98b8a163429aef3bfb3",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jnst-50:3d165ad219": {
+      "name": "jnst-50 — 投稿資料",
+      "url": "https://neurotrauma50.umin.jp/cfa.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://neurotrauma50.umin.jp/cfa.html",
+      "contentHash": "4c6a5117944a86eed389ca1f4b5432e23102ec8e4fe2f8dbe13c21a38e35e9fb",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jaam-kanto-77:f1b37c57c1": {
+      "name": "jaam-kanto-77 — 投稿資料",
+      "url": "https://jaam77kanto.umin.jp/smaq.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://jaam77kanto.umin.jp/smaq.html",
+      "contentHash": "b0527e082584d0f90c30475c7af75b920783b1ce41418f56035acd9983bd812a",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jaam-kanto-77:9ab9184e64": {
+      "name": "jaam-kanto-77 — 投稿資料",
+      "url": "https://jaam77kanto.umin.jp/kyumei.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://jaam77kanto.umin.jp/kyumei.html",
+      "contentHash": "2ccd06fd9add9de000346a390a3d6121236d8aa346267b7321f3f1d63be24465",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jaam-kanto-77:12886a7443": {
+      "name": "jaam-kanto-77 — 投稿資料",
+      "url": "https://jaam77kanto.umin.jp/subject64.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://jaam77kanto.umin.jp/subject64.html",
+      "contentHash": "d0c403c45d1853be17cc440cbc0adfd691eac7ed2db96d26856a919369969624",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jaam-kanto-77:70650cbeec": {
+      "name": "jaam-kanto-77 — 投稿資料",
+      "url": "https://jaam77kanto.umin.jp/subject77.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://jaam77kanto.umin.jp/subject77.html",
+      "contentHash": "79470d543ed55289dc582b7681ac09fe5e7d57a3827528e48e28fa1bdc95587b",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jaam-kanto-77:b1ee5fbcfd": {
+      "name": "jaam-kanto-77 — 投稿資料",
+      "url": "https://jaam77kanto.umin.jp/council.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://jaam77kanto.umin.jp/council.html",
+      "contentHash": "9ecea81fe3ce084f806e929b4a19b351110cba7e2602e7063236ff0b240197e2",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jaam-kanto-77:7d4e46f32e": {
+      "name": "jaam-kanto-77 — 投稿資料",
+      "url": "https://jaam77kanto.umin.jp/liaison-meeting.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://jaam77kanto.umin.jp/liaison-meeting.html",
+      "contentHash": "0c5aa38df8160acd4d26d8d4a6cb5ed3da8d5048a61d72c2441676ad530f8fe0",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jaam-kanto-77:7f4306fc54": {
+      "name": "jaam-kanto-77 — 投稿資料",
+      "url": "https://jaam77kanto.umin.jp/session.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://jaam77kanto.umin.jp/session.html",
+      "contentHash": "400020efef6b6b2d6dd8198c0eb65bfb037ae2f04370eda9c7c188ceef2ccee8",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jsaem-63:583d1873e1": {
+      "name": "jsaem-63 — 投稿資料",
+      "url": "https://www.jsaem63.org/abstract.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://www.jsaem63.org/abstract.html",
+      "contentHash": "fc6168c5d590395aaa8b179cb4b7dda5fa6df1796dfaa75a592110a96101ec11",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jsaem-63:89477ca035": {
+      "name": "jsaem-63 — 投稿資料",
+      "url": "https://www.jsaem63.org/young_discussant.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://www.jsaem63.org/young_discussant.html",
+      "contentHash": "094c97cf909dbb384a50fcd71bb2cf74b12c031505f18bfdbdb03da5f467791a",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jaam-kinki-133:14df0ea16a": {
+      "name": "jaam-kinki-133 — 投稿資料",
+      "url": "https://www.k-gakkai.jp/133jaam-kinki/abstract.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://www.k-gakkai.jp/133jaam-kinki/abstract.html",
+      "contentHash": "3368836ac054170ace681958e9d18a7df53d06e5e9babe19f11b3c52e24c4047",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jss-stroke-52:1fe336692d": {
+      "name": "jss-stroke-52 — 投稿資料",
+      "url": "https://www.congre.co.jp/stroke2027/cfa.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://www.congre.co.jp/stroke2027/cfa.html",
+      "contentHash": "8c4dbb0fdfeb7f1f25dbf546cc90fee7ac681584e5aac624fc600ccca22ef2d0",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jss-stroke-52:722d5fd1c7": {
+      "name": "jss-stroke-52 — 投稿資料",
+      "url": "https://www.congre.co.jp/stroke2027/kusano.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://www.congre.co.jp/stroke2027/kusano.html",
+      "contentHash": "0e93c9409805ba8bdedcf5da2fb1e6273b274522f9534e813317e4e0ca94cca6",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jadm-32:eccb95541d": {
+      "name": "jadm-32 — 投稿資料",
+      "url": "https://site2.convention.co.jp/32jadm/cfa/index.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://site2.convention.co.jp/32jadm/cfa/index.html",
+      "contentHash": "438c402dc364fd0660d5d0650746d776275685da67259a812af94a940ab728de",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jcs-91-apsc:f7d1236bb0": {
+      "name": "jcs-91-apsc — 投稿資料",
+      "url": "https://www.congre.co.jp/jcs2027/cfa/index.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://www.congre.co.jp/jcs2027/cfa/index.html",
+      "contentHash": "fb62a40c2e8934f03e9aed5a6ae104659cc41dbfe10cd90e11d12588fc348494",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jcs-91-apsc:466fd0120e": {
+      "name": "jcs-91-apsc — 投稿資料",
+      "url": "https://www.congre.co.jp/jcs2027/en/cfa/index.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://www.congre.co.jp/jcs2027/en/cfa/index.html",
+      "contentHash": "c3cca98c19f370b5571a3cd32acd79d6c35cc68dc11b848eb1310216ac941113",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jcs-91-apsc:90be0a073a": {
+      "name": "jcs-91-apsc — 投稿資料",
+      "url": "https://www.congre.co.jp/jcs2027/en/yia_students/index.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://www.congre.co.jp/jcs2027/en/yia_students/index.html",
+      "contentHash": "4b9a89178a5eebea9825b3ecb1e9a07a7dd81ae1525db321d16b47348c2bf798",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jss-41:a0c5bede80": {
+      "name": "jss-41 — 投稿資料",
+      "url": "https://jss41.umin.ne.jp/abstracts.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://jss41.umin.ne.jp/abstracts.html",
+      "contentHash": "b64b687adcf6a9ff5c1730b80ea6aaf14d0d022e385dd170bdd1cbc509fe56da",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jsicm-54:033ae88a27": {
+      "name": "jsicm-54 — 投稿資料",
+      "url": "https://jsicm.org/meeting/jsicm54/cfa/index.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://jsicm.org/meeting/jsicm54/cfa/index.html",
+      "contentHash": "014aa71cd933ad2f6fbcb7afef9fdbea3aa1aee32758d2c4c5ef8086859941a6",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jaid-101-jsc-75:be253aed6b": {
+      "name": "jaid-101-jsc-75 — 投稿資料",
+      "url": "https://www.c-linkage.co.jp/jaid101-jsc75/encore.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://www.c-linkage.co.jp/jaid101-jsc75/encore.html",
+      "contentHash": "3b2c243d47237f9cb890bedbd6faedb7438116221627355b8c24bb1ba9418efa",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jaid-101-jsc-75:ae54a9fe41": {
+      "name": "jaid-101-jsc-75 — 投稿資料",
+      "url": "https://www.c-linkage.co.jp/jaid101-jsc75/specify_abstract.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://www.c-linkage.co.jp/jaid101-jsc75/specify_abstract.html",
+      "contentHash": "789d59d4260257588be036e40311ac0cc1e28f40fe2e02e6eb9637844b0d7af8",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jsbi-53:d9c03b3899": {
+      "name": "jsbi-53 — 投稿資料",
+      "url": "https://shun-convention.jp/jsbi53/kobo_abstract.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://shun-convention.jp/jsbi53/kobo_abstract.html",
+      "contentHash": "5c555365101c58f37ced3468dbee1bfa591ed48849077df47dddf38ce64d9506",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jast-41:48d888f4bd": {
+      "name": "jast-41 — 投稿資料",
+      "url": "https://shun-convention.jp/jast2027/abstract.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://shun-convention.jp/jast2027/abstract.html",
+      "contentHash": "4099b056efc790af1c9525b08a0be19ed0c5e9405a7dd62855814168ba625806",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jaam-chushi-43:5aeb5bb2a1": {
+      "name": "jaam-chushi-43 — 投稿資料",
+      "url": "https://med-gakkai.jp/jaam-cs43/endai/",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://med-gakkai.jp/jaam-cs43/endai/",
+      "contentHash": "efe710b00c03eed495ee94b8f4fcf149eb4e413cc7330a0c2c2fde277d0516c2",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jsth-49:a8851567db": {
+      "name": "jsth-49 — 投稿資料",
+      "url": "https://www.c-linkage.co.jp/jsth49/call_for_papers.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://www.c-linkage.co.jp/jsth49/call_for_papers.html",
+      "contentHash": "fd39fd9c3ea0b5821281f3da35f5f34eb382183073494f6c20cdd0bc84cf1f49",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jsth-49:998018d614": {
+      "name": "jsth-49 — 投稿資料",
+      "url": "https://www.c-linkage.co.jp/jsth49/general_abstract.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://www.c-linkage.co.jp/jsth49/general_abstract.html",
+      "contentHash": "ad90d88d63bb5aa43314e0864cc71a7b5e4d33a81f957ef4d57377ba0f3e11fb",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jsoa-2027:dccffb561b": {
+      "name": "jsoa-2027 — 投稿資料",
+      "url": "https://www.congre.co.jp/jsoa2027/contents/abstract_i.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://www.congre.co.jp/jsoa2027/contents/abstract_i.html",
+      "contentHash": "eead4ca8a34b903c8faa8e417da23ee609bea795eb1b2dd485bbce3349511de9",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jrcm-49:6cb50eeb15": {
+      "name": "jrcm-49 — 投稿資料",
+      "url": "https://jsrcm49.umin.jp/abstract.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://jsrcm49.umin.jp/abstract.html",
+      "contentHash": "05ebe9cc99fe57c59738d51d7832cce1575f5666cfae58c1998e82617c965fb1",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:jsem-30:1cad648c01": {
+      "name": "jsem-30 — 投稿資料",
+      "url": "https://site2.convention.co.jp/jsem30/endai/",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://site2.convention.co.jp/jsem30/endai/",
+      "contentHash": "892c3939bb2637f153076e6f762c14e6a2857284b61fd7bd004d20a87a6cdd9e",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:cvit-35:225aae0951": {
+      "name": "cvit-35 — 投稿資料",
+      "url": "https://www.congre.co.jp/cvit2027/cfa.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://www.congre.co.jp/cvit2027/cfa.html",
+      "contentHash": "6208bcfc61419dceef3e193bf7f68c2fc07b2613fed8dee51a0384620c374e70",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
+    },
+    "deadline:cvit-35:20dc917432": {
+      "name": "cvit-35 — 投稿資料",
+      "url": "https://www.congre.co.jp/cvit2027/application.html",
+      "kind": "deadline",
+      "status": 200,
+      "finalUrl": "https://www.congre.co.jp/cvit2027/application.html",
+      "contentHash": "d1056360529f11d794e0c19bd759ac1094a21c488f395e5b39b177532d6a63da",
+      "error": null,
+      "lastChangedAt": "2026-11-25T13:24:19+09:00"
     }
   }
 }

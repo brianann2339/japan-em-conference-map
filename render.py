@@ -117,6 +117,27 @@ def load_watchlist(path: Path) -> list[dict]:
     return items
 
 
+def load_deadlines(path: Path) -> list[dict]:
+    items = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(items, list):
+        raise ValueError("deadline data must be a list")
+    seen = set()
+    required = {"eventId", "label", "deadline", "officialUrl", "sourceCheckedAt", "evidence"}
+    for index, item in enumerate(items, start=1):
+        missing = required - item.keys()
+        if missing:
+            raise ValueError(f"deadline record {index} missing fields: {', '.join(sorted(missing))}")
+        date.fromisoformat(item["deadline"])
+        if item.get("open"):
+            date.fromisoformat(item["open"])
+        date.fromisoformat(item["sourceCheckedAt"])
+        key = (item["eventId"], item["label"], item["deadline"])
+        if key in seen:
+            raise ValueError(f"duplicate deadline record: {key}")
+        seen.add(key)
+    return items
+
+
 def validate_events(events: list[dict]) -> None:
     if not isinstance(events, list) or not events:
         raise ValueError("conference data must be a non-empty list")
@@ -134,6 +155,8 @@ def validate_events(events: list[dict]) -> None:
             raise ValueError(f"invalid societyCode: {event['id']}")
         if "seriesCode" in event and not re.fullmatch(r"[A-Z0-9-]+", event["seriesCode"]):
             raise ValueError(f"invalid seriesCode: {event['id']}")
+        if "cadence" in event and not str(event["cadence"]).strip():
+            raise ValueError(f"empty cadence: {event['id']}")
         start = date.fromisoformat(event["start"])
         end = date.fromisoformat(event["end"])
         date.fromisoformat(event["sourceCheckedAt"])
@@ -183,6 +206,11 @@ def next_up(rows: list[dict], today: date) -> dict | None:
 
 def society_code(row: dict) -> str:
     return row["society"]
+
+
+def topic_with_cadence(row: dict) -> str:
+    cadence = row.get("cadence")
+    return f'{row["topic"]}（{cadence}）' if cadence else row["topic"]
 
 
 def color_for(row: dict) -> str:
@@ -237,7 +265,7 @@ def assign_lanes(rows: list[dict]) -> dict[str, int]:
 
 def band(row: dict) -> str:
     code = society_code(row)
-    topic = row["topic"]
+    topic = topic_with_cadence(row)
     color = color_for(row)
     return (
         f'<span class="code-block" style="color:{color};border-color:{color}">'
@@ -320,8 +348,31 @@ def build_csv(events: list[dict]) -> str:
     return "\ufeff" + stream.getvalue()
 
 
-def deadline_data(rows: list[dict]) -> list[dict]:
-    return []
+def deadline_data(rows: list[dict], deadlines: list[dict], today: date) -> list[dict]:
+    by_id = {row["id"]: row for row in rows}
+    result = []
+    for item in deadlines:
+        row = by_id.get(item["eventId"])
+        if not row:
+            continue
+        deadline = date.fromisoformat(item["deadline"])
+        result.append({
+            **item,
+            "societyCode": society_code(row),
+            "name": row["name"],
+            "nameZh": row.get("nameZh", row["name"]),
+            "status": "upcoming" if deadline >= today else "closed",
+            "daysRemaining": (deadline - today).days,
+        })
+    return sorted(
+        result,
+        key=lambda item: (
+            item["status"] == "closed",
+            item["deadline"] if item["status"] == "upcoming" else "",
+            -date.fromisoformat(item["deadline"]).toordinal() if item["status"] == "closed" else 0,
+            item["societyCode"],
+        ),
+    )
 
 
 CSS = """
@@ -436,7 +487,7 @@ h2{font-size:1.05rem; font-weight:600; margin:0 0 1rem;
 .archive-link a:hover{color:var(--ink)}
 .dl{background:var(--surface); border:1px solid var(--rule); padding:.2rem 1rem .8rem}
 .dl ol{list-style:none; margin:0; padding:0}
-.dl li{display:grid; grid-template-columns:6rem 1fr auto; gap:.8rem;
+.dl li{display:grid; grid-template-columns:11.5rem 1fr auto; gap:.8rem;
   align-items:baseline; padding:.6rem 0; border-bottom:1px solid var(--rule-soft)}
 .dl li:last-child{border-bottom:0}
 .dl .when{font-size:.88rem; color:var(--muted); white-space:nowrap}
@@ -444,6 +495,7 @@ h2{font-size:1.05rem; font-weight:600; margin:0 0 1rem;
 .dl .what span{color:var(--muted); font-size:.85rem; display:block}
 .dl .left{font-size:.85rem; white-space:nowrap; text-align:right}
 .dl li.tba .when,.dl li.tba .left{color:var(--muted); font-style:italic}
+.dl li.closed{opacity:.55}
 .dl .note{margin:.7rem 0 0; font-size:.8rem; color:var(--muted)}
 .tracking-list .what a{text-decoration:none}
 .tracking-list .what a:hover b,.tracking-list .what a:focus-visible b{text-decoration:underline}
@@ -460,7 +512,8 @@ footer ul{margin:.4rem 0; padding-left:1.1rem}
 @media (max-width:640px){
   body{font-size:16px}
   .wrap{padding:1.6rem 1rem 3rem}
-  .dl li{grid-template-columns:5.5rem 1fr; gap:.5rem}
+  .dl li{grid-template-columns:7.2rem 1fr; gap:.5rem}
+  .dl .when{white-space:normal}
   .dl .left{display:none}
   .filters{align-items:stretch}
   .filter-field{flex-basis:100%}
@@ -555,7 +608,10 @@ MAP_CSS = """
 """
 
 
-def conference_cards(rows: list[dict], today: date) -> str:
+def conference_cards(rows: list[dict], today: date, deadlines: list[dict] | None = None) -> str:
+    deadline_groups: dict[str, list[dict]] = defaultdict(list)
+    for item in deadlines or []:
+        deadline_groups[item["eventId"]].append(item)
     cards = []
     for row in rows:
         color = color_for(row)
@@ -564,16 +620,36 @@ def conference_cards(rows: list[dict], today: date) -> str:
             f'<span class="precision">{html.escape(row.get("mapNote") or "地圖點為園區代表位置")}</span>'
             if row.get("mapPrecision") == "complex" else ""
         )
+        upcoming_deadlines = [
+            item for item in sorted(deadline_groups[row["id"]], key=lambda item: item["deadline"])
+            if date.fromisoformat(item["deadline"]) >= today
+        ]
+        next_deadline = upcoming_deadlines[0] if upcoming_deadlines else None
+        same_day_count = (
+            sum(item["deadline"] == next_deadline["deadline"] for item in upcoming_deadlines)
+            if next_deadline else 0
+        )
+        deadline_text = (
+            f'{next_deadline["deadline"]}（{same_day_count} 項）'
+            if same_day_count > 1
+            else f'{next_deadline["label"]} {next_deadline["deadline"]}'
+        ) if next_deadline else ""
+        deadline_meta = (
+            f'<span class="meta" style="color:{color}">{ICON_CAL}'
+            f'<span>投稿：{html.escape(deadline_text)}</span></span>'
+            if next_deadline else ""
+        )
         cards.append(
             f'<a class="card{" past" if past else ""}" href="{html.escape(row["officialUrl"])}" '
             f'target="_blank" rel="noopener" data-filter-id="{html.escape(row["id"])}">'
             f'<span class="band">{band(row)}<em>{row["_year"]}</em></span>'
             f'<span class="soc-line" style="color:{color}">{html.escape(society_code(row))} · '
-            f'{html.escape(row["topic"])}</span>'
+            f'{html.escape(topic_with_cadence(row))}</span>'
             f'<span class="card-title">{html.escape(row["name"])}</span>'
             f'<span class="card-title-zh">{html.escape(row.get("nameZh", row["name"]))}</span>'
             f'<span class="meta" style="color:{color}">{ICON_CAL}'
             f'<span>{html.escape(date_range(row))}</span></span>'
+            f'{deadline_meta}'
             f'<span class="meta" style="color:{color}">{ICON_PIN}'
             f'<span class="place">{html.escape(location_text(row))}'
             f'<span class="venue">{html.escape(row["venue"])}</span>{precision}</span></span>'
@@ -622,7 +698,7 @@ def season_grid(rows: list[dict], today: date) -> str:
         legend.append(
             f'<span style="color:{color_for(row)}" data-filter-ids="{html.escape(ids)}">'
             f'<span class="lg-txt"><b>{html.escape(code)}</b>'
-            f'<em>{html.escape(row["topic"])}</em></span></span>'
+            f'<em>{html.escape(topic_with_cadence(row))}</em></span></span>'
         )
     return (
         f'<div class="grid">{months}{"".join(bands)}</div>'
@@ -631,11 +707,40 @@ def season_grid(rows: list[dict], today: date) -> str:
     )
 
 
-def deadline_section(rows: list[dict]) -> str:
+def deadline_section(rows: list[dict], deadlines: list[dict], today: date) -> str:
+    items = deadline_data(rows, deadlines, today)
+    if not items:
+        return (
+            '<div class="dl"><p class="note">目前沒有官方已確認的投稿截止日期。'
+            '未確認日期不會寫入 ICS 行事曆；每週複核官方來源，確認公告後才會顯示。</p></div>'
+        )
+    entries = []
+    for item in items:
+        time_text = (
+            f' {item["deadlineTime"]} '
+            f'{"JST" if item.get("timezone") == "Asia/Tokyo" else item.get("timezone", "")}'
+            if item.get("deadlineTime") else ""
+        )
+        if item["daysRemaining"] > 0:
+            status = f'剩 {item["daysRemaining"]} 天'
+        elif item["daysRemaining"] == 0:
+            status = "今天截止"
+        else:
+            status = "已截止"
+        entries.append(
+            f'<li class="deadline-item {item["status"]}" data-filter-id="{html.escape(item["eventId"])}">'
+            f'<span class="when">{html.escape(item["deadline"] + time_text)}</span>'
+            '<span class="what">'
+            f'<a href="{html.escape(item["officialUrl"])}" target="_blank" rel="noopener">'
+            f'<b>{html.escape(item["societyCode"])} · {html.escape(item["label"])}</b></a>'
+            f'<span>{html.escape(item["nameZh"])}</span></span>'
+            f'<span class="left">{html.escape(status)}</span></li>'
+        )
     return (
-        '<div class="dl"><p class="note">目前沒有官方已確認的投稿截止日期。'
-        '未確認日期不會寫入 ICS 行事曆；來源頁已納入每日變動監測，'
-        '確認公告後才會顯示。</p></div>'
+        '<div class="dl deadline-list"><ol>' + "".join(entries) + '</ol>'
+        '<p class="note">只列官方明確公告的投稿日期；未公布或無公開徵稿者不推算。'
+        '截止日不寫入會議 ICS，以免與會期事件混淆；每週二 23:00（日本時間）複核。</p></div>'
+        '<p class="filter-empty deadline-empty" hidden>投稿死線中沒有符合條件的會議。</p>'
     )
 
 
@@ -822,7 +927,7 @@ def map_strip(year: int, rows: list[dict]) -> str:
             f'<a class="ms-cell" href="{html.escape(row["officialUrl"])}" '
             f'target="_blank" rel="noopener" style="--c:{color_for(row)}" '
             f'data-filter-id="{html.escape(row["id"])}">'
-            f'<b>{html.escape(society_code(row))}（{html.escape(row["topic"])}）</b>'
+            f'<b>{html.escape(society_code(row))}（{html.escape(topic_with_cadence(row))}）</b>'
             f'<span>{ICON_PIN}{html.escape(row["city"])}</span>'
             f'<span>{ICON_CAL}{html.escape(short_date_range(row))}</span></a>'
         )
@@ -1178,7 +1283,7 @@ FILTER_JS = r"""
     var matches = valid ? events.filter(selected) : lastMatches;
     if(valid) lastMatches = matches;
     var visible = new Set(matches.map(function(event){ return event.id; }));
-    document.querySelectorAll('.card[data-filter-id],.ms-cell[data-filter-id],.bar[data-filter-id]').forEach(function(element){
+    document.querySelectorAll('.card[data-filter-id],.ms-cell[data-filter-id],.bar[data-filter-id],.deadline-item[data-filter-id]').forEach(function(element){
       element.hidden = !visible.has(element.dataset.filterId);
     });
     document.querySelectorAll('.season-year[data-filter-ids],.legend [data-filter-ids]').forEach(function(element){
@@ -1198,8 +1303,13 @@ FILTER_JS = r"""
     empty.hidden = matches.length !== 0;
     var mapEmpty = document.querySelector('.map-empty');
     var seasonEmpty = document.querySelector('.season-empty');
+    var deadlineEmpty = document.querySelector('.deadline-empty');
     if(mapEmpty) mapEmpty.hidden = matches.length !== 0;
     if(seasonEmpty) seasonEmpty.hidden = matches.length !== 0;
+    if(deadlineEmpty){
+      var shownDeadline = Array.prototype.some.call(document.querySelectorAll('.deadline-item'),function(element){ return !element.hidden; });
+      deadlineEmpty.hidden = shownDeadline;
+    }
     updateHero(matches,today);
   }
   form.addEventListener('change',function(event){
@@ -1247,7 +1357,7 @@ def footer_html(rows: list[dict], checked_at: str) -> str:
 
 
 def render_html(rows: list[dict], today: date, checked_at: str, map_svg: str,
-                archive_count: int) -> str:
+                archive_count: int, deadlines: list[dict]) -> str:
     upcoming = next_up(rows, today)
     if upcoming:
         days = max((upcoming["_start"] - today).days, 0)
@@ -1291,13 +1401,13 @@ def render_html(rows: list[dict], today: date, checked_at: str, map_svg: str,
   <h1>日本急診相關醫學會議追蹤</h1>
   <p class="stamp">資料查核 {html.escape(checked_at)}</p>
 </header>
-<p class="intro">收錄日本國內與急診醫學相關的急診、院前／EMS、災難、創傷、重症、敗血症／感染、毒物、心臟急症、航空、潛水／高壓氧、登山與運動醫學等會議；日期、城市、會場與連結均取自官方頁面。</p>
+<p class="intro">收錄日本國內與急診醫學相關的急診、院前／EMS、災難、創傷、重症、敗血症／感染、毒物、心臟急症、航空、潛水／高壓氧、登山與運動醫學等會議，以及已確認在日本舉辦的世界級會議；日期、城市、會場與連結均取自官方頁面。</p>
 {filter_controls(rows)}
 {japan_map_section(rows, map_svg)}
 {hero}
 <section>
   <h2>即將舉行的場次</h2>
-  {conference_cards(rows, today)}
+  {conference_cards(rows, today, deadlines)}
   <p class="filter-empty cards-empty" hidden>沒有符合條件的會議。</p>
   {archive_link}
 </section>
@@ -1307,7 +1417,7 @@ def render_html(rows: list[dict], today: date, checked_at: str, map_svg: str,
 </section>
 <section style="margin-top:3rem">
   <h2>投稿死線</h2>
-  {deadline_section(rows)}
+  {deadline_section(rows, deadlines, today)}
 </section>
 {footer_html(rows, checked_at)}
 </div><script id="conference-filter-data" type="application/json">{filter_data(rows)}</script>
@@ -1343,27 +1453,33 @@ def render_archive(rows: list[dict], today: date, checked_at: str,
 
 
 def build_files(events: list[dict], map_svg: str, today: date | None = None,
-                watchlist: list[dict] | None = None) -> dict[str, str]:
+                watchlist: list[dict] | None = None,
+                deadlines: list[dict] | None = None) -> dict[str, str]:
     validate_events(events)
     rows = prepare(events)
     watchlist = watchlist or []
+    deadlines = deadlines or []
+    unknown_deadlines = {item["eventId"] for item in deadlines} - {row["id"] for row in rows}
+    if unknown_deadlines:
+        raise ValueError(f'unknown deadline event IDs: {", ".join(sorted(unknown_deadlines))}')
     today = today or tokyo_today()
     checked_at = source_checked_at(events)
     current, archive = split_archive(rows, today)
-    deadlines = deadline_data(current)
+    rendered_deadlines = deadline_data(current, deadlines, today)
     return {
-        "index.html": render_html(current, today, checked_at, map_svg, len(archive)),
+        "index.html": render_html(current, today, checked_at, map_svg, len(archive), deadlines),
         "past.html": render_archive(archive, today, checked_at, watchlist),
         "conferences.json": json.dumps(events, ensure_ascii=False, indent=2) + "\n",
         "conferences.csv": build_csv(events),
         "conferences.ics": build_ics(current, checked_at),
-        "deadlines.json": json.dumps(deadlines, ensure_ascii=False, indent=2) + "\n",
+        "deadlines.json": json.dumps(rendered_deadlines, ensure_ascii=False, indent=2) + "\n",
     }
 
 
 def write_site(events: list[dict], map_svg: str, outdir: Path, license_text: str,
-               today: date | None = None, watchlist: list[dict] | None = None) -> None:
-    files = build_files(events, map_svg, today, watchlist)
+               today: date | None = None, watchlist: list[dict] | None = None,
+               deadlines: list[dict] | None = None) -> None:
+    files = build_files(events, map_svg, today, watchlist, deadlines)
     outdir.mkdir(parents=True, exist_ok=True)
     for relative, content in files.items():
         path = outdir / relative
@@ -1381,6 +1497,7 @@ def main() -> None:
     parser.add_argument("--map", dest="map_path", type=Path, default=Path("assets/map-full.svg"))
     parser.add_argument("--license", type=Path, default=Path("MAP-LICENSE.md"))
     parser.add_argument("--watchlist", type=Path, default=Path("data/watchlist.json"))
+    parser.add_argument("--deadlines", type=Path, default=Path("data/submission_deadlines.json"))
     parser.add_argument("--out", type=Path, default=Path("docs"))
     args = parser.parse_args()
     write_site(
@@ -1389,6 +1506,7 @@ def main() -> None:
         args.out,
         args.license.read_text(encoding="utf-8"),
         watchlist=load_watchlist(args.watchlist),
+        deadlines=load_deadlines(args.deadlines),
     )
 
 

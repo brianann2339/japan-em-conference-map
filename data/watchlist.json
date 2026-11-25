@@ -35,10 +35,17 @@
   },
   {
     "id": "national-mc-next",
-    "name": "全国メディカルコントロール協議会連絡会 次回会議",
+    "name": "全国メディカルコントロール協議会連絡会 次回以後の会議",
     "url": "https://www.mhlw.go.jp/stf/shingi/other-isei_202743.html",
-    "status": "announced",
-    "reason": "厚生勞動省已公布令和8年度第2回將於2027年2月5日在パシフィコ横浜舉行；本項保留監測後續更新。"
+    "status": "waiting",
+    "reason": "2027年2月5日場次已列入會議卡；本項繼續監測每年兩次系列的下一場公告。"
+  },
+  {
+    "id": "jaam-kinki-135",
+    "name": "第135回近畿救急医学研究会",
+    "url": "https://www.jaam-kinki.jp/meeting.html",
+    "status": "partial",
+    "reason": "官方已列第135回與會長，但日期、城市及會場尚未公布；本系列每年兩次，持續監測。"
   },
   {
     "id": "j-cimels",
