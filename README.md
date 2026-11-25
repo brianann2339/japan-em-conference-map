@@ -1,6 +1,6 @@
 # 日本急診相關醫學會議追蹤
 
-以日本地圖、會議卡片、年度節奏與投稿死線整理日本國內急診及急性照護相關醫學會議，以及已確認在日本舉辦的跨國輪辦世界級會議。世界級會議以主辦國跨國輪替為判準，不限每年或每兩年舉辦；雙年會等非年度制系列仍標示為世界級，並另行標出週期。目前收錄 48 場已由官方來源確認日期與會場的未來會議，以及 96 場 2025／2026 已結束的歷屆會議；可用都道府縣、領域與自訂日期區間交集篩選，會議與區間有任一天重疊即納入。所有結果區會同步更新；選擇都道府縣時，地圖會自動聚焦符合條件的會場區域。各會議並附官方日文名稱及繁體中文譯名；每年兩次、每兩年一次或其他非年度制系列會在領域旁標示舉辦週期，歷屆頁另列出下一屆尚未完整公告的固定系列與官方追蹤入口。
+以日本地圖、會議卡片、年度節奏與投稿死線整理日本國內急診及急性照護相關醫學會議，以及已確認在日本舉辦的跨國輪辦世界級會議。世界級會議以主辦國跨國輪替為判準，不限每年或每兩年舉辦；雙年會等非年度制系列仍標示為世界級，並另行標出週期。目前收錄 48 場已由官方來源確認日期與會場的未來會議，以及 96 場 2025／2026 已結束的歷屆會議；可用都道府縣、領域與自訂日期區間交集篩選，會議與區間有任一天重疊即納入。所有結果區會同步更新；選擇都道府縣時，地圖會自動聚焦符合條件的會場區域。主頁與歷屆頁可切換繁體中文、日文及英文；英文正式會名只在官方已有英文名稱時使用，否則保留官方日文名稱並明確標示。每年兩次、每兩年一次或其他非年度制系列會在領域旁標示舉辦週期，歷屆頁另列出下一屆尚未完整公告的固定系列與官方追蹤入口。
 
 - 公開網站：<https://brianann2339.github.io/japan-em-conference-map/>
 - GitHub repository：<https://github.com/brianann2339/japan-em-conference-map>
@@ -13,7 +13,7 @@
 python3 build.py
 ```
 
-`build.py` 讀取 `data/conferences.json`、`data/conference_names_zh-Hant.json`、`data/watchlist.json`、`data/submission_deadlines.json` 與 `assets/map-full.svg`，先產生 GitHub Pages 使用的 `docs/`，再同步完全相同的內容到 Sites 使用的 `dist/`。歷屆資料的逐批官方查核證據保留於 `data/history_sources/`，由 `scripts/import_history_sources.py` 驗證查核覆蓋率後匯入。
+`build.py` 讀取 `data/conferences.json`、`data/conference_names_zh-Hant.json`、`data/watchlist.json`、`data/submission_deadlines.json` 與 `assets/map-full.svg`，產生繁中 `index.html`／`past.html`、日文 `index-ja.html`／`past-ja.html`、英文 `index-en.html`／`past-en.html`，先寫入 GitHub Pages 使用的 `docs/`，再同步完全相同的內容到 Sites 使用的 `dist/`。歷屆資料的逐批官方查核證據保留於 `data/history_sources/`，由 `scripts/import_history_sources.py` 驗證查核覆蓋率後匯入。
 
 若只需產生單一輸出目錄：
 

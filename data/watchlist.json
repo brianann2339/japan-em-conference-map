@@ -9,7 +9,11 @@
     "showOnArchive": true,
     "displayCode": "JSACS",
     "nameZh": "日本急性照護外科學會下一屆學術集會",
-    "topic": "急性照護外科"
+    "nameEn": "Next Academic Meeting of the Japanese Society for Acute Care Surgery",
+    "topic": "急性照護外科",
+    "topicKey": "trauma",
+    "reasonJa": "公式サイトのHTTPS証明書が期限切れで、HTTPもリダイレクトを繰り返すため、次回開催を安定して追跡できる公式入口が見つからず、手動追跡としている。",
+    "reasonEn": "The official site's HTTPS certificate has expired and HTTP repeatedly redirects. No stable official page for tracking the next meeting was found, so this series is tracked manually."
   },
   {
     "id": "jsccm-next",
@@ -20,7 +24,11 @@
     "showOnArchive": true,
     "displayCode": "JSCCM",
     "nameZh": "第42屆日本救命醫療學會總會暨學術集會",
-    "topic": "救命醫療・急重症"
+    "nameEn": "42nd Annual Meeting of the Japanese Society for Life-Saving Medicine",
+    "topic": "救命醫療・急重症",
+    "topicKey": "critical",
+    "reasonJa": "公式には第42回の会長のみ公表されており、日程、都市、会場は未発表。",
+    "reasonEn": "The official source lists only the chair for the 42nd meeting; the dates, city, and venue have not been announced."
   },
   {
     "id": "jcts-next",
@@ -31,7 +39,11 @@
     "showOnArchive": true,
     "displayCode": "JCTS",
     "nameZh": "日本交通科學學會下一屆學術講演會",
-    "topic": "交通醫學・創傷"
+    "nameEn": "Next Annual Meeting of the Japanese Council of Traffic Science",
+    "topic": "交通醫學・創傷",
+    "topicKey": "trauma",
+    "reasonJa": "公式一覧の最新は2026年の第62回で、第63回の日程、都市、会場は未発表。",
+    "reasonEn": "The latest meeting in the official index is the 62nd meeting in 2026; the dates, city, and venue for the 63rd meeting have not been announced."
   },
   {
     "id": "national-mc-next",
@@ -63,7 +75,11 @@
     "showOnArchive": true,
     "displayCode": "JUHMS",
     "nameZh": "第61屆日本高壓暨潛水醫學會學術總會",
-    "topic": "高氣壓・潛水醫學"
+    "nameEn": "61st Annual Meeting of the Japanese Society of Hyperbaric and Undersea Medicine",
+    "topic": "高氣壓・潛水醫學",
+    "topicKey": "environment",
+    "reasonJa": "公式には2027年の第61回と会長のみ公表されており、日程、都市、会場は未発表。",
+    "reasonEn": "The official source lists only the 61st meeting in 2027 and its chair; the dates, city, and venue have not been announced."
   },
   {
     "id": "jser-next",
@@ -74,6 +90,10 @@
     "showOnArchive": true,
     "displayCode": "JSER",
     "nameZh": "日本急診放射線研究會下一屆主年會",
-    "topic": "急診放射線"
+    "nameEn": "Next Annual Meeting of the Japanese Society of Emergency Radiology",
+    "topic": "急診放射線",
+    "topicKey": "radiology",
+    "reasonJa": "第37回の日程、都市、会場は未発表。2027年の母大会の日程を本研究会の日程とはみなさない。",
+    "reasonEn": "The dates, city, and venue for the 37th meeting have not been announced. The dates of the 2027 parent meeting are not treated as the dates of this study group."
   }
 ]

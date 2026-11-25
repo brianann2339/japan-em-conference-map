@@ -60,6 +60,57 @@ TOPIC_LABELS = {
     "environment": "航空／潛水／登山／環境",
     "sports": "運動醫學",
 }
+TOPIC_LABELS_JA = {
+    "emergency": "救急医学",
+    "ems": "病院前救急／EMS",
+    "disaster": "災害医学",
+    "trauma": "外傷／Acute Care Surgery",
+    "critical": "重症／集中治療",
+    "infection": "感染症／敗血症",
+    "burn": "熱傷",
+    "pediatric": "小児救急",
+    "toxicology": "臨床中毒",
+    "resuscitation": "蘇生",
+    "shock": "ショック",
+    "nursing": "救急／災害看護",
+    "respiratory": "呼吸療法",
+    "transport": "搬送医療",
+    "cardiology": "心血管救急",
+    "neuro": "脳神経救急",
+    "pocus": "POCUS",
+    "radiology": "救急放射線／IVR",
+    "coagulation": "血栓止血／DIC",
+    "environment": "航空／潜水／登山／環境",
+    "sports": "スポーツ医学",
+}
+TOPIC_LABELS_EN = {
+    "emergency": "Emergency medicine",
+    "ems": "Prehospital care / EMS",
+    "disaster": "Disaster medicine",
+    "trauma": "Trauma / acute care surgery",
+    "critical": "Intensive and critical care",
+    "infection": "Infection / sepsis",
+    "burn": "Burn care",
+    "pediatric": "Pediatric emergency medicine",
+    "toxicology": "Clinical toxicology",
+    "resuscitation": "Resuscitation",
+    "shock": "Shock",
+    "nursing": "Emergency / disaster nursing",
+    "respiratory": "Respiratory care",
+    "transport": "Medical transport",
+    "cardiology": "Acute cardiovascular care",
+    "neuro": "Neurologic emergencies",
+    "pocus": "POCUS",
+    "radiology": "Emergency radiology / IVR",
+    "coagulation": "Thrombosis / hemostasis / DIC",
+    "environment": "Aerospace / diving / mountain / environmental medicine",
+    "sports": "Sports medicine",
+}
+TOPIC_LABELS_BY_LOCALE = {
+    "zh-Hant": TOPIC_LABELS,
+    "ja": TOPIC_LABELS_JA,
+    "en": TOPIC_LABELS_EN,
+}
 PREFECTURE_CODES = {
     "北海道": 1, "青森県": 2, "岩手県": 3, "宮城県": 4, "秋田県": 5,
     "山形県": 6, "福島県": 7, "茨城県": 8, "栃木県": 9, "群馬県": 10,
@@ -72,8 +123,152 @@ PREFECTURE_CODES = {
     "佐賀県": 41, "長崎県": 42, "熊本県": 43, "大分県": 44, "宮崎県": 45,
     "鹿児島県": 46, "沖縄県": 47,
 }
-
-MONTH_ABBR = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"]
+PREFECTURE_EN = {
+    "北海道": "Hokkaido", "青森県": "Aomori", "岩手県": "Iwate", "宮城県": "Miyagi",
+    "秋田県": "Akita", "山形県": "Yamagata", "福島県": "Fukushima", "茨城県": "Ibaraki",
+    "栃木県": "Tochigi", "群馬県": "Gunma", "埼玉県": "Saitama", "千葉県": "Chiba",
+    "東京都": "Tokyo", "神奈川県": "Kanagawa", "新潟県": "Niigata", "富山県": "Toyama",
+    "石川県": "Ishikawa", "福井県": "Fukui", "山梨県": "Yamanashi", "長野県": "Nagano",
+    "岐阜県": "Gifu", "静岡県": "Shizuoka", "愛知県": "Aichi", "三重県": "Mie",
+    "滋賀県": "Shiga", "京都府": "Kyoto", "大阪府": "Osaka", "兵庫県": "Hyogo",
+    "奈良県": "Nara", "和歌山県": "Wakayama", "鳥取県": "Tottori", "島根県": "Shimane",
+    "岡山県": "Okayama", "広島県": "Hiroshima", "山口県": "Yamaguchi", "徳島県": "Tokushima",
+    "香川県": "Kagawa", "愛媛県": "Ehime", "高知県": "Kochi", "福岡県": "Fukuoka",
+    "佐賀県": "Saga", "長崎県": "Nagasaki", "熊本県": "Kumamoto", "大分県": "Oita",
+    "宮崎県": "Miyazaki", "鹿児島県": "Kagoshima", "沖縄県": "Okinawa",
+}
+CADENCE_LABELS = {
+    "每年2次": {"zh-Hant": "每年2次", "ja": "年2回", "en": "Twice yearly"},
+    "每2年1次": {"zh-Hant": "每2年1次", "ja": "2年に1回", "en": "Biennial"},
+    "自2028起每年1次；此前非年度制": {
+        "zh-Hant": "自2028起每年1次；此前非年度制",
+        "ja": "2028年以降は年1回（以前は不定期）",
+        "en": "Annual from 2028; previously non-annual",
+    },
+}
+MONTH_LABELS = {
+    "zh-Hant": ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十", "十一", "十二"],
+    "ja": ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
+    "en": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+}
+LOCALES = ("zh-Hant", "ja", "en")
+PAGE_SUFFIX = {"zh-Hant": "", "ja": "-ja", "en": "-en"}
+TEXT = {
+    "zh-Hant": {
+        "language": "語言", "site_title": "日本急診相關醫學會議追蹤",
+        "site_description": "追蹤日本國內急診、EMS、重症、敗血症、創傷、毒物、心臟、航空、潛水、登山與運動醫學等急性照護相關會議。",
+        "checked": "資料查核 {date}",
+        "intro": "收錄日本國內與急診醫學相關的急診、院前／EMS、災難、創傷、重症、敗血症／感染、毒物、心臟急症、航空、潛水／高壓氧、登山與運動醫學等會議，以及已確認在日本舉辦的跨國輪辦世界級會議；世界級以主辦國跨國輪替為判準，不限年會或雙年會，非年度制系列另行標示週期。日期、城市、會場與連結均取自官方頁面。",
+        "filter_aria": "篩選會議", "prefecture": "都道府縣", "all_prefectures": "全部都道府縣",
+        "topic": "領域", "all_topics": "全部領域", "date_range": "時間區間", "start_date": "起日",
+        "to": "至", "end_date": "迄日", "date_error": "起日不可晚於迄日。",
+        "event_count": "{count} 場會議", "show_count": "顯示 {count} 場會議", "reset": "清除篩選",
+        "map_title": "日本急診相關醫學會議地圖", "choose_year": "選擇年份",
+        "map_aria": "日本急診相關醫學會議地圖", "map_empty": "地圖上沒有符合條件的會議。",
+        "map_note": "旗桿底端對應會場座標；滑鼠移到旗子或以鍵盤聚焦可看會議資訊，下方每場會議分開列示。同座標的會議共用旗子，沒有用假位移拆開。縮放可使用右上角按鈕、Ctrl／⌘＋滾輪、雙擊或手機雙指；放大後可拖曳。",
+        "zoom": "地圖縮放", "zoom_in": "放大", "zoom_out": "縮小", "zoom_reset": "還原",
+        "upcoming_flag": "即將舉行的日本會議", "next": "下一場", "filtered_next": "篩選後下一場",
+        "no_future": "目前沒有符合條件的未來會議。", "no_upcoming": "目前沒有尚未結束的收錄會議。",
+        "opens_days": "<b>{count}</b> 天後開幕", "opens_tomorrow": "<b>明天</b> 開幕",
+        "opens_today": "<b>今天</b> 開幕", "ongoing": "<b>進行中</b>", "ended": "<b>已閉幕</b>",
+        "upcoming_section": "即將舉行的場次", "cards_empty": "沒有符合條件的會議。",
+        "archive_count": "查看已結束的 {count} 場歷屆會議", "archive_page": "查看歷屆會議頁",
+        "season_section": "年度節奏", "months": "月份", "season_empty": "年度節奏中沒有符合條件的會議。",
+        "deadlines_section": "投稿死線", "deadline_none": "目前沒有官方已確認的投稿截止日期。未確認日期不會寫入 ICS 行事曆；每週複核官方來源，確認公告後才會顯示。",
+        "deadline_note": "只列官方明確公告的投稿日期；未公布或無公開徵稿者不推算。截止日不寫入會議 ICS，以免與會期事件混淆；每週二 23:00（日本時間）複核。",
+        "deadline_empty": "投稿死線中沒有符合條件的會議。", "days_remaining": "剩 {count} 天",
+        "deadline_today": "今天截止", "closed": "已截止", "submission_prefix": "投稿：", "submission_items": "{count} 項",
+        "tracking_section": "後續場次待公告的系列", "tracking_waiting": "尚未公告",
+        "tracking_partial": "部分公告", "tracking_manual": "人工追蹤", "official_page": "官方頁 ↗",
+        "tracking_note": "只列 2025、2026 均有實際舉辦紀錄，且下一屆日期、城市或會場仍未完整公告的固定系列；已完整公告下一屆者不列入。",
+        "past_title": "歷屆會議", "back_home": "回到主頁",
+        "past_intro": "已結束的日本急診相關醫學會議；另列出 2025、2026 曾舉辦、但下一屆尚未完整公告的系列，供後續依官方入口追蹤。",
+        "all_past": "全部歷屆場次", "no_past": "目前尚無已結束的收錄會議。", "map_count": "{count} 場",
+        "footer_sources": "官方資料查核至 {date}。資料來源：", "footer_disclaimer": "會議日期、城市與會場請以官方公告為準。",
+        "subscribe": "訂閱", "ics_calendar": "ICS 行事曆", "or_download": "，或下載",
+        "template_credit": "版型與追蹤架構沿用學長的", "template_title": "「急診國際年會追蹤」",
+        "source_repository": "原始碼 repository", "map_source": "日本地圖 SVG 來源：",
+        "map_derived": "源自 Wikipedia「日本地図.svg」，依下列授權使用：", "map_license_use": "專案內保留原始 SVG 與授權說明。",
+        "maker_credit": "山上有草一直燒資訊有限公司製作",
+        "english_unavailable": "官方日文名稱（尚無已核實的英文名稱）",
+    },
+    "ja": {
+        "language": "言語", "site_title": "日本の救急関連医学会議トラッカー",
+        "site_description": "日本国内で開催される救急、EMS、集中治療、敗血症、外傷、毒物、循環器、航空、潜水、登山、スポーツ医学などの急性期医療関連学会を追跡します。",
+        "checked": "情報確認日 {date}",
+        "intro": "日本国内の救急医学に関連する救急、病院前／EMS、災害、外傷、重症、敗血症／感染症、中毒、心血管救急、航空、潜水／高気圧、登山、スポーツ医学などの学会と、日本開催が確認された国際持ち回りの世界会議を収録しています。世界会議は開催頻度を問わず、開催国が国際的に持ち回りであることを基準とし、隔年などの周期は別に表示します。日程、都市、会場、リンクはすべて公式情報に基づきます。",
+        "filter_aria": "会議を絞り込む", "prefecture": "都道府県", "all_prefectures": "すべての都道府県",
+        "topic": "分野", "all_topics": "すべての分野", "date_range": "期間", "start_date": "開始日",
+        "to": "～", "end_date": "終了日", "date_error": "開始日は終了日より後にできません。",
+        "event_count": "{count}件", "show_count": "{count}件を表示", "reset": "絞り込みを解除",
+        "map_title": "日本の救急関連医学会議マップ", "choose_year": "年を選択",
+        "map_aria": "日本の救急関連医学会議マップ", "map_empty": "該当する会議は地図上にありません。",
+        "map_note": "旗竿の下端が会場座標です。旗にマウスを合わせるかキーボードでフォーカスすると会議情報を確認できます。下部には各会議を個別に表示します。同一座標の会議は同じ旗を共有し、見かけ上の位置ずらしは行いません。右上のボタン、Ctrl／⌘＋ホイール、ダブルクリック、またはピンチ操作で拡大でき、拡大後はドラッグできます。",
+        "zoom": "地図の拡大縮小", "zoom_in": "拡大", "zoom_out": "縮小", "zoom_reset": "元に戻す",
+        "upcoming_flag": "今後の日本開催会議", "next": "次の会議", "filtered_next": "絞り込み後の次の会議",
+        "no_future": "条件に合う今後の会議はありません。", "no_upcoming": "収録済みの今後の会議はありません。",
+        "opens_days": "<b>{count}</b>日後に開幕", "opens_tomorrow": "<b>明日</b>開幕",
+        "opens_today": "<b>本日</b>開幕", "ongoing": "<b>開催中</b>", "ended": "<b>終了</b>",
+        "upcoming_section": "今後の開催", "cards_empty": "条件に合う会議はありません。",
+        "archive_count": "終了した過去の会議 {count}件を見る", "archive_page": "過去の会議を見る",
+        "season_section": "年間スケジュール", "months": "月", "season_empty": "年間スケジュールに該当する会議はありません。",
+        "deadlines_section": "演題募集締切", "deadline_none": "公式に確認できた演題募集締切は現在ありません。未確認の日付はICSカレンダーに追加せず、公式発表を毎週確認してから表示します。",
+        "deadline_note": "公式に明記された演題募集日のみ掲載します。未発表または公募のないものは推定しません。締切日は会期と混同しないようICSには追加せず、毎週火曜日23:00（日本時間）に確認します。",
+        "deadline_empty": "該当する演題募集締切はありません。", "days_remaining": "あと{count}日",
+        "deadline_today": "本日締切", "closed": "締切済み", "submission_prefix": "演題募集：", "submission_items": "{count}件",
+        "tracking_section": "次回開催の詳細待ち", "tracking_waiting": "未発表",
+        "tracking_partial": "一部発表", "tracking_manual": "手動追跡", "official_page": "公式ページ ↗",
+        "tracking_note": "2025年と2026年に実開催の記録があり、次回の日程、都市、会場のいずれかが未発表の定例シリーズのみを掲載します。次回の詳細がすべて発表済みのものは含みません。",
+        "past_title": "過去の会議", "back_home": "トップへ戻る",
+        "past_intro": "終了した日本の救急関連医学会議です。あわせて、2025年と2026年に開催実績があり、次回の詳細がまだ出そろっていないシリーズを公式ページとともに掲載します。",
+        "all_past": "過去の全会議", "no_past": "収録済みの過去の会議はありません。", "map_count": "{count}件",
+        "footer_sources": "公式情報の確認日：{date}。情報源：", "footer_disclaimer": "日程、都市、会場は公式発表を優先してください。",
+        "subscribe": "購読：", "ics_calendar": "ICSカレンダー", "or_download": "、またはダウンロード：",
+        "template_credit": "レイアウトと追跡構成は先輩の", "template_title": "「国際救急医学会議トラッカー」",
+        "source_repository": "ソースコード repository", "map_source": "日本地図SVGの出典：",
+        "map_derived": "Wikipedia「日本地図.svg」を元に、次のライセンスで使用しています：", "map_license_use": "プロジェクト内に元SVGとライセンス情報を保存しています。",
+        "maker_credit": "制作：山上有草一直燒資訊有限公司",
+        "english_unavailable": "公式日本語名（確認済みの英語名なし）",
+    },
+    "en": {
+        "language": "Language", "site_title": "Japan Emergency Medicine Conference Tracker",
+        "site_description": "Track emergency medicine, EMS, critical care, sepsis, trauma, toxicology, cardiovascular, aerospace, diving, mountain, and sports medicine meetings held in Japan.",
+        "checked": "Information checked {date}",
+        "intro": "Covers emergency medicine, prehospital care and EMS, disaster medicine, trauma, critical care, sepsis and infection, toxicology, acute cardiovascular care, aerospace, diving and hyperbaric medicine, mountain medicine, and sports medicine meetings in Japan, plus internationally rotating world congresses confirmed to be held in Japan. World congresses are identified by rotating host countries, regardless of whether they are annual or biennial; non-annual cycles are labeled separately. Dates, cities, venues, and links come from official sources. Verified English congress titles are used when available; otherwise the official Japanese title is retained. Official Japanese place and venue names are retained where no verified English form is available.",
+        "filter_aria": "Filter conferences", "prefecture": "Prefecture", "all_prefectures": "All prefectures",
+        "topic": "Field", "all_topics": "All fields", "date_range": "Date range", "start_date": "From",
+        "to": "to", "end_date": "Until", "date_error": "The start date cannot be later than the end date.",
+        "event_count": "{count} conferences", "show_count": "Showing {count} conferences", "reset": "Clear filters",
+        "map_title": "Japan Emergency Medicine Conference Map", "choose_year": "Choose year",
+        "map_aria": "Map of emergency medicine-related conferences in Japan", "map_empty": "No matching conferences are shown on the map.",
+        "map_note": "The bottom of each flagpole marks the venue coordinates. Hover over or focus a flag to view conference details; every conference is also listed separately below. Conferences at the same coordinates share one flag and are not artificially offset. Zoom with the controls, Ctrl/⌘ plus the mouse wheel, double-click, or pinch; drag after zooming.",
+        "zoom": "Map zoom", "zoom_in": "Zoom in", "zoom_out": "Zoom out", "zoom_reset": "Reset",
+        "upcoming_flag": "Upcoming Japan Conferences", "next": "Next conference", "filtered_next": "Next matching conference",
+        "no_future": "No future conferences match these filters.", "no_upcoming": "No upcoming conferences are currently listed.",
+        "opens_days": "Opens in <b>{count}</b> days", "opens_tomorrow": "Opens <b>tomorrow</b>",
+        "opens_today": "Opens <b>today</b>", "ongoing": "<b>In progress</b>", "ended": "<b>Ended</b>",
+        "upcoming_section": "Upcoming conferences", "cards_empty": "No conferences match these filters.",
+        "archive_count": "View {count} past conferences", "archive_page": "View past conferences",
+        "season_section": "Annual schedule", "months": "Month", "season_empty": "No matching conferences appear in the annual schedule.",
+        "deadlines_section": "Submission deadlines", "deadline_none": "No officially confirmed submission deadlines are currently available. Unconfirmed dates are not added to the ICS calendar and appear only after the official source is verified.",
+        "deadline_note": "Only submission dates explicitly published by official sources are listed. Missing dates and meetings without an open call are not estimated. Deadlines are excluded from the conference ICS to avoid confusion with meeting dates and are reviewed every Tuesday at 23:00 Japan time.",
+        "deadline_empty": "No submission deadlines match these filters.", "days_remaining": "{count} days left",
+        "deadline_today": "Due today", "closed": "Closed", "submission_prefix": "Submissions: ", "submission_items": "{count} items",
+        "tracking_section": "Series awaiting next-meeting details", "tracking_waiting": "Not announced",
+        "tracking_partial": "Partially announced", "tracking_manual": "Manual tracking", "official_page": "Official page ↗",
+        "tracking_note": "Lists recurring series held in both 2025 and 2026 whose next date, city, or venue is not yet fully announced. Series with complete next-meeting details are excluded.",
+        "past_title": "Past conferences", "back_home": "Back to home",
+        "past_intro": "Past emergency medicine-related conferences in Japan, plus recurring series held in 2025 and 2026 whose next meeting details are not yet complete, with official pages for follow-up.",
+        "all_past": "All past conferences", "no_past": "No past conferences are currently listed.", "map_count": "{count} conferences",
+        "footer_sources": "Official information checked through {date}. Sources:", "footer_disclaimer": "Conference dates, cities, and venues should be confirmed against official announcements.",
+        "subscribe": "Subscribe to the", "ics_calendar": "ICS calendar", "or_download": ", or download",
+        "template_credit": "Layout and tracking structure adapted from the senior's", "template_title": "Emergency Medicine International Conference Tracker",
+        "source_repository": "source repository", "map_source": "Japan map SVG source:",
+        "map_derived": "Derived from Wikipedia's “Japan map.svg” and used under this license:", "map_license_use": "The original SVG and license notice are retained in this project.",
+        "maker_credit": "Produced by 山上有草一直燒資訊有限公司",
+        "english_unavailable": "Official Japanese title (verified English title not available)",
+    },
+}
 REQUIRED_FIELDS = {
     "id", "name", "start", "end", "city", "prefecture", "region", "venue",
     "topic", "topicKey", "officialUrl", "sourceCheckedAt", "societyCode",
@@ -104,7 +299,9 @@ def load_watchlist(path: Path) -> list[dict]:
         raise ValueError("watchlist data must be a list")
     seen = set()
     required = {"id", "name", "url", "status", "reason"}
-    display_required = {"displayCode", "nameZh", "topic"}
+    display_required = {
+        "displayCode", "nameZh", "nameEn", "topic", "topicKey", "reasonJa", "reasonEn",
+    }
     for index, item in enumerate(items, start=1):
         missing = required - item.keys()
         if item.get("showOnArchive"):
@@ -208,9 +405,48 @@ def society_code(row: dict) -> str:
     return row["society"]
 
 
-def topic_with_cadence(row: dict) -> str:
+def tr(locale: str, key: str, **values: object) -> str:
+    return TEXT[locale][key].format(**values)
+
+
+def page_name(page: str, locale: str) -> str:
+    return f"{page}{PAGE_SUFFIX[locale]}.html"
+
+
+def topic_label(row: dict, locale: str) -> str:
+    if locale == "zh-Hant":
+        return row["topic"]
+    return TOPIC_LABELS_BY_LOCALE[locale][row["topicKey"]]
+
+
+def topic_with_cadence(row: dict, locale: str = "zh-Hant") -> str:
+    topic = topic_label(row, locale)
     cadence = row.get("cadence")
-    return f'{row["topic"]}（{cadence}）' if cadence else row["topic"]
+    if not cadence:
+        return topic
+    translated = CADENCE_LABELS[cadence][locale]
+    return f"{topic} ({translated})" if locale == "en" else f"{topic}（{translated}）"
+
+
+def official_name_lang(row: dict) -> str:
+    return "ja" if re.search(r"[\u3040-\u30ff\u3400-\u9fff]", row["name"]) else "en"
+
+
+def event_titles(row: dict, locale: str) -> tuple[str, str | None, str, str | None]:
+    official_lang = official_name_lang(row)
+    if locale == "zh-Hant":
+        return row["name"], row.get("nameZh", row["name"]), official_lang, "zh-Hant"
+    if locale == "ja":
+        return row["name"], None, official_lang, None
+    if row.get("englishName"):
+        return row["englishName"], row["name"], "en", official_lang
+    if official_lang == "en":
+        return row["name"], None, "en", None
+    return row["name"], tr("en", "english_unavailable"), "ja", "en"
+
+
+def event_name(row: dict, locale: str) -> str:
+    return event_titles(row, locale)[0]
 
 
 def color_for(row: dict) -> str:
@@ -219,6 +455,22 @@ def color_for(row: dict) -> str:
 
 def canonical_prefecture(value: str) -> str:
     return value.replace("縣", "県")
+
+
+def localized_city(row: dict, locale: str = "zh-Hant") -> str:
+    city = row["city"]
+    if locale == "zh-Hant":
+        return city
+    if city == "線上":
+        return "Online" if locale == "en" else "オンライン"
+    return city.translate(str.maketrans({
+        "區": "区",
+        "橫": "横",
+        "濱": "浜",
+        "戶": "戸",
+        "會": "会",
+        "兒": "児",
+    }))
 
 
 def date_range(row: dict) -> str:
@@ -237,10 +489,31 @@ def short_date_range(row: dict) -> str:
     return f"{start.month}/{start.day}–{end.month}/{end.day}"
 
 
-def location_text(row: dict) -> str:
-    if row["city"].startswith(row["prefecture"]):
-        return row["city"]
-    return f'{row["prefecture"]} · {row["city"]}'
+def location_text(row: dict, locale: str = "zh-Hant") -> str:
+    city = localized_city(row, locale)
+    if locale == "en":
+        if city == "Online":
+            return "Online"
+        return f'{PREFECTURE_EN[canonical_prefecture(row["prefecture"])]} · {city}'
+    prefecture = canonical_prefecture(row["prefecture"]) if locale == "ja" else row["prefecture"]
+    if city.startswith(prefecture):
+        return city
+    return f'{prefecture} · {city}'
+
+
+def language_switcher(page: str, locale: str) -> str:
+    labels = {"zh-Hant": "繁中", "ja": "日本語", "en": "English"}
+    links = []
+    for item in LOCALES:
+        current = ' aria-current="page"' if item == locale else ""
+        links.append(
+            f'<a href="{page_name(page, item)}" lang="{item}"{current}>'
+            f'{labels[item]}</a>'
+        )
+    return (
+        f'<nav class="language-switcher" aria-label="{html.escape(tr(locale, "language"))}">'
+        + "".join(links) + "</nav>"
+    )
 
 
 def source_checked_at(events: list[dict]) -> str:
@@ -263,9 +536,9 @@ def assign_lanes(rows: list[dict]) -> dict[str, int]:
     return result
 
 
-def band(row: dict) -> str:
+def band(row: dict, locale: str = "zh-Hant") -> str:
     code = society_code(row)
-    topic = topic_with_cadence(row)
+    topic = topic_with_cadence(row, locale)
     color = color_for(row)
     return (
         f'<span class="code-block" style="color:{color};border-color:{color}">'
@@ -361,6 +634,7 @@ def deadline_data(rows: list[dict], deadlines: list[dict], today: date) -> list[
             "societyCode": society_code(row),
             "name": row["name"],
             "nameZh": row.get("nameZh", row["name"]),
+            "englishName": row.get("englishName"),
             "status": "upcoming" if deadline >= today else "closed",
             "daysRemaining": (deadline - today).days,
         })
@@ -396,6 +670,12 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{ou
   gap:1rem; flex-wrap:wrap; border-bottom:1px solid var(--ink); padding-bottom:.6rem}
 .masthead h1{font-size:1.5rem; font-weight:600; margin:0; letter-spacing:.01em}
 .masthead .stamp{color:var(--muted); font-size:.85rem}
+.masthead-tools{display:flex; align-items:center; justify-content:flex-end; gap:.75rem 1rem; flex-wrap:wrap}
+.language-switcher{display:inline-flex; border:1px solid var(--rule); border-radius:3px; overflow:hidden}
+.language-switcher a{padding:.26rem .52rem; color:var(--muted); font-family:"Inter","Helvetica Neue",Arial,sans-serif;
+  font-size:.76rem; line-height:1.2; text-decoration:none; background:var(--surface); border-left:1px solid var(--rule)}
+.language-switcher a:first-child{border-left:0}
+.language-switcher a[aria-current="page"]{color:#fff; background:#1d3550}
 .intro{margin:.65rem 0 0; color:var(--muted); font-size:.95rem; line-height:1.6; max-width:55rem}
 .filters{margin:1.5rem 0 2.2rem; padding:.9rem 0; border-top:1px solid var(--rule);
   border-bottom:1px solid var(--rule); display:flex; align-items:flex-end; gap:.8rem 1rem; flex-wrap:wrap}
@@ -608,7 +888,8 @@ MAP_CSS = """
 """
 
 
-def conference_cards(rows: list[dict], today: date, deadlines: list[dict] | None = None) -> str:
+def conference_cards(rows: list[dict], today: date, locale: str = "zh-Hant",
+                     deadlines: list[dict] | None = None) -> str:
     deadline_groups: dict[str, list[dict]] = defaultdict(list)
     for item in deadlines or []:
         deadline_groups[item["eventId"]].append(item)
@@ -616,8 +897,13 @@ def conference_cards(rows: list[dict], today: date, deadlines: list[dict] | None
     for row in rows:
         color = color_for(row)
         past = is_past(row, today)
+        precision_text = row.get("mapNote") or "地圖點為園區代表位置"
+        if locale == "ja":
+            precision_text = "地図上の位置は会場施設の代表点です"
+        elif locale == "en":
+            precision_text = "Map marker represents the venue complex"
         precision = (
-            f'<span class="precision">{html.escape(row.get("mapNote") or "地圖點為園區代表位置")}</span>'
+            f'<span class="precision">{html.escape(precision_text)}</span>'
             if row.get("mapPrecision") == "complex" else ""
         )
         upcoming_deadlines = [
@@ -630,38 +916,43 @@ def conference_cards(rows: list[dict], today: date, deadlines: list[dict] | None
             if next_deadline else 0
         )
         deadline_text = (
-            f'{next_deadline["deadline"]}（{same_day_count} 項）'
+            f'{next_deadline["deadline"]}（{tr(locale, "submission_items", count=same_day_count)}）'
             if same_day_count > 1
             else f'{next_deadline["label"]} {next_deadline["deadline"]}'
         ) if next_deadline else ""
         deadline_meta = (
             f'<span class="meta" style="color:{color}">{ICON_CAL}'
-            f'<span>投稿：{html.escape(deadline_text)}</span></span>'
+            f'<span>{html.escape(tr(locale, "submission_prefix"))}{html.escape(deadline_text)}</span></span>'
             if next_deadline else ""
+        )
+        primary, secondary, primary_lang, secondary_lang = event_titles(row, locale)
+        secondary_html = (
+            f'<span class="card-title-zh" lang="{secondary_lang}">{html.escape(secondary)}</span>'
+            if secondary else ""
         )
         cards.append(
             f'<a class="card{" past" if past else ""}" href="{html.escape(row["officialUrl"])}" '
             f'target="_blank" rel="noopener" data-filter-id="{html.escape(row["id"])}">'
-            f'<span class="band">{band(row)}<em>{row["_year"]}</em></span>'
+            f'<span class="band">{band(row, locale)}<em>{row["_year"]}</em></span>'
             f'<span class="soc-line" style="color:{color}">{html.escape(society_code(row))} · '
-            f'{html.escape(topic_with_cadence(row))}</span>'
-            f'<span class="card-title">{html.escape(row["name"])}</span>'
-            f'<span class="card-title-zh">{html.escape(row.get("nameZh", row["name"]))}</span>'
+            f'{html.escape(topic_with_cadence(row, locale))}</span>'
+            f'<span class="card-title" lang="{primary_lang}">{html.escape(primary)}</span>'
+            f'{secondary_html}'
             f'<span class="meta" style="color:{color}">{ICON_CAL}'
             f'<span>{html.escape(date_range(row))}</span></span>'
             f'{deadline_meta}'
             f'<span class="meta" style="color:{color}">{ICON_PIN}'
-            f'<span class="place">{html.escape(location_text(row))}'
-            f'<span class="venue">{html.escape(row["venue"])}</span>{precision}</span></span>'
+            f'<span class="place">{html.escape(location_text(row, locale))}'
+            f'<span class="venue" lang="ja">{html.escape(row["venue"])}</span>{precision}</span></span>'
             f'</a>'
         )
     return '<div class="cards" id="conference-cards">' + "".join(cards) + "</div>"
 
 
-def season_grid(rows: list[dict], today: date) -> str:
+def season_grid(rows: list[dict], today: date, locale: str = "zh-Hant") -> str:
     years = sorted({row["_year"] for row in rows})
-    months = '<div class="gridrow months"><span>月份</span>' + "".join(
-        f"<span>{month}</span>" for month in MONTH_ABBR
+    months = f'<div class="gridrow months"><span>{html.escape(tr(locale, "months"))}</span>' + "".join(
+        f"<span>{month}</span>" for month in MONTH_LABELS[locale]
     ) + "</div>"
     bands = []
     for year in years:
@@ -674,11 +965,11 @@ def season_grid(rows: list[dict], today: date) -> str:
             color = color_for(row)
             bars.append(
                 f'<div class="bar" style="grid-column:{row["_month"] + 1};grid-row:{lane};'
-                f'color:{color}" title="{html.escape(row["name"])}" '
+                f'color:{color}" title="{html.escape(event_name(row, locale))}" '
                 f'data-filter-id="{html.escape(row["id"])}">'
                 f'<b>{html.escape(society_code(row))}</b>'
                 f'<span>{html.escape(short_date_range(row))}</span>'
-                f'<span>{html.escape(row["city"])}</span></div>'
+                f'<span>{html.escape(localized_city(row, locale))}</span></div>'
             )
         now = " now" if year == today.year else ""
         ids = " ".join(row["id"] for row in year_rows)
@@ -698,21 +989,21 @@ def season_grid(rows: list[dict], today: date) -> str:
         legend.append(
             f'<span style="color:{color_for(row)}" data-filter-ids="{html.escape(ids)}">'
             f'<span class="lg-txt"><b>{html.escape(code)}</b>'
-            f'<em>{html.escape(topic_with_cadence(row))}</em></span></span>'
+            f'<em>{html.escape(topic_with_cadence(row, locale))}</em></span></span>'
         )
     return (
         f'<div class="grid">{months}{"".join(bands)}</div>'
         f'<p class="legend">{"".join(legend)}</p>'
-        '<p class="filter-empty season-empty" hidden>年度節奏中沒有符合條件的會議。</p>'
+        f'<p class="filter-empty season-empty" hidden>{html.escape(tr(locale, "season_empty"))}</p>'
     )
 
 
-def deadline_section(rows: list[dict], deadlines: list[dict], today: date) -> str:
+def deadline_section(rows: list[dict], deadlines: list[dict], today: date,
+                     locale: str = "zh-Hant") -> str:
     items = deadline_data(rows, deadlines, today)
     if not items:
         return (
-            '<div class="dl"><p class="note">目前沒有官方已確認的投稿截止日期。'
-            '未確認日期不會寫入 ICS 行事曆；每週複核官方來源，確認公告後才會顯示。</p></div>'
+            f'<div class="dl"><p class="note">{html.escape(tr(locale, "deadline_none"))}</p></div>'
         )
     entries = []
     for item in items:
@@ -722,119 +1013,124 @@ def deadline_section(rows: list[dict], deadlines: list[dict], today: date) -> st
             if item.get("deadlineTime") else ""
         )
         if item["daysRemaining"] > 0:
-            status = f'剩 {item["daysRemaining"]} 天'
+            status = tr(locale, "days_remaining", count=item["daysRemaining"])
         elif item["daysRemaining"] == 0:
-            status = "今天截止"
+            status = tr(locale, "deadline_today")
         else:
-            status = "已截止"
+            status = tr(locale, "closed")
         entries.append(
             f'<li class="deadline-item {item["status"]}" data-filter-id="{html.escape(item["eventId"])}">'
             f'<span class="when">{html.escape(item["deadline"] + time_text)}</span>'
             '<span class="what">'
             f'<a href="{html.escape(item["officialUrl"])}" target="_blank" rel="noopener">'
             f'<b>{html.escape(item["societyCode"])} · {html.escape(item["label"])}</b></a>'
-            f'<span>{html.escape(item["nameZh"])}</span></span>'
+            f'<span>{html.escape(event_name(item, locale))}</span></span>'
             f'<span class="left">{html.escape(status)}</span></li>'
         )
     return (
         '<div class="dl deadline-list"><ol>' + "".join(entries) + '</ol>'
-        '<p class="note">只列官方明確公告的投稿日期；未公布或無公開徵稿者不推算。'
-        '截止日不寫入會議 ICS，以免與會期事件混淆；每週二 23:00（日本時間）複核。</p></div>'
-        '<p class="filter-empty deadline-empty" hidden>投稿死線中沒有符合條件的會議。</p>'
+        f'<p class="note">{html.escape(tr(locale, "deadline_note"))}</p></div>'
+        f'<p class="filter-empty deadline-empty" hidden>{html.escape(tr(locale, "deadline_empty"))}</p>'
     )
 
 
-def tracking_list(items: list[dict]) -> str:
+def tracking_list(items: list[dict], locale: str = "zh-Hant") -> str:
     visible = [item for item in items if item.get("showOnArchive")]
     if not visible:
         return ""
     status_labels = {
-        "waiting": "尚未公告",
-        "partial": "部分公告",
-        "manual": "人工追蹤",
+        "waiting": tr(locale, "tracking_waiting"),
+        "partial": tr(locale, "tracking_partial"),
+        "manual": tr(locale, "tracking_manual"),
     }
     entries = []
     for item in visible:
         status = status_labels.get(item["status"], item["status"])
+        topic = item["topic"] if locale == "zh-Hant" else TOPIC_LABELS_BY_LOCALE[locale][item["topicKey"]]
+        name = item["nameZh"] if locale == "zh-Hant" else item["name"] if locale == "ja" else item["nameEn"]
+        reason = item["reason"] if locale == "zh-Hant" else item[f'reason{locale.title()}']
         entries.append(
             f'<li data-tracking-id="{html.escape(item["id"])}">'
             f'<span class="when">{html.escape(status)}</span>'
             '<span class="what">'
             f'<a href="{html.escape(item["url"])}" target="_blank" rel="noopener">'
-            f'<b>{html.escape(item["displayCode"])} · {html.escape(item["topic"])}</b></a>'
-            f'<span>{html.escape(item["nameZh"])}</span>'
-            f'<span lang="ja">{html.escape(item["name"])}</span>'
-            f'<span class="reason">{html.escape(item["reason"])}</span>'
+            f'<b>{html.escape(item["displayCode"])} · {html.escape(topic)}</b></a>'
+            f'<span>{html.escape(name)}</span>'
+            f'<span class="reason">{html.escape(reason)}</span>'
             '</span>'
             f'<span class="left"><a href="{html.escape(item["url"])}" target="_blank" '
-            'rel="noopener">官方頁 ↗</a></span>'
+            f'rel="noopener">{html.escape(tr(locale, "official_page"))}</a></span>'
             '</li>'
         )
     return (
         '<div class="dl tracking-list"><ol>' + "".join(entries) + '</ol>'
-        '<p class="note">只列 2025、2026 均有實際舉辦紀錄，且下一屆日期、城市或會場仍未完整公告的固定系列；已完整公告下一屆者不列入。</p></div>'
+        f'<p class="note">{html.escape(tr(locale, "tracking_note"))}</p></div>'
     )
 
 
-def filter_controls(rows: list[dict]) -> str:
+def filter_controls(rows: list[dict], locale: str = "zh-Hant") -> str:
     prefectures = sorted({canonical_prefecture(row["prefecture"]) for row in rows})
     topics = sorted({row["topicKey"] for row in rows}, key=lambda key: TOPIC_LABELS[key])
     prefecture_options = "".join(
         f'<option value="{html.escape(prefecture)}" data-map-code="{PREFECTURE_CODES[prefecture]}">'
-        f'{html.escape(prefecture)}</option>'
+        f'{html.escape(PREFECTURE_EN[prefecture] if locale == "en" else prefecture)}</option>'
         for prefecture in prefectures
     )
     topic_options = "".join(
-        f'<option value="{html.escape(key)}">{html.escape(TOPIC_LABELS[key])}</option>'
+        f'<option value="{html.escape(key)}">{html.escape(TOPIC_LABELS_BY_LOCALE[locale][key])}</option>'
         for key in topics
     )
     return f"""
-<form class="filters" id="conference-filters" aria-label="篩選會議">
-  <label class="filter-field" for="filter-prefecture"><span>都道府縣</span>
+<form class="filters" id="conference-filters" aria-label="{html.escape(tr(locale, 'filter_aria'))}">
+  <label class="filter-field" for="filter-prefecture"><span>{html.escape(tr(locale, 'prefecture'))}</span>
     <select id="filter-prefecture" aria-controls="conference-cards">
-      <option value="all">全部都道府縣</option>{prefecture_options}
+      <option value="all">{html.escape(tr(locale, 'all_prefectures'))}</option>{prefecture_options}
     </select>
   </label>
-  <label class="filter-field" for="filter-topic"><span>領域</span>
+  <label class="filter-field" for="filter-topic"><span>{html.escape(tr(locale, 'topic'))}</span>
     <select id="filter-topic" aria-controls="conference-cards">
-      <option value="all">全部領域</option>{topic_options}
+      <option value="all">{html.escape(tr(locale, 'all_topics'))}</option>{topic_options}
     </select>
   </label>
   <fieldset class="filter-field filter-range">
-    <legend>時間區間</legend>
+    <legend>{html.escape(tr(locale, 'date_range'))}</legend>
     <div class="filter-dates">
-      <label class="filter-date" for="filter-start"><span>起日</span>
+      <label class="filter-date" for="filter-start"><span>{html.escape(tr(locale, 'start_date'))}</span>
         <input id="filter-start" type="date" aria-controls="conference-cards" aria-describedby="filter-date-error">
       </label>
-      <span class="filter-date-separator" aria-hidden="true">至</span>
-      <label class="filter-date" for="filter-end"><span>迄日</span>
+      <span class="filter-date-separator" aria-hidden="true">{html.escape(tr(locale, 'to'))}</span>
+      <label class="filter-date" for="filter-end"><span>{html.escape(tr(locale, 'end_date'))}</span>
         <input id="filter-end" type="date" aria-controls="conference-cards" aria-describedby="filter-date-error">
       </label>
-      <span class="filter-date-error" id="filter-date-error" role="alert" hidden>起日不可晚於迄日。</span>
+      <span class="filter-date-error" id="filter-date-error" role="alert" hidden>{html.escape(tr(locale, 'date_error'))}</span>
     </div>
   </fieldset>
   <div class="filter-actions">
-    <output class="filter-count" id="filter-count" aria-live="polite" aria-atomic="true">{len(rows)} 場會議</output>
-    <button class="filter-reset" type="reset">清除篩選</button>
+    <output class="filter-count" id="filter-count" aria-live="polite" aria-atomic="true">{html.escape(tr(locale, 'event_count', count=len(rows)))}</output>
+    <button class="filter-reset" type="reset">{html.escape(tr(locale, 'reset'))}</button>
   </div>
 </form>"""
 
 
-def filter_data(rows: list[dict]) -> str:
+def filter_data(rows: list[dict], locale: str = "zh-Hant") -> str:
     payload = [
         {
             "id": row["id"],
             "code": society_code(row),
             "color": color_for(row),
-            "name": row["name"],
+            "name": event_titles(row, locale)[0],
             "nameZh": row.get("nameZh", row["name"]),
+            "englishName": row.get("englishName"),
+            "nameSecondary": event_titles(row, locale)[1],
+            "nameLang": event_titles(row, locale)[2],
+            "nameSecondaryLang": event_titles(row, locale)[3],
             "prefecture": canonical_prefecture(row["prefecture"]),
             "topic": row["topicKey"],
             "start": row["start"],
             "end": row["end"],
             "year": row["_year"],
             "date": date_range(row),
-            "location": location_text(row),
+            "location": location_text(row, locale),
             "venue": row["venue"],
             "url": row["officialUrl"],
         }
@@ -868,7 +1164,7 @@ def truncate_map_name(value: str, limit: int = 19) -> str:
     return value if len(value) <= limit else value[:limit] + "…"
 
 
-def map_marker(group: list[dict]) -> str:
+def map_marker(group: list[dict], locale: str = "zh-Hant") -> str:
     first = group[0]
     x, y = project(first["lat"], first["lng"])
     color = color_for(first) if len({row["society"] for row in group}) == 1 else "#1d3550"
@@ -881,7 +1177,10 @@ def map_marker(group: list[dict]) -> str:
     callout_x = max(5, min(1000 - callout_width - 5, callout_x))
     callout_y = max(5, min(1000 - callout_height - 5, y - callout_height / 2))
     leader_x = callout_x if callout_x > x else callout_x + callout_width
-    title = f'{first["mapVenue"]} · {len(group)} 場' if len(group) > 1 else first["mapVenue"]
+    title = (
+        f'{first["mapVenue"]} · {tr(locale, "map_count", count=len(group))}'
+        if len(group) > 1 else first["mapVenue"]
+    )
     lines = []
     for index, row in enumerate(group):
         line_y = callout_y + 42 + index * 31
@@ -891,11 +1190,11 @@ def map_marker(group: list[dict]) -> str:
             f'y="{line_y - 14:.1f}" width="4" height="18" '
             f'rx="1" fill="{color_for(row)}"/>'
             f'<text x="{callout_x + 21:.1f}" y="{line_y - 2:.1f}" class="m-t">'
-            f'{html.escape(society_code(row))} · {html.escape(truncate_map_name(row["name"]))}</text>'
+            f'{html.escape(society_code(row))} · {html.escape(truncate_map_name(event_name(row, locale)))}</text>'
             f'<text x="{callout_x + 21:.1f}" y="{line_y + 12:.1f}" class="m-s">'
-            f'{html.escape(short_date_range(row))} · {html.escape(row["city"])}</text></g>'
+            f'{html.escape(short_date_range(row))} · {html.escape(localized_city(row, locale))}</text></g>'
         )
-    description = "；".join(f'{society_code(row)} {row["name"]}' for row in group)
+    description = "；".join(f'{society_code(row)} {event_name(row, locale)}' for row in group)
     ids = " ".join(row["id"] for row in group)
     return (
         f'<a href="{html.escape(first["officialUrl"])}" class="m-item" '
@@ -920,33 +1219,39 @@ def map_marker(group: list[dict]) -> str:
     )
 
 
-def map_strip(year: int, rows: list[dict]) -> str:
+def map_strip(year: int, rows: list[dict], locale: str = "zh-Hant") -> str:
     cells = []
     for row in rows:
+        label = (
+            f'{society_code(row)} ({topic_with_cadence(row, locale)})'
+            if locale == "en" else f'{society_code(row)}（{topic_with_cadence(row, locale)}）'
+        )
         cells.append(
             f'<a class="ms-cell" href="{html.escape(row["officialUrl"])}" '
             f'target="_blank" rel="noopener" style="--c:{color_for(row)}" '
             f'data-filter-id="{html.escape(row["id"])}">'
-            f'<b>{html.escape(society_code(row))}（{html.escape(topic_with_cadence(row))}）</b>'
-            f'<span>{ICON_PIN}{html.escape(row["city"])}</span>'
+            f'<b>{html.escape(label)}</b>'
+            f'<span>{ICON_PIN}{html.escape(localized_city(row, locale))}</span>'
             f'<span>{ICON_CAL}{html.escape(short_date_range(row))}</span></a>'
         )
     return (
         f'<div class="ms-strip" data-year="{year}"><div class="ms-flag">{ICON_CAL}'
-        f'<span>Upcoming<br>Japan Conferences <b>{year}</b></span></div>'
+        f'<span>{html.escape(tr(locale, "upcoming_flag"))} <b>{year}</b></span></div>'
         f'<div class="ms-cells">{"".join(cells)}</div></div>'
     )
 
 
-ZOOM_CONTROLS = (
-    '<div class="m-zoom" role="group" aria-label="地圖縮放">'
-    '<button type="button" data-z="in" aria-label="放大">+</button>'
-    '<button type="button" data-z="out" aria-label="縮小">−</button>'
-    '<button type="button" data-z="reset" aria-label="還原" title="還原">⤢</button></div>'
-)
+def zoom_controls(locale: str) -> str:
+    return (
+        f'<div class="m-zoom" role="group" aria-label="{html.escape(tr(locale, "zoom"))}">'
+        f'<button type="button" data-z="in" aria-label="{html.escape(tr(locale, "zoom_in"))}">+</button>'
+        f'<button type="button" data-z="out" aria-label="{html.escape(tr(locale, "zoom_out"))}">−</button>'
+        f'<button type="button" data-z="reset" aria-label="{html.escape(tr(locale, "zoom_reset"))}" '
+        f'title="{html.escape(tr(locale, "zoom_reset"))}">⤢</button></div>'
+    )
 
 
-def japan_map_section(rows: list[dict], map_svg: str) -> str:
+def japan_map_section(rows: list[dict], map_svg: str, locale: str = "zh-Hant") -> str:
     years = sorted({row["_year"] for row in rows})
     if not years:
         return ""
@@ -960,17 +1265,17 @@ def japan_map_section(rows: list[dict], map_svg: str) -> str:
     strips = []
     for year in years:
         year_rows = [row for row in rows if row["_year"] == year]
-        markers = "".join(map_marker(group) for group in coordinate_groups(year_rows))
+        markers = "".join(map_marker(group, locale) for group in coordinate_groups(year_rows))
         hidden = "" if year == active_year else " hidden"
         map_years.append(f'<g class="m-year" data-year="{year}"{hidden}>{markers}</g>')
-        strip = map_strip(year, year_rows)
+        strip = map_strip(year, year_rows, locale)
         if hidden:
             strip = strip.replace(f'data-year="{year}"', f'data-year="{year}" hidden', 1)
         strips.append(strip)
     svg_inner = extract_svg_inner(map_svg)
     svg = (
         '<svg class="m-svg jp-map geolonia-svg-map" viewBox="0 0 1000 1000" '
-        'role="img" aria-label="日本急診相關醫學會議地圖">'
+        f'role="img" aria-label="{html.escape(tr(locale, "map_aria"))}">'
         '<defs><filter id="m-shadow" x="-10%" y="-10%" width="120%" height="140%">'
         '<feDropShadow dx="0" dy="1.5" stdDeviation="1.6" flood-opacity=".28"/>'
         '</filter></defs><g class="m-layer">'
@@ -978,14 +1283,12 @@ def japan_map_section(rows: list[dict], map_svg: str) -> str:
     )
     return (
         '<section class="worldmap" aria-labelledby="wm-title">'
-        '<div class="wm-head"><h2 id="wm-title">日本急診相關醫學會議地圖 '
+        f'<div class="wm-head"><h2 id="wm-title">{html.escape(tr(locale, "map_title"))} '
         f'<span class="wm-year">{active_year}</span></h2>'
-        f'<div class="wm-tabs" role="group" aria-label="選擇年份">{tabs}</div></div>'
-        f'<div class="wm-board"><div class="m-stage">{ZOOM_CONTROLS}{svg}</div>{"".join(strips)}</div>'
-        '<p class="filter-empty map-empty" hidden>地圖上沒有符合條件的會議。</p>'
-        '<p class="wm-note">旗桿底端對應會場座標；滑鼠移到旗子或以鍵盤聚焦可看會議資訊，'
-        '下方每場會議分開列示。同座標的會議共用旗子，沒有用假位移拆開。'
-        '縮放可使用右上角按鈕、Ctrl／⌘＋滾輪、雙擊或手機雙指；放大後可拖曳。</p></section>'
+        f'<div class="wm-tabs" role="group" aria-label="{html.escape(tr(locale, "choose_year"))}">{tabs}</div></div>'
+        f'<div class="wm-board"><div class="m-stage">{zoom_controls(locale)}{svg}</div>{"".join(strips)}</div>'
+        f'<p class="filter-empty map-empty" hidden>{html.escape(tr(locale, "map_empty"))}</p>'
+        f'<p class="wm-note">{html.escape(tr(locale, "map_note"))}</p></section>'
     )
 
 
@@ -1137,6 +1440,10 @@ MAP_JS = r"""
 
 COUNTDOWN_JS = r"""
 (function(){
+  var source = document.getElementById('page-i18n');
+  if(!source) return;
+  var messages = JSON.parse(source.textContent);
+  function message(key,count){ return messages[key].replace('{count}',String(count)); }
   function tokyoDay(){
     var p = new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit'})
       .formatToParts(new Date()).reduce(function(a,x){ if(x.type !== 'literal') a[x.type] = x.value; return a; },{});
@@ -1146,11 +1453,11 @@ COUNTDOWN_JS = r"""
   var el = document.querySelector('.count[data-start]');
   if(!el) return;
   var d = daysUntil(el.dataset.start), e = daysUntil(el.dataset.end || el.dataset.start);
-  if(d > 1) el.innerHTML = '<b>'+d+'</b> 天後開幕';
-  else if(d === 1) el.innerHTML = '<b>明天</b> 開幕';
-  else if(d === 0) el.innerHTML = '<b>今天</b> 開幕';
-  else if(e >= 0) el.innerHTML = '<b>進行中</b>';
-  else el.innerHTML = '<b>已閉幕</b>';
+  if(d > 1) el.innerHTML = message('opens_days',d);
+  else if(d === 1) el.innerHTML = messages.opens_tomorrow;
+  else if(d === 0) el.innerHTML = messages.opens_today;
+  else if(e >= 0) el.innerHTML = messages.ongoing;
+  else el.innerHTML = messages.ended;
 })();
 """
 
@@ -1159,8 +1466,11 @@ FILTER_JS = r"""
 (function(){
   var form = document.getElementById('conference-filters');
   var source = document.getElementById('conference-filter-data');
-  if(!form || !source) return;
+  var messageSource = document.getElementById('page-i18n');
+  if(!form || !source || !messageSource) return;
   var events = JSON.parse(source.textContent), byId = {};
+  var messages = JSON.parse(messageSource.textContent);
+  function message(key,count){ return messages[key].replace('{count}',String(count)); }
   var lastMatches = events.slice();
   events.forEach(function(event){ byId[event.id] = event; });
   var prefecture = document.getElementById('filter-prefecture');
@@ -1189,8 +1499,8 @@ FILTER_JS = r"""
   }
   function dateRangeValid(){
     var invalid = startDate.value && endDate.value && startDate.value > endDate.value;
-    startDate.setCustomValidity(invalid ? '起日不可晚於迄日。' : '');
-    endDate.setCustomValidity(invalid ? '起日不可晚於迄日。' : '');
+    startDate.setCustomValidity(invalid ? messages.date_error : '');
+    endDate.setCustomValidity(invalid ? messages.date_error : '');
     if(invalid){
       startDate.setAttribute('aria-invalid','true');
       endDate.setAttribute('aria-invalid','true');
@@ -1208,11 +1518,11 @@ FILTER_JS = r"""
   function countdown(element, today){
     var start = Math.round((dateValue(element.start) - today) / day);
     var end = Math.round((dateValue(element.end) - today) / day);
-    if(start > 1) return '<b>'+start+'</b> 天後開幕';
-    if(start === 1) return '<b>明天</b> 開幕';
-    if(start === 0) return '<b>今天</b> 開幕';
-    if(end >= 0) return '<b>進行中</b>';
-    return '<b>已閉幕</b>';
+    if(start > 1) return message('opens_days',start);
+    if(start === 1) return messages.opens_tomorrow;
+    if(start === 0) return messages.opens_today;
+    if(end >= 0) return messages.ongoing;
+    return messages.ended;
   }
   function updateHero(matches, today){
     if(!hero) return;
@@ -1223,14 +1533,20 @@ FILTER_JS = r"""
     var titleZh = hero.querySelector('.title-zh');
     var meta = hero.querySelector('.meta');
     var status = hero.querySelector('.count');
-    lede.textContent = active ? '篩選後下一場' : '下一場';
+    lede.textContent = active ? messages.filtered_next : messages.next;
     if(!next){
-      title.textContent = '目前沒有符合條件的未來會議。';
+      title.textContent = messages.no_future;
       if(titleZh) titleZh.hidden = true;
       meta.hidden = true; status.hidden = true; return;
     }
     title.textContent = next.name;
-    if(titleZh){ titleZh.textContent = next.nameZh; titleZh.hidden = false; }
+    title.setAttribute('lang',next.nameLang || '');
+    if(titleZh){
+      titleZh.textContent = next.nameSecondary || '';
+      titleZh.hidden = !next.nameSecondary;
+      if(next.nameSecondaryLang) titleZh.setAttribute('lang',next.nameSecondaryLang);
+      else titleZh.removeAttribute('lang');
+    }
     meta.textContent = next.date+'　·　'+next.location+'　·　'+next.venue;
     meta.hidden = false; status.hidden = false;
     status.dataset.start = next.start; status.dataset.end = next.end;
@@ -1264,7 +1580,7 @@ FILTER_JS = r"""
     flagFace.setAttribute('x',String(flagX));
     flagFace.setAttribute('width',String(flagWidth));
     flagFace.setAttribute('stroke',flagColor);
-    marker.querySelector('.m-location-title').textContent = marker.dataset.mapVenue+(ids.length > 1 ? ' · '+ids.length+' 場' : '');
+    marker.querySelector('.m-location-title').textContent = marker.dataset.mapVenue+(ids.length > 1 ? ' · '+message('map_count',ids.length) : '');
     var card = marker.querySelector('.m-card'), height = 34 + ids.length * 31;
     card.setAttribute('height',String(height));
     var y = Number(card.getAttribute('y'));
@@ -1299,7 +1615,7 @@ FILTER_JS = r"""
       if(available) available.click();
     }
     if(map) map.classList.toggle('filter-no-results',matches.length === 0);
-    count.textContent = '顯示 '+matches.length+' 場會議';
+    count.textContent = message('show_count',matches.length);
     empty.hidden = matches.length !== 0;
     var mapEmpty = document.querySelector('.map-empty');
     var seasonEmpty = document.querySelector('.season-empty');
@@ -1328,69 +1644,94 @@ FILTER_JS = r"""
 """
 
 
-def source_list(rows: list[dict]) -> str:
+def source_list(rows: list[dict], locale: str = "zh-Hant") -> str:
     return "".join(
         f'<li><a href="{html.escape(row["officialUrl"])}" target="_blank" rel="noopener">'
-        f'{html.escape(society_code(row))} — {html.escape(row["name"])}</a></li>'
+        f'{html.escape(society_code(row))} — {html.escape(event_name(row, locale))}</a></li>'
         for row in rows
     )
 
 
-def footer_html(rows: list[dict], checked_at: str) -> str:
+def page_i18n(locale: str) -> str:
+    keys = {
+        "date_error", "next", "filtered_next", "no_future", "opens_days",
+        "opens_tomorrow", "opens_today", "ongoing", "ended", "show_count", "map_count",
+    }
+    payload = {key: TEXT[locale][key] for key in keys}
+    return json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
+
+
+def footer_html(rows: list[dict], checked_at: str, locale: str = "zh-Hant") -> str:
+    list_separator = " / " if locale == "en" else "／"
+    sentence_end = "." if locale == "en" else "。"
+    credit_separator = {"zh-Hant": "；", "ja": "。", "en": "; "}[locale]
+    source_separator = {"zh-Hant": "，", "ja": "、", "en": ", "}[locale]
+    license_name = (
+        "GNU Free Documentation License (GFDL)"
+        if locale == "en" else "GNU Free Documentation License（GFDL）"
+    )
     return f"""
 <footer>
-  <p>官方資料查核至 {html.escape(checked_at)}。資料來源：</p>
-  <ul>{source_list(rows)}</ul>
-  <p>會議日期、城市與會場請以官方公告為準。訂閱
-     <a href="conferences.ics">ICS 行事曆</a>，或下載
-     <a href="conferences.csv">CSV</a>／<a href="conferences.json">JSON</a>。</p>
-  <p class="template-credit">版型與追蹤架構沿用學長的
-    <a href="https://96311123.github.io/EM-conference2/" target="_blank" rel="noopener">「急診國際年會追蹤」</a>；
-    <a href="https://github.com/96311123/EM-conference2/" target="_blank" rel="noopener">原始碼 repository</a>。</p>
-  <p class="license-note">日本地圖 SVG 來源：
-    <a href="https://github.com/geolonia/japanese-prefectures" target="_blank" rel="noopener">Geolonia japanese-prefectures / map-full.svg</a>，
-    源自 Wikipedia「日本地図.svg」，依
-    <a href="https://www.gnu.org/licenses/fdl-1.3.html" target="_blank" rel="noopener">GNU Free Documentation License（GFDL）</a>使用。
-    專案內保留原始 SVG 與授權說明。</p>
-  <p class="maker-credit">山上有草一直燒資訊有限公司製作</p>
+  <p>{html.escape(tr(locale, "footer_sources", date=checked_at))}</p>
+  <ul>{source_list(rows, locale)}</ul>
+  <p>{html.escape(tr(locale, "footer_disclaimer"))} {html.escape(tr(locale, "subscribe"))}
+     <a href="conferences.ics">{html.escape(tr(locale, "ics_calendar"))}</a>{html.escape(tr(locale, "or_download"))}
+     <a href="conferences.csv">CSV</a>{list_separator}<a href="conferences.json">JSON</a>{sentence_end}</p>
+  <p class="template-credit">{html.escape(tr(locale, "template_credit"))}
+    <a href="https://96311123.github.io/EM-conference2/" target="_blank" rel="noopener">{html.escape(tr(locale, "template_title"))}</a>{credit_separator}
+    <a href="https://github.com/96311123/EM-conference2/" target="_blank" rel="noopener">{html.escape(tr(locale, "source_repository"))}</a>{sentence_end}</p>
+  <p class="license-note">{html.escape(tr(locale, "map_source"))}
+    <a href="https://github.com/geolonia/japanese-prefectures" target="_blank" rel="noopener">Geolonia japanese-prefectures / map-full.svg</a>{source_separator}
+    {html.escape(tr(locale, "map_derived"))}
+    <a href="https://www.gnu.org/licenses/fdl-1.3.html" target="_blank" rel="noopener">{license_name}</a>{sentence_end}
+    {html.escape(tr(locale, "map_license_use"))}</p>
+  <p class="maker-credit">{html.escape(tr(locale, "maker_credit"))}</p>
 </footer>"""
 
 
 def render_html(rows: list[dict], today: date, checked_at: str, map_svg: str,
-                archive_count: int, deadlines: list[dict]) -> str:
+                archive_count: int, deadlines: list[dict], locale: str = "zh-Hant") -> str:
     upcoming = next_up(rows, today)
     if upcoming:
         days = max((upcoming["_start"] - today).days, 0)
+        primary, secondary, primary_lang, secondary_lang = event_titles(upcoming, locale)
+        secondary_html = (
+            f'<p class="title-zh" lang="{secondary_lang}">{html.escape(secondary)}</p>'
+            if secondary else '<p class="title-zh" hidden></p>'
+        )
         hero = (
-            '<section class="hero" id="next-conference"><p class="lede">下一場</p>'
-            f'<p class="title">{html.escape(upcoming["name"])}</p>'
-            f'<p class="title-zh">{html.escape(upcoming.get("nameZh", upcoming["name"]))}</p>'
+            f'<section class="hero" id="next-conference"><p class="lede">{html.escape(tr(locale, "next"))}</p>'
+            f'<p class="title" lang="{primary_lang}">{html.escape(primary)}</p>'
+            f'{secondary_html}'
             f'<p class="meta">{html.escape(date_range(upcoming))}　·　'
-            f'{html.escape(location_text(upcoming))}　·　{html.escape(upcoming["venue"])}</p>'
+            f'{html.escape(location_text(upcoming, locale))}　·　{html.escape(upcoming["venue"])}</p>'
             f'<p class="count" data-start="{upcoming["start"]}" data-end="{upcoming["end"]}">'
-            f'<b>{days}</b> 天後開幕</p></section>'
+            f'{tr(locale, "opens_days", count=days)}</p></section>'
         )
     else:
         hero = (
-            '<section class="hero" id="next-conference"><p class="lede">下一場</p>'
-            '<p class="title">目前沒有尚未結束的收錄會議。</p>'
+            f'<section class="hero" id="next-conference"><p class="lede">{html.escape(tr(locale, "next"))}</p>'
+            f'<p class="title">{html.escape(tr(locale, "no_upcoming"))}</p>'
             '<p class="title-zh" hidden></p>'
             '<p class="meta" hidden></p><p class="count" hidden></p></section>'
         )
     archive_link = (
-        f'<p class="archive-link"><a href="past.html">查看已結束的 {archive_count} 場歷屆會議</a></p>'
-        if archive_count else '<p class="archive-link"><a href="past.html">查看歷屆會議頁</a></p>'
+        f'<p class="archive-link"><a href="{page_name("past", locale)}">'
+        f'{html.escape(tr(locale, "archive_count", count=archive_count))}</a></p>'
+        if archive_count else f'<p class="archive-link"><a href="{page_name("past", locale)}">'
+        f'{html.escape(tr(locale, "archive_page"))}</a></p>'
     )
+    og_locale = {"zh-Hant": "zh_TW", "ja": "ja_JP", "en": "en_US"}[locale]
     return f"""<!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="{locale}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>日本急診相關醫學會議追蹤</title>
+<title>{html.escape(tr(locale, "site_title"))}</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231d3550'/%3E%3Cpath d='M26 14h12v12h12v12H38v12H26V38H14V26h12z' fill='white'/%3E%3C/svg%3E">
-<meta name="description" content="追蹤日本國內急診、EMS、重症、敗血症、創傷、毒物、心臟、航空、潛水、登山與運動醫學等急性照護相關會議。">
-<meta property="og:title" content="日本急診相關醫學會議追蹤">
-<meta property="og:locale" content="zh_TW">
+<meta name="description" content="{html.escape(tr(locale, "site_description"))}">
+<meta property="og:title" content="{html.escape(tr(locale, "site_title"))}">
+<meta property="og:locale" content="{og_locale}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,600&display=swap" rel="stylesheet">
@@ -1398,57 +1739,61 @@ def render_html(rows: list[dict], today: date, checked_at: str, map_svg: str,
 </head>
 <body><div class="wrap">
 <header class="masthead">
-  <h1>日本急診相關醫學會議追蹤</h1>
-  <p class="stamp">資料查核 {html.escape(checked_at)}</p>
+  <h1>{html.escape(tr(locale, "site_title"))}</h1>
+  <div class="masthead-tools"><p class="stamp">{html.escape(tr(locale, "checked", date=checked_at))}</p>
+  {language_switcher("index", locale)}</div>
 </header>
-<p class="intro">收錄日本國內與急診醫學相關的急診、院前／EMS、災難、創傷、重症、敗血症／感染、毒物、心臟急症、航空、潛水／高壓氧、登山與運動醫學等會議，以及已確認在日本舉辦的跨國輪辦世界級會議；世界級以主辦國跨國輪替為判準，不限年會或雙年會，非年度制系列另行標示週期。日期、城市、會場與連結均取自官方頁面。</p>
-{filter_controls(rows)}
-{japan_map_section(rows, map_svg)}
+<p class="intro">{html.escape(tr(locale, "intro"))}</p>
+{filter_controls(rows, locale)}
+{japan_map_section(rows, map_svg, locale)}
 {hero}
 <section>
-  <h2>即將舉行的場次</h2>
-  {conference_cards(rows, today, deadlines)}
-  <p class="filter-empty cards-empty" hidden>沒有符合條件的會議。</p>
+  <h2>{html.escape(tr(locale, "upcoming_section"))}</h2>
+  {conference_cards(rows, today, locale, deadlines)}
+  <p class="filter-empty cards-empty" hidden>{html.escape(tr(locale, "cards_empty"))}</p>
   {archive_link}
 </section>
 <section style="margin-top:3rem">
-  <h2>年度節奏</h2>
-  {season_grid(rows, today)}
+  <h2>{html.escape(tr(locale, "season_section"))}</h2>
+  {season_grid(rows, today, locale)}
 </section>
 <section style="margin-top:3rem">
-  <h2>投稿死線</h2>
-  {deadline_section(rows, deadlines, today)}
+  <h2>{html.escape(tr(locale, "deadlines_section"))}</h2>
+  {deadline_section(rows, deadlines, today, locale)}
 </section>
-{footer_html(rows, checked_at)}
-</div><script id="conference-filter-data" type="application/json">{filter_data(rows)}</script>
+{footer_html(rows, checked_at, locale)}
+</div><script id="page-i18n" type="application/json">{page_i18n(locale)}</script>
+<script id="conference-filter-data" type="application/json">{filter_data(rows, locale)}</script>
 <script>{COUNTDOWN_JS}{MAP_JS}{FILTER_JS}</script></body></html>
 """
 
 
 def render_archive(rows: list[dict], today: date, checked_at: str,
-                   watchlist: list[dict]) -> str:
+                   watchlist: list[dict], locale: str = "zh-Hant") -> str:
     content = (
-        conference_cards(rows, today)
-        if rows else '<div class="dl"><p class="note">目前尚無已結束的收錄會議。</p></div>'
+        conference_cards(rows, today, locale)
+        if rows else f'<div class="dl"><p class="note">{html.escape(tr(locale, "no_past"))}</p></div>'
     )
-    grid = season_grid(rows, today) if rows else ""
-    tracking = tracking_list(watchlist)
+    grid = season_grid(rows, today, locale) if rows else ""
+    tracking = tracking_list(watchlist, locale)
     return f"""<!DOCTYPE html>
-<html lang="zh-Hant"><head><meta charset="utf-8">
+<html lang="{locale}"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>歷屆會議 — 日本急診相關醫學會議追蹤</title>
+<title>{html.escape(tr(locale, "past_title"))} — {html.escape(tr(locale, "site_title"))}</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231d3550'/%3E%3Cpath d='M26 14h12v12h12v12H38v12H26V38H14V26h12z' fill='white'/%3E%3C/svg%3E">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,600&display=swap" rel="stylesheet">
 <style>{CSS}</style></head><body><div class="wrap">
-<header class="masthead"><h1>歷屆會議</h1><p class="stamp"><a href="index.html">回到主頁</a></p></header>
-<section style="margin-top:2.4rem"><p class="intro">已結束的日本急診相關醫學會議；另列出 2025、2026 曾舉辦、但下一屆尚未完整公告的系列，供後續依官方入口追蹤。</p></section>
-{f'<section style="margin-top:2rem"><h2>後續場次待公告的系列</h2>{tracking}</section>' if tracking else ''}
-{f'<section style="margin-top:2rem"><h2>年度節奏</h2>{grid}</section>' if grid else ''}
-<section style="margin-top:3rem"><h2>全部歷屆場次</h2>{content}</section>
-{footer_html(rows, checked_at)}
+<header class="masthead"><h1>{html.escape(tr(locale, "past_title"))}</h1>
+<div class="masthead-tools"><p class="stamp"><a href="{page_name("index", locale)}">{html.escape(tr(locale, "back_home"))}</a></p>
+{language_switcher("past", locale)}</div></header>
+<section style="margin-top:2.4rem"><p class="intro">{html.escape(tr(locale, "past_intro"))}</p></section>
+{f'<section style="margin-top:2rem"><h2>{html.escape(tr(locale, "tracking_section"))}</h2>{tracking}</section>' if tracking else ''}
+{f'<section style="margin-top:2rem"><h2>{html.escape(tr(locale, "season_section"))}</h2>{grid}</section>' if grid else ''}
+<section style="margin-top:3rem"><h2>{html.escape(tr(locale, "all_past"))}</h2>{content}</section>
+{footer_html(rows, checked_at, locale)}
 </div></body></html>"""
 
 
@@ -1466,14 +1811,20 @@ def build_files(events: list[dict], map_svg: str, today: date | None = None,
     checked_at = source_checked_at(events)
     current, archive = split_archive(rows, today)
     rendered_deadlines = deadline_data(current, deadlines, today)
-    return {
-        "index.html": render_html(current, today, checked_at, map_svg, len(archive), deadlines),
-        "past.html": render_archive(archive, today, checked_at, watchlist),
+    files = {
         "conferences.json": json.dumps(events, ensure_ascii=False, indent=2) + "\n",
         "conferences.csv": build_csv(events),
         "conferences.ics": build_ics(current, checked_at),
         "deadlines.json": json.dumps(rendered_deadlines, ensure_ascii=False, indent=2) + "\n",
     }
+    for locale in LOCALES:
+        files[page_name("index", locale)] = render_html(
+            current, today, checked_at, map_svg, len(archive), deadlines, locale
+        )
+        files[page_name("past", locale)] = render_archive(
+            archive, today, checked_at, watchlist, locale
+        )
+    return files
 
 
 def write_site(events: list[dict], map_svg: str, outdir: Path, license_text: str,

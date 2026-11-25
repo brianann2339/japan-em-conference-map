@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import html
 import io
 import json
 import re
@@ -135,6 +136,73 @@ class RenderTests(unittest.TestCase):
         self.assertEqual(len(self.current), page.count('class="card-title-zh"'))
         self.assertIn('class="title-zh"', page)
 
+    def test_localized_pages_and_switchers_are_rendered(self):
+        expected = {
+            "index.html": ("zh-Hant", "日本急診相關醫學會議追蹤"),
+            "index-ja.html": ("ja", "日本の救急関連医学会議トラッカー"),
+            "index-en.html": ("en", "Japan Emergency Medicine Conference Tracker"),
+            "past.html": ("zh-Hant", "歷屆會議"),
+            "past-ja.html": ("ja", "過去の会議"),
+            "past-en.html": ("en", "Past conferences"),
+        }
+        for filename, (locale, title) in expected.items():
+            page = self.files[filename]
+            self.assertIn(f'<html lang="{locale}">', page)
+            self.assertIn(title, page)
+            self.assertEqual(1, page.count(f'lang="{locale}" aria-current="page"'))
+            self.assertIn('class="language-switcher"', page)
+        self.assertIn('href="index.html" lang="zh-Hant"', self.files["index-en.html"])
+        self.assertIn('href="index-ja.html" lang="ja"', self.files["index.html"])
+        self.assertIn('href="index-en.html" lang="en"', self.files["index-ja.html"])
+        self.assertIn('href="past-en.html"', self.files["past-en.html"])
+        self.assertIn("20th World Congress of Intensive and Critical Care", self.files["index-en.html"])
+        self.assertIn("Official Japanese title (verified English title not available)", self.files["index-en.html"])
+
+    def test_localized_pages_preserve_filter_machine_keys(self):
+        registries = []
+        for filename in ("index.html", "index-ja.html", "index-en.html"):
+            match = re.search(
+                r'<script id="conference-filter-data" type="application/json">(.*?)</script>',
+                self.files[filename],
+            )
+            self.assertIsNotNone(match)
+            registries.append(json.loads(match.group(1)))
+        baseline = [(item["id"], item["prefecture"], item["topic"], item["start"], item["end"])
+                    for item in registries[0]]
+        for registry in registries[1:]:
+            self.assertEqual(
+                baseline,
+                [(item["id"], item["prefecture"], item["topic"], item["start"], item["end"])
+                 for item in registry],
+            )
+        self.assertIn('<option value="東京都" data-map-code="13">Tokyo</option>', self.files["index-en.html"])
+        self.assertIn('<option value="critical">Intensive and critical care</option>', self.files["index-en.html"])
+        self.assertIn('<option value="critical">重症／集中治療</option>', self.files["index-ja.html"])
+
+    def test_localized_archive_tracking_text_is_complete(self):
+        visible = [item for item in self.watchlist if item.get("showOnArchive")]
+        for item in visible:
+            self.assertIn(item["nameEn"], self.files["past-en.html"])
+            self.assertIn(html.escape(item["reasonEn"]), self.files["past-en.html"])
+            self.assertIn(item["reasonJa"], self.files["past-ja.html"])
+        self.assertEqual(set(render.TEXT["zh-Hant"]), set(render.TEXT["ja"]))
+        self.assertEqual(set(render.TEXT["zh-Hant"]), set(render.TEXT["en"]))
+        self.assertEqual(set(render.TOPIC_LABELS), set(render.TOPIC_LABELS_JA))
+        self.assertEqual(set(render.TOPIC_LABELS), set(render.TOPIC_LABELS_EN))
+
+    def test_japanese_and_english_pages_use_japanese_city_forms(self):
+        for filename in ("index-ja.html", "index-en.html", "past-ja.html", "past-en.html"):
+            page = self.files[filename]
+            self.assertNotIn("千代田區", page)
+            self.assertNotIn("橫濱市", page)
+            self.assertNotIn("神戶市", page)
+            self.assertNotIn("鹿兒島市", page)
+        self.assertIn("東京都千代田区", self.files["index-ja.html"])
+        self.assertIn("横浜市", self.files["index-ja.html"])
+        self.assertIn("鹿児島市", self.files["index-ja.html"])
+        self.assertIn("Online", self.files["past-en.html"])
+        self.assertIn("オンライン", self.files["past-ja.html"])
+
     def test_filter_controls_and_registry_cover_source(self):
         page = self.files["index.html"]
         match = re.search(
@@ -171,7 +239,7 @@ class RenderTests(unittest.TestCase):
         self.assertIn("startDate.value > endDate.value", page)
         self.assertIn("startDate.setAttribute('aria-invalid','true')", page)
         self.assertIn("var matches = valid ? events.filter(selected) : lastMatches", page)
-        self.assertIn("count.textContent = '顯示 '+matches.length+' 場會議'", page)
+        self.assertIn("count.textContent = message('show_count',matches.length)", page)
 
     def test_filter_hooks_exist_for_every_event(self):
         page = self.files["index.html"]
