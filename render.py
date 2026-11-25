@@ -1401,7 +1401,7 @@ def render_html(rows: list[dict], today: date, checked_at: str, map_svg: str,
   <h1>日本急診相關醫學會議追蹤</h1>
   <p class="stamp">資料查核 {html.escape(checked_at)}</p>
 </header>
-<p class="intro">收錄日本國內與急診醫學相關的急診、院前／EMS、災難、創傷、重症、敗血症／感染、毒物、心臟急症、航空、潛水／高壓氧、登山與運動醫學等會議，以及已確認在日本舉辦的跨國輪辦會議；僅將每年更換主辦國的系列列為世界級，國際雙年會等非年度制系列另行標示週期。日期、城市、會場與連結均取自官方頁面。</p>
+<p class="intro">收錄日本國內與急診醫學相關的急診、院前／EMS、災難、創傷、重症、敗血症／感染、毒物、心臟急症、航空、潛水／高壓氧、登山與運動醫學等會議，以及已確認在日本舉辦的跨國輪辦世界級會議；世界級以主辦國跨國輪替為判準，不限年會或雙年會，非年度制系列另行標示週期。日期、城市、會場與連結均取自官方頁面。</p>
 {filter_controls(rows)}
 {japan_map_section(rows, map_svg)}
 {hero}

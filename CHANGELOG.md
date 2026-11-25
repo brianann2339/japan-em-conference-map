@@ -24,7 +24,7 @@
 - 歷屆頁新增 5 個待續辦系列的可見追蹤清單與官方入口；同時修正全國 Medical Control 協議會已公布 2027-02-05 場次的過期追蹤狀態。
 - 新增令和8年度第2回全國 Medical Control 協議會、近畿急診醫學研究會第134回與 WCICC2029，未來場次增為 48 場。
 - 補入 WADEM 2025 東京及全國 Medical Control 協議會 2025／2026 三場歷屆紀錄，歷屆總數增為 96 場。
-- 對照學長網站的國際候選系列並逐一核查官方公告；依 [WFICC 年度化公告](https://www.wficc.com/news/wficc-council-approves-change-to-an-annual-world-congress-from-2027/) 與 [2027–2030 主辦地公告](https://www.wficc.com/news/future-world-congress-hosts-and-locations-announced/)，WCICC2029 京都符合「每年跨國輪辦」的世界級定義；WADEM 2025 東京則改列國際雙年會，不再混稱世界級。
+- 對照學長網站的國際候選系列並逐一核查官方公告；世界級以主辦國跨國輪替為判準，不限年會或雙年會。依 [WFICC 年度化公告](https://www.wficc.com/news/wficc-council-approves-change-to-an-annual-world-congress-from-2027/) 與 [2027–2030 主辦地公告](https://www.wficc.com/news/future-world-congress-hosts-and-locations-announced/)，WCICC2029 京都列為世界級年會；依 [WADEM 歷屆主辦地](https://wadem.org/congress/congress-overview/)，WADEM 2025 東京列為世界級雙年會並標示每2年1次。
 - 對每年兩次、每兩年一次及由非年度制改為年度制的系列新增 `cadence` 標示，並補查同年度第二場。
 - 新增 28 場會議共 71 個官方確認的投稿／發表申請期限；卡片顯示下一個截止日，投稿列表與既有篩選同步，未公告期限不推估。
 - 官方來源監測擴充至會議、待公告系列及投稿頁共 97 個入口；本次新入口均已建立基準，沒有讀取失敗。

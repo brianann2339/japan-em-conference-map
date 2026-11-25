@@ -213,8 +213,8 @@ class RenderTests(unittest.TestCase):
         self.assertIn("NATIONAL-MC（院前救急・醫療管制（每年2次））", page)
         self.assertIn("WCICC（世界重症・集中治療（自2028起每年1次；此前非年度制））", page)
         self.assertIn("WADEM", archive)
-        self.assertIn("國際災難・急診醫學（每2年1次）", archive)
-        self.assertNotIn("世界災難・急診醫學（每2年1次）", archive)
+        self.assertIn("世界災難・急診醫學（每2年1次）", archive)
+        self.assertNotIn("國際災難・急診醫學（每2年1次）", archive)
 
     def test_shared_coordinate_uses_one_group_marker(self):
         page = self.files["index.html"]
